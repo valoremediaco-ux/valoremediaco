@@ -37,6 +37,11 @@ nav{position:fixed;top:0;left:0;right:0;z-index:500;
 nav.vis{opacity:1;}
 nav.scrolled{background:rgba(237,235,230,.93);backdrop-filter:blur(14px);border-bottom:1px solid rgba(0,0,0,.06);}
 .nl{height:21px;display:block;transition:filter .3s;flex-shrink:0;}
+.nl-vm{height:34px;width:34px;border-radius:50%;transition:opacity .3s;}
+.nl-light{position:absolute;top:0;left:0;opacity:0;}
+nav.inv .nl-dark{opacity:0;}
+nav.inv .nl-light{opacity:1;}
+nav.inv .nl-vm{filter:none;}
 nav.inv .nl{filter:invert(1);}
 .nls{display:flex;gap:2rem;list-style:none;}
 .nls a{font-size:.78rem;letter-spacing:.02em;color:var(--bk);text-decoration:none;opacity:.42;transition:opacity .2s,color .3s;font-weight:400;}
