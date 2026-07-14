@@ -56,9 +56,6 @@ nav.inv .nc{color:var(--pa);border-color:rgba(255,255,255,.25);}
 .hero-banner{display:block;position:relative;height:auto;min-height:0;}
 .hero-banner img{width:100%;height:auto;display:block;opacity:0;transition:opacity 1s .2s ease;}
 .hero-banner img.in{opacity:1;}
-.hero-banner-scroll{position:absolute;bottom:1.5rem;left:var(--pad);}
-.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;}
-@media(min-width:900px){.hero-banner{height:100vh;min-height:640px;}.hero-banner img{height:100%;object-fit:cover;object-position:center;}}
 .hero-l{display:flex;flex-direction:column;justify-content:flex-end;padding:0 var(--pad) 4rem var(--pad);position:relative;}
 .h-eyebrow{font-size:.72rem;letter-spacing:.14em;text-transform:lowercase;color:var(--ta);font-weight:500;
   margin-bottom:1.6rem;display:flex;align-items:center;gap:.7rem;
@@ -754,3 +751,4 @@ footer{background:#060606;border-top:1px solid rgba(255,255,255,.04);padding:2.5
   .itabs-side .itab{padding:1rem 0;}
   .wstage-below{flex-direction:column;gap:1.2rem;}
 }
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;}
