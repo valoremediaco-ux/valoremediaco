@@ -87,12 +87,12 @@
   </script>
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>valoré media · digital marketing agency</title>
+<title>valoré media: digital marketing agency</title>
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300&family=Cormorant+Garamond:ital,wght@1,300;1,400&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-<div id="cr"><span class="ct">VM.</span></div>
+<div id="cr"><span class="star">✧</span><img class="crlogo crlogo-dark" src="images/logo-vm.png" alt=""><img class="crlogo crlogo-light" src="images/logo-vm-light.png" alt=""></div>
 
 <!-- ══ BACK TO HOME (shown only while work gallery is open) ══ -->
 <button class="ov-back" onclick="closeOv()" id="ovBackBtn">
@@ -164,7 +164,7 @@
   <div class="stmt-r">
     <p class="s-ey rf">who we are</p>
     <h2 class="stmt-h rc">we create content that <span class="lt">stops the scroll</span> and builds brands.</h2>
-    <p class="stmt-body rf d1">valoré means value. our mission is to bring value to your brand through elevated social content, branding, and creative direction.</p>
+    <p class="stmt-body rf d1">Valoré means value. our mission is to bring value to your brand through elevated social content, branding, and creative direction.</p>
     <p class="stmt-body rf d1">We partner with brands to create scroll-stopping content, build strategy that connects, and deliver results that last.</p>
     <a href="#ct-a" class="stmt-cta rf d2">let's create →</a>
     <p class="stmt-sub rf d3">south florida-based creative agency<br>miami · fort lauderdale</p>
@@ -217,45 +217,39 @@
     <div><p class="work-ey s-ey rf">our work</p><h2 class="work-ht rc"><span class="acc">content with</span><br>direction.</h2></div>
     <div class="work-desc rf d1">Explore selected work across industries. Each project is built with intention and designed to deliver results.</div>
   </div>
-  <div class="wstage">
-    <div class="iside">
-      <div>
-        <p class="ilbl">industries we support</p>
-        <div class="itabs">
-          <div class="itab on" data-ind="fashion"><span class="itn">fashion & beauty</span><span class="ita">→</span></div>
-          <div class="itab" data-ind="kids"><span class="itn">kids</span><span class="ita">→</span></div>
-          <div class="itab" data-ind="lifestyle"><span class="itn">lifestyle</span><span class="ita">→</span></div>
-          <div class="itab" data-ind="events"><span class="itn">events</span><span class="ita">→</span></div>
+  <div class="wstage2">
+    <div class="itabs-side itabs-side-l">
+      <p class="ilbl">industries we support</p>
+      <div class="itab on" data-ind="fashion"><span class="itn">fashion & beauty</span><span class="ita">→</span></div>
+      <div class="itab" data-ind="kids"><span class="itn">kids</span><span class="ita">→</span></div>
+    </div>
+    <div class="ph-wrap">
+      <div class="pf2">
+        <div class="pnt"></div>
+        <div class="pscr">
+          <div class="pui2"><span class="pul">VM.</span><div class="pud"><div class="pdd"></div><div class="pdd"></div><div class="pdd"></div></div></div>
+          <video id="phoneVid" autoplay muted loop playsinline preload="none" style="width:100%;height:100%;object-fit:cover;">
+            <source id="phoneVidSrc" src="videos/video-01-f3641e43.mp4" type="video/mp4">
+          </video>
+          <div class="ph-ind-label" id="phIndLabel">fashion & beauty</div>
         </div>
       </div>
-      <button class="iview" id="iview-btn" onclick="openOv(curInd)">view all fashion & beauty work →</button>
     </div>
-    <div class="pside">
-      <div class="ph-wrap">
-        <div class="pf2">
-          <div class="pnt"></div>
-          <div class="pscr">
-            <div class="pui2"><span class="pul">VM.</span><div class="pud"><div class="pdd"></div><div class="pdd"></div><div class="pdd"></div></div></div>
-            <video id="phoneVid" autoplay muted loop playsinline preload="none" style="width:100%;height:100%;object-fit:cover;">
-              <source id="phoneVidSrc" src="videos/video-01-f3641e43.mp4" type="video/mp4">
-            </video>
-            <div class="ph-ind-label" id="phIndLabel">fashion & beauty</div>
-          </div>
-        </div>
-      </div>
-      <div class="pside-r">
-        <p class="pside-r-ey">work that speaks</p>
-        <h3 class="pside-r-h"><span class="acc">content with</span>direction.</h3>
-        <p class="pside-r-body">Explore selected work across industries. Each project is built with intention and designed to deliver results.</p>
-        <button class="pside-r-cta" onclick="openOv(curInd)">explore all work →</button>
-      </div>
+    <div class="itabs-side itabs-side-r">
+      <p class="ilbl">&nbsp;</p>
+      <div class="itab" data-ind="lifestyle"><span class="itn">lifestyle</span><span class="ita">→</span></div>
+      <div class="itab" data-ind="events"><span class="itn">events</span><span class="ita">→</span></div>
     </div>
+  </div>
+  <div class="wstage-below rf d1">
+    <button class="iview" id="iview-btn" onclick="openOv(curInd)">view all fashion & beauty work →</button>
+    <button class="pside-r-cta" onclick="openOv(curInd)">explore all work →</button>
   </div>
 </div>
 
 <!-- ══ BACKSTAGE FEATURE ══ -->
 <div style="width:100%;">
-  <img src="images/image-02-e23b07d3.jpg" alt="Vale Orduy backstage at FLLFW · Valoré Media" style="width:100%;height:auto;display:block;">
+  <img src="images/image-24-backstage.jpg" alt="Vale Orduy backstage at FLLFW · Valoré Media" style="width:100%;height:auto;display:block;">
 </div>
 
 <!-- ══ SERVICES MARQUEE ══ -->
@@ -345,7 +339,6 @@
     <div>
       <p class="aey rf">about valoré media</p>
       <h2 class="ah rf d1">meet the founder<br><span class="acc">vale orduy.</span></h2>
-      <div class="about-photo rf d2"><img src="images/image-23-about.jpg" alt="Vale Orduy — founder of Valoré Media, Miami content creator"></div>
       <div class="arl rf d2"></div>
       <p class="ap rf d2">Valoré Media is a Miami-based creative agency specializing in elevated content creation, social media strategy, and creative direction for fashion, beauty, lifestyle, and elevated brands.</p>
       <p class="ap rf d3">With a marketing background, fashion business studies in Milan, and international business studies in Vienna, Vale brings a global, editorial perspective to every project. Her experience covering international fashion weeks, from New York to Milan to Miami, shapes a refined approach where strategy and storytelling work together, so content feels effortless, aspirational, and aligned with each brand's identity.</p>
@@ -354,6 +347,7 @@
       <p class="bilingual rf d5">bilingual, <em>english & español</em></p>
     </div>
     <div class="rf d2">
+      <div class="about-photo about-photo-r"><img src="images/image-23-about.jpg" alt="Vale Orduy, founder of Valoré Media, Miami content creator"></div>
       <!-- EDUCATION -->
       <div class="acc-section edu">
         <p class="acc-title">education</p>
