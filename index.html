@@ -25,10 +25,13 @@
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Valoré Media | Miami Social Media Management & Content Creation">
-  <meta name="twitter:description" content="Miami-based creative agency for fashion, beauty, lifestyle & luxury brands. Elevated visuals. Meaningful value.">
+  <meta name="twitter:description" content="Miami-based creative agency for fashion, beauty, lifestyle &amp; luxury brands. Your brand's creative powerhouse.">
 
   <!-- Canonical -->
   <link rel="canonical" href="https://valoremediaco.com/">
+  <meta property="og:image" content="https://valoremediaco.com/images/image-21-hero-banner.jpg">
+  <meta name="twitter:image" content="https://valoremediaco.com/images/image-21-hero-banner.jpg">
+  <link rel="icon" type="image/png" href="images/image-01-5f636089.png">
 
   <!-- Schema.org Structured Data -->
   <script type="application/ld+json">
@@ -90,13 +93,15 @@
 <body>
 <div id="cr"><span class="ct">VM.</span></div>
 
+<!-- ══ BACK TO HOME (shown only while work gallery is open) ══ -->
+<button class="ov-back" onclick="closeOv()" id="ovBackBtn">
+  <svg viewBox="0 0 24 24"><polyline points="15,18 9,12 15,6"/></svg>
+  ← back to home
+</button>
+
 <!-- ══ OVERLAY ══ -->
 <div id="ind-overlay">
   <nav class="ov-nav" id="ovNav">
-    <button class="ov-back" onclick="closeOv()" id="ovBackBtn">
-      <svg viewBox="0 0 24 24"><polyline points="15,18 9,12 15,6"/></svg>
-      ← back to home
-    </button>
     <span class="ov-title" id="ov-title">fashion</span>
     <img class="ov-logo" src="images/image-01-3af8c9a6.jpg" alt="valoré media" onclick="closeOv()" style="cursor:pointer;">
   </nav>
@@ -124,10 +129,6 @@
 <div class="hero hero-banner">
   <h1 class="sr-only">Valoré Media — Miami social media management & content creation for fashion, beauty, lifestyle & luxury brands</h1>
   <img id="heroImg" src="images/image-21-hero-banner.jpg" alt="Valoré Media — Vale Orduy, Miami content creation & social media agency">
-  <div class="h-scroll hero-banner-scroll" id="hScrl">
-    <svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="19,12 12,19 5,12"/></svg>
-    scroll to explore
-  </div>
 </div>
 
 <!-- ══ TICKER ══ -->
@@ -165,7 +166,7 @@
     <p class="stmt-body rf d1">valoré means value. our mission is to bring value to your brand through elevated social content, branding, and creative direction.</p>
     <p class="stmt-body rf d1">We partner with brands to create scroll-stopping content, build strategy that connects, and deliver results that last.</p>
     <a href="#ct-a" class="stmt-cta rf d2">let's create →</a>
-    <p class="stmt-sub rf d3">south florida-based creative agency<br>elevated visuals · meaningful value</p>
+    <p class="stmt-sub rf d3">south florida-based creative agency<br>miami · fort lauderdale</p>
   </div></div>
 
 <!-- ══ BRANDS ══ -->
@@ -334,7 +335,7 @@
 
 <!-- ══ CTA STRIP ══ -->
 <div style="padding:0 var(--pad) 9vh;background:var(--pa);text-align:center;">
-  <a href="#ct-a" class="stmt-cta rf" style="display:inline-flex;">start your project →</a>
+  <a href="#ct-a" class="stmt-cta rf" style="display:inline-flex;">get a quote for your project →</a>
 </div>
 
 <!-- ══ ABOUT ══ -->
@@ -342,7 +343,7 @@
   <div class="about-inner">
     <div>
       <p class="aey rf">about valoré media</p>
-      <h2 class="ah rf d1">founded by<br><span class="acc">vale orduy.</span></h2>
+      <h2 class="ah rf d1">meet the founder<br><span class="acc">vale orduy.</span></h2>
       <div class="about-photo rf d2"><img src="images/image-23-about.jpg" alt="Vale Orduy — founder of Valoré Media, Miami content creator"></div>
       <div class="arl rf d2"></div>
       <p class="ap rf d2">Valoré Media is a Miami-based creative agency specializing in elevated content creation, social media strategy, and creative direction for fashion, beauty, lifestyle, and elevated brands.</p>
@@ -353,11 +354,11 @@
     </div>
     <div class="rf d2">
       <!-- EDUCATION -->
-      <div class="acc-section">
+      <div class="acc-section edu">
         <p class="acc-title">education</p>
-        <div class="acc-item"><div class="acc-header"><div class="acc-header-left"><span class="acc-name">UCF · Business Administration & Marketing</span></div><span class="acc-arr">↓</span></div><div class="acc-body-wrap"><p class="acc-sub">Bachelor of Business Administration · Marketing</p></div></div>
-        <div class="acc-item"><div class="acc-header"><div class="acc-header-left"><span class="acc-name">WU Vienna University</span></div><span class="acc-arr">↓</span></div><div class="acc-body-wrap"><p class="acc-sub">International Business Certificate · Vienna, Austria</p></div></div>
-        <div class="acc-item"><div class="acc-header"><div class="acc-header-left"><span class="acc-name">Istituto Marangoni · Milan</span></div><span class="acc-arr">↓</span></div><div class="acc-body-wrap"><p class="acc-sub">Fashion Business Certificate · Milan, Italy</p></div></div>
+        <div class="acc-item"><div class="acc-header"><div class="acc-header-left"><span class="acc-name">UCF</span></div><span class="acc-arr">↓</span></div><div class="acc-body-wrap"><p class="acc-sub">Bachelor's in Business Administration & Marketing, Orlando, FL</p></div></div>
+        <div class="acc-item"><div class="acc-header"><div class="acc-header-left"><span class="acc-name">WU University of Business & Economics</span></div><span class="acc-arr">↓</span></div><div class="acc-body-wrap"><p class="acc-sub">International Business Certificate, Vienna, Austria</p></div></div>
+        <div class="acc-item"><div class="acc-header"><div class="acc-header-left"><span class="acc-name">Istituto Marangoni</span></div><span class="acc-arr">↓</span></div><div class="acc-body-wrap"><p class="acc-sub">Fashion Business Certificate, Milan, Italy</p></div></div>
       </div>
 
       <!-- CERTIFICATES -->
@@ -390,7 +391,7 @@
     <div>
       <p class="ctey rf">get in touch</p>
       <h2 class="cth rf d1"><span class="acc">let's create</span>something<br>valuable.</h2>
-      <p class="ctsl rf d2">"elevated visuals. meaningful value."</p>
+      <p class="ctsl rf d2">"your brand's creative powerhouse."</p>
       <p class="ctdet rf d2">miami · fort lauderdale<br><span class="ctlang">hablamos español</span></p>
       <div class="ctlinks rf d3">
         <a href="mailto:valoremediaco@gmail.com" class="ctlnk"><span class="ctll">email</span><span class="ctlv">valoremediaco@gmail.com</span><span class="ctla">→</span></a>
