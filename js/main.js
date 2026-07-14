@@ -36,7 +36,7 @@ document.querySelectorAll('.rc,.rf').forEach(function(el){rio.observe(el);});
 
 /* ── NAV ── */
 var nav2=document.getElementById('nav');
-var darkZ=document.querySelectorAll('.stats,.ct,.tick');
+var darkZ=document.querySelectorAll('.stats,.ct,.tick,.work');
 var tk2=false;
 window.addEventListener('scroll',function(){
   if(!tk2){requestAnimationFrame(function(){
@@ -110,6 +110,7 @@ function openOv(ind){
   ovTitle.textContent=label;
   ovBody.innerHTML='<div class="vgrid">'+(indGrids[ind]||'')+'</div>';
   overlay.classList.add('open');
+  document.body.classList.add('ov-open');
   document.body.style.overflow='hidden';
   // Lazy load videos in overlay
   ovBody.querySelectorAll('.vw[data-src]').forEach(function(w){vobs.observe(w);});
@@ -122,6 +123,7 @@ function openOv(ind){
 function closeOv(){
   if(!overlay)return;
   overlay.classList.remove('open');
+  document.body.classList.remove('ov-open');
   document.body.style.overflow='';
 }
 // ESC key to close overlay
@@ -134,3 +136,31 @@ function ts(btn){
   btn.querySelector('.io').style.display=vid.muted?'block':'none';
   btn.querySelector('.in2').style.display=vid.muted?'none':'block';
 }
+
+/* ── CERTIFICATES: tap/click toggle (mobile has no hover) ── */
+(function(){
+  var dd=document.querySelector('.acc-dropdown');
+  if(!dd)return;
+  var t=dd.querySelector('.acc-title');
+  if(t)t.addEventListener('click',function(){dd.classList.toggle('open');});
+})();
+
+/* ── CONTACT FORM: submit without leaving the page ── */
+(function(){
+  var f=document.querySelector('.ctform');
+  if(!f)return;
+  f.addEventListener('submit',function(e){
+    e.preventDefault();
+    var btn=f.querySelector('.ctbtn');
+    var orig=btn.innerHTML;
+    btn.innerHTML='sending...';btn.disabled=true;
+    fetch(f.action,{method:'POST',body:new FormData(f),headers:{'Accept':'application/json'}})
+      .then(function(r){return r.json();})
+      .then(function(d){
+        if(d.success){btn.innerHTML='sent ✓';f.reset();
+          setTimeout(function(){btn.innerHTML=orig;btn.disabled=false;},4000);}
+        else{btn.innerHTML='something went wrong, try again';btn.disabled=false;}
+      })
+      .catch(function(){btn.innerHTML='something went wrong, try again';btn.disabled=false;});
+  });
+})();
