@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Our Work — Valoré Media</title>
+<meta name="description" content="Explore Valoré Media's portfolio by category.">
+<link rel="icon" type="image/png" href="images/logo-vm-badge.png">
+<link rel="apple-touch-icon" href="images/logo-vm-badge.png">
+<link rel="stylesheet" href="css/styles.css">
+<style>
+  /* ══ CATEGORY PAGE ══ */
+  .cat-hero{padding:12rem var(--pad) 4rem;background:var(--pa);}
+  .cat-back{display:inline-flex;align-items:center;gap:.5rem;font-size:.78rem;letter-spacing:.02em;color:var(--bk);opacity:.55;text-decoration:none;margin-bottom:2rem;transition:opacity .2s;}
+  .cat-back:hover{opacity:1;}
+  .cat-eyebrow{font-size:.85rem;letter-spacing:.1em;text-transform:lowercase;color:var(--ta);font-weight:500;margin-bottom:.8rem;display:flex;align-items:center;gap:.6rem;}
+  .cat-eyebrow::before{content:'—';opacity:.5;font-weight:300;}
+  .cat-title{font-family:var(--P);font-weight:800;font-size:clamp(2.2rem,5vw,4rem);letter-spacing:-.02em;line-height:1.05;margin-bottom:1.2rem;}
+  .cat-desc{font-size:.92rem;line-height:1.9;color:rgba(0,0,0,.5);font-weight:300;max-width:38rem;}
+
+  .cat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2.5rem 1.8rem;padding:2rem var(--pad) 9rem;}
+  .cat-card{display:block;text-decoration:none;color:inherit;}
+  .cat-card-img-wrap{width:100%;aspect-ratio:4/5;overflow:hidden;background:#e5e0d8;margin-bottom:1rem;}
+  .cat-card-img-wrap img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .6s cubic-bezier(.16,1,.3,1);}
+  .cat-card:hover .cat-card-img-wrap img{transform:scale(1.04);}
+  .cat-card-type{font-size:.68rem;letter-spacing:.08em;text-transform:uppercase;color:var(--ta);font-weight:600;margin-bottom:.4rem;}
+  .cat-card-title{font-family:var(--P);font-weight:700;font-size:1.05rem;letter-spacing:-.01em;margin-bottom:.4rem;}
+  .cat-card-desc{font-size:.82rem;line-height:1.6;color:rgba(0,0,0,.5);font-weight:300;}
+
+  .cat-empty{padding:4rem var(--pad) 8rem;text-align:center;color:rgba(0,0,0,.4);font-size:.9rem;}
+
+  @media(max-width:1024px){ .cat-grid{grid-template-columns:repeat(2,1fr);} }
+  @media(max-width:600px){
+    .cat-hero{padding:9rem var(--pad) 3rem;}
+    .cat-grid{grid-template-columns:1fr;gap:2.2rem;padding:1rem var(--pad) 6rem;}
+  }
+  body{cursor:auto;}
+</style>
+</head>
+<body>
+
+<!-- ══ NAV ══ -->
+<nav id="nav" class="vis scrolled">
+  <a href="index.html" style="position:relative;display:block;"><img class="nl nl-vm nl-dark" src="images/logo-vm-badge.png" alt="valoré media"><img class="nl nl-vm nl-light" src="images/logo-vm-badge.png" alt="" aria-hidden="true"></a>
+  <ul class="nls">
+    <li><a href="index.html#work-a">work</a></li>
+    <li><a href="index.html#about-a">about</a></li>
+    <li><a href="index.html#svcs-a">services</a></li>
+    <li><a href="index.html#proc-a">process</a></li>
+    <li><a href="index.html#ct-a">contact</a></li>
+  </ul>
+  <a href="index.html#ct-a" class="nc">let's talk →</a>
+  <button class="nav-burger" id="navBurger" onclick="toggleMobileNav()" aria-label="menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+<div class="mobile-nav-panel" id="mobileNavPanel">
+  <a href="index.html#work-a" onclick="closeMobileNav()">work</a>
+  <a href="index.html#about-a" onclick="closeMobileNav()">about</a>
+  <a href="index.html#svcs-a" onclick="closeMobileNav()">services</a>
+  <a href="index.html#proc-a" onclick="closeMobileNav()">process</a>
+  <a href="index.html#ct-a" onclick="closeMobileNav()">contact</a>
+</div>
+<script>
+  function toggleMobileNav(){
+    var panel = document.getElementById('mobileNavPanel');
+    var btn = document.getElementById('navBurger');
+    var isOpen = panel.classList.toggle('open');
+    btn.classList.toggle('open', isOpen);
+    btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+  }
+  function closeMobileNav(){
+    document.getElementById('mobileNavPanel').classList.remove('open');
+    document.getElementById('navBurger').classList.remove('open');
+    document.getElementById('navBurger').setAttribute('aria-expanded','false');
+  }
+</script>
+
+<!-- ══ CATEGORY HERO ══ -->
+<div class="cat-hero">
+  <a href="index.html#work-a" class="cat-back">← back to work</a>
+  <p class="cat-eyebrow" id="catEyebrow">our work</p>
+  <h1 class="cat-title" id="catTitle">Loading…</h1>
+  <p class="cat-desc" id="catDesc"></p>
+</div>
+
+<!-- ══ PROJECT GRID ══ -->
+<div class="cat-grid" id="catGrid"></div>
+<div class="cat-empty" id="catEmpty" style="display:none;">More projects coming soon.</div>
+
+<footer>
+  <div><img class="ft-logo" src="images/image-01-5f636089.png" alt="valoré media"><p class="ft-copy">© 2026 Valoré Media<br>All rights reserved.</p></div>
+  <div><p class="ft-col-title">menu</p><ul class="ft-col-links"><li><a href="index.html#work-a">work</a></li><li><a href="index.html#about-a">about</a></li><li><a href="index.html#svcs-a">services</a></li><li><a href="index.html#proc-a">process</a></li><li><a href="index.html#ct-a">contact</a></li></ul></div>
+  <div><p class="ft-col-title">services</p><ul class="ft-col-links"><li><a href="index.html#svcs-a">content creation</a></li><li><a href="index.html#svcs-a">social media</a></li><li><a href="index.html#svcs-a">strategy</a></li><li><a href="index.html#svcs-a">paid media</a></li></ul></div>
+  <div><p class="ft-col-title">let's connect</p><ul class="ft-col-links"><li><a href="https://instagram.com/valeorduy" target="_blank">instagram</a></li><li><a href="mailto:valoremediaco@gmail.com">email</a></li><li><a href="index.html#ct-a">inquiry</a></li></ul></div>
+</footer>
+
+<script src="js/work-data.js"></script>
+<script>
+(function(){
+  var params = new URLSearchParams(window.location.search);
+  var catSlug = params.get('cat');
+  var cat = getCategory(catSlug);
+
+  if(!cat){
+    document.getElementById('catTitle').textContent = 'Category not found';
+    document.getElementById('catDesc').textContent = '';
+    document.getElementById('catEmpty').style.display = 'block';
+    return;
+  }
+
+  document.title = cat.name + ' — Valoré Media';
+  document.getElementById('catTitle').textContent = cat.name;
+  document.getElementById('catDesc').textContent = cat.description;
+
+  var projects = getProjectsByCategory(catSlug);
+  var grid = document.getElementById('catGrid');
+
+  if(projects.length === 0){
+    document.getElementById('catEmpty').style.display = 'block';
+  } else {
+    projects.forEach(function(p){
+      var a = document.createElement('a');
+      a.className = 'cat-card';
+      a.href = 'project.html?id=' + encodeURIComponent(p.slug);
+      a.innerHTML =
+        '<div class="cat-card-img-wrap"><img src="' + p.coverImage + '" alt="' + p.title + '" loading="lazy" decoding="async"></div>' +
+        '<p class="cat-card-type">' + p.type + '</p>' +
+        '<h3 class="cat-card-title">' + p.title + '</h3>' +
+        '<p class="cat-card-desc">' + p.description + '</p>';
+      grid.appendChild(a);
+    });
+  }
+})();
+</script>
+</body>
+</html>

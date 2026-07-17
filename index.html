@@ -246,32 +246,89 @@
     <div><p class="work-ey s-ey rf">our work</p><h2 class="work-ht rc"><span class="acc">content with</span><br>direction.</h2></div>
     <div class="work-desc rf d1">Every project begins with strategy. From campaign concepts to platform-specific content, we create visuals designed to strengthen brand identity.</div>
   </div>
-  <div class="wstage2">
-    <div class="itabs-side itabs-side-l">
-      <div class="itab on" data-ind="fashion"><span class="itn">fashion and beauty</span><span class="ita">→</span></div>
-      <div class="itab" data-ind="kids"><span class="itn">kids</span><span class="ita">→</span></div>
-    </div>
-    <div class="ph-wrap">
-      <div class="pf2">
-        <div class="pnt"></div>
-        <div class="pscr">
-          <div class="pui2"><span class="pul">VM.</span><div class="pud"><div class="pdd"></div><div class="pdd"></div><div class="pdd"></div></div></div>
-          <video id="phoneVid" autoplay muted loop playsinline preload="none" style="width:100%;height:100%;object-fit:cover;">
-            <source id="phoneVidSrc" src="videos/video-01-f3641e43.mp4" type="video/mp4">
-          </video>
-          <div class="ph-ind-label" id="phIndLabel">fashion and beauty</div>
+  <div class="work-cards rf d2">
+    <a class="wcard" href="category.html?cat=fashion-beauty" data-video="videos/cover-fashion-beauty.mp4">
+      <div class="wcard-media">
+        <img class="wcard-cover" src="images/work/cover-fashion-beauty.jpg" alt="Fashion & Beauty work" loading="lazy" decoding="async">
+        <video class="wcard-video" muted loop playsinline preload="none"></video>
+        <div class="wcard-shade"></div>
+      </div>
+      <div class="wcard-info">
+        <div class="wcard-title-row"><h3 class="wcard-title">Fashion & Beauty</h3><span class="wcard-arrow">→</span></div>
+        <div class="wcard-drop">
+          <p class="wcard-desc">A curated selection of campaigns, editorials, product launches, and social-first content created for fashion and beauty brands.</p>
+          <span class="wcard-explore">Explore →</span>
         </div>
       </div>
-    </div>
-    <div class="itabs-side itabs-side-r">
-      <div class="itab" data-ind="lifestyle"><span class="itn">lifestyle</span><span class="ita">→</span></div>
-      <div class="itab" data-ind="events"><span class="itn">events</span><span class="ita">→</span></div>
-    </div>
-  </div>
-  <div class="wstage-below rf d1">
-    <button class="iview" id="iview-btn" onclick="openOv(curInd)">view all fashion and beauty work →</button>
+    </a>
+    <a class="wcard" href="category.html?cat=events" data-video="videos/cover-events.mp4">
+      <div class="wcard-media">
+        <img class="wcard-cover" src="images/work/cover-events.jpg" alt="Events work" loading="lazy" decoding="async">
+        <video class="wcard-video" muted loop playsinline preload="none"></video>
+        <div class="wcard-shade"></div>
+      </div>
+      <div class="wcard-info">
+        <div class="wcard-title-row"><h3 class="wcard-title">Events</h3><span class="wcard-arrow">→</span></div>
+        <div class="wcard-drop">
+          <p class="wcard-desc">Backstage coverage, fashion weeks, brand activations, and live event storytelling.</p>
+          <span class="wcard-explore">Explore →</span>
+        </div>
+      </div>
+    </a>
+    <a class="wcard" href="category.html?cat=kids-brands" data-video="videos/cover-kids-brands.mp4">
+      <div class="wcard-media">
+        <img class="wcard-cover" src="images/work/cover-kids-brands.jpg" alt="Kids Brands work" loading="lazy" decoding="async">
+        <video class="wcard-video" muted loop playsinline preload="none"></video>
+        <div class="wcard-shade"></div>
+      </div>
+      <div class="wcard-info">
+        <div class="wcard-title-row"><h3 class="wcard-title">Kids Brands</h3><span class="wcard-arrow">→</span></div>
+        <div class="wcard-drop">
+          <p class="wcard-desc">Campaigns, retail content, product launches, and storytelling created for children's brands.</p>
+          <span class="wcard-explore">Explore →</span>
+        </div>
+      </div>
+    </a>
+    <a class="wcard" href="category.html?cat=lifestyle-hospitality" data-video="videos/cover-lifestyle-hospitality.mp4">
+      <div class="wcard-media">
+        <img class="wcard-cover" src="images/work/cover-lifestyle-hospitality.jpg" alt="Lifestyle & Hospitality work" loading="lazy" decoding="async">
+        <video class="wcard-video" muted loop playsinline preload="none"></video>
+        <div class="wcard-shade"></div>
+      </div>
+      <div class="wcard-info">
+        <div class="wcard-title-row"><h3 class="wcard-title">Lifestyle & Hospitality</h3><span class="wcard-arrow">→</span></div>
+        <div class="wcard-drop">
+          <p class="wcard-desc">Editorial content and social storytelling for hospitality, travel, and lifestyle brands.</p>
+          <span class="wcard-explore">Explore →</span>
+        </div>
+      </div>
+    </a>
   </div>
 </div>
+
+<script src="js/work-data.js"></script>
+<script>
+(function(){
+  var cards = document.querySelectorAll('.wcard');
+  cards.forEach(function(card){
+    var video = card.querySelector('.wcard-video');
+    var src = card.getAttribute('data-video');
+    var hoverTimer;
+    card.addEventListener('mouseenter', function(){
+      clearTimeout(hoverTimer);
+      hoverTimer = setTimeout(function(){
+        if(!video.getAttribute('src')){ video.setAttribute('src', src); video.load(); }
+        video.play().then(function(){ video.classList.add('in'); }).catch(function(){});
+      }, 120);
+    });
+    card.addEventListener('mouseleave', function(){
+      clearTimeout(hoverTimer);
+      video.classList.remove('in');
+      video.pause();
+    });
+  });
+})();
+</script>
 
 <!-- ══ RUNWAY FEATURE (moved here) ══ -->
 <div class="runway-banner">

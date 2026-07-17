@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Project — Valoré Media</title>
+<link rel="icon" type="image/png" href="images/logo-vm-badge.png">
+<link rel="apple-touch-icon" href="images/logo-vm-badge.png">
+<link rel="stylesheet" href="css/styles.css">
+<style>
+  body{cursor:auto;}
+  /* ══ PROJECT PAGE ══ */
+  .proj-hero{padding:11rem var(--pad) 2.5rem;background:var(--pa);}
+  .proj-back{display:inline-flex;align-items:center;gap:.5rem;font-size:.78rem;color:var(--bk);opacity:.55;text-decoration:none;margin-bottom:2rem;transition:opacity .2s;}
+  .proj-back:hover{opacity:1;}
+  .proj-type{font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:var(--ta);font-weight:600;margin-bottom:.9rem;}
+  .proj-title{font-family:var(--P);font-weight:800;font-size:clamp(2rem,4.5vw,3.6rem);letter-spacing:-.02em;line-height:1.05;margin-bottom:1.2rem;max-width:44rem;}
+  .proj-desc{font-size:.95rem;line-height:1.85;color:rgba(0,0,0,.55);font-weight:300;max-width:36rem;}
+
+  .proj-services{padding:0 var(--pad) 3rem;display:flex;flex-wrap:wrap;gap:.6rem;}
+  .proj-service-pill{font-size:.72rem;letter-spacing:.03em;color:var(--bk);border:1px solid rgba(0,0,0,.15);padding:.45rem 1rem;border-radius:2px;opacity:.75;}
+
+  .proj-hero-media{width:100%;background:#0a0a0a;aspect-ratio:16/9;position:relative;overflow:hidden;}
+  .proj-hero-media video,.proj-hero-media img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;}
+  .proj-sound-btn{position:absolute;bottom:1.2rem;right:1.2rem;z-index:5;width:42px;height:42px;border-radius:50%;
+    background:rgba(13,13,13,.55);backdrop-filter:blur(6px);border:1px solid rgba(255,255,255,.25);
+    display:flex;align-items:center;justify-content:center;cursor:pointer;transition:background .2s;}
+  .proj-sound-btn:hover{background:rgba(13,13,13,.8);}
+  .proj-sound-btn svg{width:18px;height:18px;fill:none;stroke:#fff;stroke-width:1.6;}
+
+  .proj-gallery{padding:5rem var(--pad);display:grid;grid-template-columns:repeat(2,1fr);gap:1.5rem;}
+  .proj-gallery img{width:100%;display:block;aspect-ratio:4/5;object-fit:cover;background:#e5e0d8;}
+
+  .proj-supporting{padding:0 var(--pad) 5rem;display:grid;grid-template-columns:repeat(2,1fr);gap:1.5rem;}
+  .proj-supporting video{width:100%;display:block;aspect-ratio:9/16;object-fit:cover;background:#0a0a0a;max-height:520px;margin:0 auto;}
+
+  .proj-nav{border-top:1px solid rgba(0,0,0,.08);padding:2.5rem var(--pad);display:flex;justify-content:space-between;align-items:center;gap:1.5rem;flex-wrap:wrap;}
+  .proj-nav-link{font-size:.85rem;color:var(--bk);text-decoration:none;opacity:.6;transition:opacity .2s;display:flex;flex-direction:column;gap:.3rem;}
+  .proj-nav-link:hover{opacity:1;}
+  .proj-nav-label{font-size:.65rem;letter-spacing:.08em;text-transform:uppercase;color:var(--ta);}
+  .proj-nav-cat{font-size:.78rem;opacity:.55;text-decoration:none;color:var(--bk);}
+
+  .proj-empty{padding:12rem var(--pad) 8rem;text-align:center;}
+
+  @media(max-width:768px){
+    .proj-hero{padding:8.5rem var(--pad) 2rem;}
+    .proj-gallery{grid-template-columns:1fr;padding:3rem var(--pad);}
+    .proj-supporting{grid-template-columns:1fr;padding:0 var(--pad) 3rem;}
+    .proj-nav{flex-direction:column;align-items:flex-start;}
+  }
+</style>
+</head>
+<body>
+
+<!-- ══ NAV ══ -->
+<nav id="nav" class="vis scrolled">
+  <a href="index.html" style="position:relative;display:block;"><img class="nl nl-vm nl-dark" src="images/logo-vm-badge.png" alt="valoré media"><img class="nl nl-vm nl-light" src="images/logo-vm-badge.png" alt="" aria-hidden="true"></a>
+  <ul class="nls">
+    <li><a href="index.html#work-a">work</a></li>
+    <li><a href="index.html#about-a">about</a></li>
+    <li><a href="index.html#svcs-a">services</a></li>
+    <li><a href="index.html#proc-a">process</a></li>
+    <li><a href="index.html#ct-a">contact</a></li>
+  </ul>
+  <a href="index.html#ct-a" class="nc">let's talk →</a>
+  <button class="nav-burger" id="navBurger" onclick="toggleMobileNav()" aria-label="menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+<div class="mobile-nav-panel" id="mobileNavPanel">
+  <a href="index.html#work-a" onclick="closeMobileNav()">work</a>
+  <a href="index.html#about-a" onclick="closeMobileNav()">about</a>
+  <a href="index.html#svcs-a" onclick="closeMobileNav()">services</a>
+  <a href="index.html#proc-a" onclick="closeMobileNav()">process</a>
+  <a href="index.html#ct-a" onclick="closeMobileNav()">contact</a>
+</div>
+<script>
+  function toggleMobileNav(){
+    var panel = document.getElementById('mobileNavPanel');
+    var btn = document.getElementById('navBurger');
+    var isOpen = panel.classList.toggle('open');
+    btn.classList.toggle('open', isOpen);
+    btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+  }
+  function closeMobileNav(){
+    document.getElementById('mobileNavPanel').classList.remove('open');
+    document.getElementById('navBurger').classList.remove('open');
+    document.getElementById('navBurger').setAttribute('aria-expanded','false');
+  }
+</script>
+
+<div id="projRoot">
+  <!-- ══ PROJECT HERO TEXT ══ -->
+  <div class="proj-hero">
+    <a href="index.html#work-a" class="proj-back" id="backToCat">← back to work</a>
+    <p class="proj-type" id="projType"></p>
+    <h1 class="proj-title" id="projTitle">Loading…</h1>
+    <p class="proj-desc" id="projDesc"></p>
+  </div>
+
+  <!-- ══ SERVICES ══ -->
+  <div class="proj-services" id="projServices"></div>
+
+  <!-- ══ HERO MEDIA (lazy — only loads once this page is opened) ══ -->
+  <div class="proj-hero-media" id="projHeroMedia"></div>
+
+  <!-- ══ GALLERY ══ -->
+  <div class="proj-gallery" id="projGallery"></div>
+
+  <!-- ══ SUPPORTING VIDEOS ══ -->
+  <div class="proj-supporting" id="projSupporting"></div>
+
+  <!-- ══ PREV / NEXT / BACK ══ -->
+  <div class="proj-nav" id="projNav"></div>
+</div>
+
+<footer>
+  <div><img class="ft-logo" src="images/image-01-5f636089.png" alt="valoré media"><p class="ft-copy">© 2026 Valoré Media<br>All rights reserved.</p></div>
+  <div><p class="ft-col-title">menu</p><ul class="ft-col-links"><li><a href="index.html#work-a">work</a></li><li><a href="index.html#about-a">about</a></li><li><a href="index.html#svcs-a">services</a></li><li><a href="index.html#proc-a">process</a></li><li><a href="index.html#ct-a">contact</a></li></ul></div>
+  <div><p class="ft-col-title">services</p><ul class="ft-col-links"><li><a href="index.html#svcs-a">content creation</a></li><li><a href="index.html#svcs-a">social media</a></li><li><a href="index.html#svcs-a">strategy</a></li><li><a href="index.html#svcs-a">paid media</a></li></ul></div>
+  <div><p class="ft-col-title">let's connect</p><ul class="ft-col-links"><li><a href="https://instagram.com/valeorduy" target="_blank">instagram</a></li><li><a href="mailto:valoremediaco@gmail.com">email</a></li><li><a href="index.html#ct-a">inquiry</a></li></ul></div>
+</footer>
+
+<script src="js/work-data.js"></script>
+<script>
+(function(){
+  var params = new URLSearchParams(window.location.search);
+  var slug = params.get('id');
+  var project = getProject(slug);
+  var root = document.getElementById('projRoot');
+
+  if(!project){
+    root.innerHTML = '<div class="proj-empty"><h1 class="proj-title">Project not found</h1><a href="index.html#work-a" class="proj-back" style="margin-top:1.5rem;display:inline-flex;">← back to work</a></div>';
+    return;
+  }
+
+  var cat = getCategory(project.category);
+  document.title = project.title + ' — Valoré Media';
+  document.getElementById('projType').textContent = project.type;
+  document.getElementById('projTitle').textContent = project.title;
+  document.getElementById('projDesc').textContent = project.description;
+  document.getElementById('backToCat').href = 'category.html?cat=' + encodeURIComponent(project.category);
+  document.getElementById('backToCat').textContent = '← back to ' + (cat ? cat.name : 'work');
+
+  // services — only render ones present on this project
+  var svcWrap = document.getElementById('projServices');
+  (project.services || []).forEach(function(s){
+    var span = document.createElement('span');
+    span.className = 'proj-service-pill';
+    span.textContent = s;
+    svcWrap.appendChild(span);
+  });
+
+  // hero media — lazy: only build the video element (which itself uses preload=none)
+  // once this project page has actually been opened by the user.
+  var heroWrap = document.getElementById('projHeroMedia');
+  if(project.heroVideo){
+    heroWrap.innerHTML =
+      '<video id="heroVid" muted loop playsinline preload="none" poster="' + (project.coverImage||'') + '">' +
+      '<source src="' + project.heroVideo + '" type="video/mp4"></video>' +
+      '<div class="proj-sound-btn" id="soundBtn" role="button" aria-label="toggle sound">' +
+      '<svg id="soundIconOn" viewBox="0 0 24 24" style="display:none;"><path d="M4 9v6h4l5 5V4L8 9H4z"/><path d="M16 8a5 5 0 010 8"/><path d="M18.5 5.5a9 9 0 010 13"/></svg>' +
+      '<svg id="soundIconOff" viewBox="0 0 24 24"><path d="M4 9v6h4l5 5V4L8 9H4z"/><line x1="16" y1="9" x2="21" y2="14"/><line x1="21" y1="9" x2="16" y2="14"/></svg>' +
+      '</div>';
+    var heroVid = document.getElementById('heroVid');
+    var soundBtn = document.getElementById('soundBtn');
+    var iconOn = document.getElementById('soundIconOn');
+    var iconOff = document.getElementById('soundIconOff');
+    heroVid.play().catch(function(){});
+    soundBtn.addEventListener('click', function(){
+      heroVid.muted = !heroVid.muted;
+      iconOn.style.display = heroVid.muted ? 'none' : 'block';
+      iconOff.style.display = heroVid.muted ? 'block' : 'none';
+    });
+  } else if(project.coverImage){
+    heroWrap.innerHTML = '<img src="' + project.coverImage + '" alt="' + project.title + '" loading="lazy" decoding="async">';
+  }
+
+  // gallery — lazy-loaded images
+  var galWrap = document.getElementById('projGallery');
+  (project.galleryImages || []).forEach(function(src){
+    var img = document.createElement('img');
+    img.src = src; img.alt = project.title; img.loading = 'lazy'; img.decoding = 'async';
+    galWrap.appendChild(img);
+  });
+
+  // supporting videos — lazy, preload=none, click to play
+  var supWrap = document.getElementById('projSupporting');
+  (project.supportingVideos || []).forEach(function(src){
+    var v = document.createElement('video');
+    v.src = src; v.controls = true; v.preload = 'none'; v.playsInline = true;
+    if(project.coverImage) v.poster = project.coverImage;
+    supWrap.appendChild(v);
+  });
+
+  // prev / next within same category
+  var siblings = getProjectsByCategory(project.category);
+  var idx = siblings.findIndex(function(p){ return p.slug === project.slug; });
+  var prev = siblings[(idx - 1 + siblings.length) % siblings.length];
+  var next = siblings[(idx + 1) % siblings.length];
+  var navWrap = document.getElementById('projNav');
+  navWrap.innerHTML =
+    (prev && prev.slug !== project.slug ? '<a class="proj-nav-link" href="project.html?id=' + prev.slug + '"><span class="proj-nav-label">← previous project</span>' + prev.title + '</a>' : '<span></span>') +
+    '<a class="proj-nav-cat" href="category.html?cat=' + project.category + '">back to ' + (cat ? cat.name : 'category') + '</a>' +
+    (next && next.slug !== project.slug ? '<a class="proj-nav-link" href="project.html?id=' + next.slug + '" style="text-align:right;align-items:flex-end;"><span class="proj-nav-label">next project →</span>' + next.title + '</a>' : '<span></span>');
+})();
+</script>
+</body>
+</html>
