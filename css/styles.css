@@ -268,6 +268,35 @@ nav.inv .nc{color:var(--pa);border-color:rgba(255,255,255,.25);}
 .wstage2 .pf2{width:280px;}
 .wstage2 .pscr{height:575px;}
 .wstage-below{display:flex;justify-content:center;gap:3rem;align-items:center;padding:0 var(--pad) 2rem;flex-wrap:wrap;}
+
+/* ══ WORK CARDS — new category grid ══ */
+.work-cards{display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem;padding:0 var(--pad);margin-top:1vh;}
+.wcard{position:relative;display:block;text-decoration:none;color:inherit;overflow:hidden;border-radius:2px;background:#111;}
+.wcard-media{position:relative;width:100%;aspect-ratio:3/4;overflow:hidden;}
+.wcard-cover,.wcard-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;}
+.wcard-video{opacity:0;transition:opacity .5s ease;}
+.wcard-video.in{opacity:1;}
+.wcard-shade{position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.75) 0%,rgba(0,0,0,.15) 45%,rgba(0,0,0,0) 70%);transition:opacity .35s ease;}
+.wcard:hover .wcard-media img.wcard-cover{transform:scale(1.035);}
+.wcard-media img.wcard-cover{transition:transform .7s cubic-bezier(.16,1,.3,1);}
+.wcard-info{position:absolute;left:0;right:0;bottom:0;padding:1.4rem 1.5rem 1.6rem;color:var(--pa);}
+.wcard-title-row{display:flex;align-items:center;justify-content:space-between;gap:.6rem;}
+.wcard-title{font-family:var(--P);font-weight:700;font-size:1.05rem;letter-spacing:-.01em;}
+.wcard-arrow{font-size:.9rem;opacity:.6;transition:transform .35s ease,opacity .35s ease;}
+.wcard:hover .wcard-arrow{transform:translateX(4px);opacity:1;}
+.wcard-drop{max-height:0;opacity:0;overflow:hidden;transition:max-height .45s cubic-bezier(.16,1,.3,1),opacity .35s ease,margin-top .45s ease;}
+.wcard:hover .wcard-drop{max-height:160px;opacity:1;margin-top:.8rem;}
+.wcard-desc{font-size:.78rem;line-height:1.65;color:rgba(237,235,230,.78);font-weight:300;}
+.wcard-explore{display:inline-block;margin-top:.7rem;font-size:.72rem;letter-spacing:.04em;font-weight:600;color:var(--pa);opacity:.85;}
+
+@media(max-width:1024px){
+  .work-cards{grid-template-columns:repeat(2,1fr);}
+}
+@media(max-width:600px){
+  .work-cards{grid-template-columns:1fr;gap:1.1rem;}
+  .wcard-media{aspect-ratio:4/3;}
+  .wcard-drop{max-height:none;opacity:1;margin-top:.7rem;}
+}
 /* single video in phone */
 #phoneVid{width:100%;height:100%;object-fit:cover;}
 .pui2{position:absolute;top:0;left:0;right:0;padding:.5rem .8rem;display:flex;justify-content:space-between;align-items:center;background:linear-gradient(to bottom,rgba(0,0,0,.55),transparent);z-index:3;}
@@ -760,8 +789,8 @@ footer{background:#060606;border-top:1px solid rgba(255,255,255,.04);padding:2.5
 .backstage-banner{width:100%;}
 .backstage-banner img{width:100%;height:auto;display:block;}
 @media(max-width:768px){
-  .backstage-banner{overflow:hidden;}
-  .backstage-banner img{height:440px;object-fit:cover;object-position:center 22%;}
+  .backstage-banner{overflow:hidden;background:#0a0a0a;display:flex;align-items:center;justify-content:center;}
+  .backstage-banner img{width:100%;height:420px;object-fit:contain;object-position:center;}
 }
 
 /* runway banner — cropped on desktop, taller crop on mobile */
