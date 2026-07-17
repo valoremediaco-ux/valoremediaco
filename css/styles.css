@@ -403,9 +403,10 @@ body.ov-open .ov-back{display:inline-flex;}
 .aey{font-size:.85rem;letter-spacing:.1em;text-transform:lowercase;color:var(--ta);opacity:.85;margin-bottom:1.4rem;display:flex;align-items:center;gap:.6rem;font-weight:500;}
 .aey::before{content:'—';opacity:.5;}
 .ah{font-family:var(--P);font-weight:800;font-size:clamp(2rem,3.2vw,2.8rem);letter-spacing:-.02em;line-height:1.15;margin-bottom:1.5rem;text-transform:lowercase;}
-.ah .acc{font-family:var(--CG);font-style:italic;font-weight:300;color:var(--ta);}
+.ah .acc{font-family:var(--CG);font-style:italic;font-weight:300;color:var(--ta);text-transform:none;}
 .arl{width:22px;height:1px;background:var(--ta);opacity:.4;margin-bottom:1.5rem;}
 .ap{font-size:.88rem;line-height:2.2;color:rgba(0,0,0,.5);font-weight:300;margin-bottom:1rem;max-width:500px;}
+.ap-first{margin-top:1.4rem;}
 .atags{display:flex;flex-wrap:wrap;gap:.4rem;margin-top:1.2rem;}
 .atag{font-size:.65rem;letter-spacing:.05em;padding:.3rem .75rem;border:1px solid rgba(0,0,0,.11);color:rgba(0,0,0,.38);font-weight:400;}
 .bilingual{margin-top:1.5rem;font-size:.75rem;letter-spacing:.04em;color:rgba(0,0,0,.4);font-weight:400;}
@@ -734,11 +735,12 @@ footer{background:#060606;border-top:1px solid rgba(255,255,255,.04);padding:2.5
 
 /* hero value proposition line */
 .h-vp{font-size:.85rem;letter-spacing:.03em;color:rgba(13,13,13,.62);font-weight:400;line-height:1.7;max-width:34rem;margin-top:.9rem;}
-/* credentials: education | certificates+skills side by side */
+/* credentials: education | certificates | skills — full-width row below bio+photo */
 .cred-grid{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:start;}
+.cred-grid-full{grid-template-columns:1fr 1fr 1fr;margin-top:5rem;}
 .cred-col .acc-section{margin-bottom:1.6rem;}
 .skills-grid.skills-grid-stacked{grid-template-columns:1fr;gap:1rem;}
-@media(max-width:768px){.cred-grid{grid-template-columns:1fr;gap:0;}}
+@media(max-width:768px){.cred-grid{grid-template-columns:1fr;gap:0;}.cred-grid-full{margin-top:2.5rem;}}
 
 /* skills: compact 3-column grid, always visible, fills space */
 .skills-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;padding-top:1.4rem;}
