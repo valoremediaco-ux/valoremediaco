@@ -868,7 +868,7 @@ footer{background:#060606;border-top:1px solid rgba(255,255,255,.04);padding:2.5
 
 /* ══ WORK "WORTH THE WAIT" MODAL ══ */
 .wm-overlay{display:none;position:fixed;inset:0;background:rgba(13,13,13,.55);
-  backdrop-filter:blur(4px);z-index:10000;align-items:center;justify-content:center;
+  backdrop-filter:blur(4px);z-index:9000;align-items:center;justify-content:center;
   opacity:0;transition:opacity .35s ease;}
 .wm-overlay.active{display:flex;opacity:1;}
 .wm-modal{background:var(--pa);padding:4rem 3.2rem;max-width:420px;width:90%;
