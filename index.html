@@ -333,14 +333,15 @@
     var wmOverlay = document.getElementById('wmOverlay');
     var wmClose = document.getElementById('wmClose');
 
+    function wmCloseModal(){ wmOverlay.classList.remove('active'); document.body.classList.remove('wm-open'); }
+
     cards.forEach(function(card){
       card.addEventListener('click', function(e){
         e.preventDefault();
         wmOverlay.classList.add('active');
+        document.body.classList.add('wm-open');
       });
     });
-
-    function wmCloseModal(){ wmOverlay.classList.remove('active'); }
 
     wmClose.addEventListener('click', wmCloseModal);
     wmOverlay.addEventListener('click', function(e){
