@@ -870,6 +870,8 @@ footer{background:#060606;border-top:1px solid rgba(255,255,255,.04);padding:2.5
 .wm-overlay{display:none;position:fixed;inset:0;background:rgba(13,13,13,.55);
   backdrop-filter:blur(4px);z-index:9000;align-items:center;justify-content:center;
   opacity:0;transition:opacity .35s ease;}
+body.wm-open #cr .star{color:var(--bk) !important;opacity:1;}
+body.wm-open #cr .crlogo-light{opacity:0 !important;}
 .wm-overlay.active{display:flex;opacity:1;}
 .wm-modal{background:var(--pa);padding:4rem 3.2rem;max-width:420px;width:90%;
   text-align:center;position:relative;transform:translateY(12px);
