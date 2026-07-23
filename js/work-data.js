@@ -11,28 +11,28 @@ const WORK_CATEGORIES = [
     slug: "fashion-beauty",
     name: "Fashion & Beauty",
     description: "A curated selection of campaigns, editorials, product launches, and social-first content created for fashion and beauty brands.",
-    coverImage: "images/work/cover-fashion-beauty.jpg",
+    coverImage: "images/cover-fashion-beauty.jpg",
     coverVideo: "videos/cover-fashion-beauty.mp4"
   },
   {
     slug: "events",
     name: "Events",
     description: "Backstage coverage, fashion weeks, brand activations, and live event storytelling.",
-    coverImage: "images/work/cover-events.jpg",
+    coverImage: "images/cover-events.jpg",
     coverVideo: "videos/cover-events.mp4"
   },
   {
     slug: "kids-brands",
     name: "Kids Brands",
     description: "Campaigns, retail content, product launches, and storytelling created for children's brands.",
-    coverImage: "images/work/cover-kids-brands.jpg",
+    coverImage: "images/cover-kids-brands.jpg",
     coverVideo: "videos/cover-kids-brands.mp4"
   },
   {
     slug: "lifestyle-hospitality",
     name: "Lifestyle & Hospitality",
     description: "Editorial content and social storytelling for hospitality, travel, and lifestyle brands.",
-    coverImage: "images/work/cover-lifestyle-hospitality.jpg",
+    coverImage: "images/cover-lifestyle-hospitality.jpg",
     coverVideo: "videos/cover-lifestyle-hospitality.mp4"
   }
 ];
