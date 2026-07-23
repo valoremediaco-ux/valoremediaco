@@ -327,6 +327,27 @@
       video.pause();
     });
   });
+
+  /* ── "worth the wait" modal — intercepts clicks on work cards ── */
+  var wmOverlay = document.getElementById('wmOverlay');
+  var wmClose = document.getElementById('wmClose');
+
+  cards.forEach(function(card){
+    card.addEventListener('click', function(e){
+      e.preventDefault();
+      wmOverlay.classList.add('active');
+    });
+  });
+
+  function wmCloseModal(){ wmOverlay.classList.remove('active'); }
+
+  wmClose.addEventListener('click', wmCloseModal);
+  wmOverlay.addEventListener('click', function(e){
+    if(e.target === wmOverlay) wmCloseModal();
+  });
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape') wmCloseModal();
+  });
 })();
 </script>
 
@@ -511,6 +532,19 @@
         <button class="ctbtn" type="submit">send inquiry →</button>
       </form>
     </div>
+  </div>
+</div>
+
+<!-- ══ WORK "WORTH THE WAIT" MODAL ══ -->
+<div class="wm-overlay" id="wmOverlay">
+  <div class="wm-modal">
+    <button class="wm-close" id="wmClose" aria-label="Close">&times;</button>
+    <p class="wm-eyebrow">Worth the wait.</p>
+    <p class="wm-body">
+      This selection is being thoughtfully revamped.<br>
+      View our work on
+      <a href="https://instagram.com/valeorduy" target="_blank" rel="noopener">@valeorduy</a>
+    </p>
   </div>
 </div>
 
