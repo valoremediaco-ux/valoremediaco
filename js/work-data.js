@@ -1,9 +1,16 @@
 /* ══════════════════════════════════════════════════════════
    VALORÉ MEDIA — WORK DATA
    Central data source for the entire Work section.
-   Add, remove, or edit projects here — the homepage cards,
-   category pages, and project pages all read from this file.
+   Add, remove, or edit projects here — the homepage tiles and
+   the work overlay (see main.js) both read from this file.
    Nothing else needs to be touched when content changes.
+
+   FILE UPLOAD CONVENTION
+   Push real assets to GitHub using this folder pattern, then
+   the paths below will resolve automatically — no code edits
+   needed once files land:
+     videos/campaigns/[slug]/01.mp4, 02.mp4 ...
+     images/campaigns/[slug]/01.jpg, 02.jpg ...
    ══════════════════════════════════════════════════════════ */
 
 const WORK_CATEGORIES = [
@@ -38,46 +45,198 @@ const WORK_CATEGORIES = [
 ];
 
 /* Each project:
-   slug            unique id, used in the URL (project.html?id=slug)
+   slug            unique id, matches its upload folder
    category        must match a WORK_CATEGORIES slug
-   title           project title
-   type            project type / one line label
-   description     one-sentence description (shown on category grid + project page)
-   coverImage      featured cover image (category grid + project hero fallback)
-   heroVideo       main project video (project page only, lazy-loaded)
-   galleryImages   array of image paths
-   supportingVideos array of video paths
-   services        array of services used — only matching ones render on the project page
+   title           project title (no client names — see credit field for photographer credit)
+   type            one-line label (role / project type)
+   description     approach — what was done
+   result          optional — headline stat, e.g. "55k+ views"
+   coverImage      first image shown on the card
+   heroVideo       optional — plays on hover, in videos/campaigns/[slug]/
+   galleryImages   array of additional image paths, in images/campaigns/[slug]/
+   supportingVideos array of additional video paths
+   services        array of service tags shown on the card
+   credit          optional — "photographed by: [name]" shown only when a
+                   specific external photographer's images are used
 */
 const WORK_PROJECTS = [
   // ── Fashion & Beauty ──
-  { slug:"editorial-styling-project", category:"fashion-beauty", title:"Editorial Styling Project", type:"Editorial", description:"A styling-led editorial built around mood, texture, and light.", coverImage:"images/work/placeholder-fashion-1.jpg", heroVideo:"videos/placeholder-project.mp4", galleryImages:["images/work/placeholder-fashion-1.jpg","images/work/placeholder-fashion-2.jpg","images/work/placeholder-fashion-3.jpg"], supportingVideos:[], services:["Creative Direction","Photography","Content Creation"] },
-  { slug:"luxury-swim-campaign", category:"fashion-beauty", title:"Luxury Swim Campaign", type:"Campaign", description:"A seasonal swim campaign shot on location for a premium resort brand.", coverImage:"images/work/placeholder-fashion-2.jpg", heroVideo:"videos/placeholder-project.mp4", galleryImages:["images/work/placeholder-fashion-2.jpg","images/work/placeholder-fashion-3.jpg"], supportingVideos:["videos/placeholder-project.mp4"], services:["Creative Direction","Content Creation","Social Media Management"] },
-  { slug:"footwear-campaign", category:"fashion-beauty", title:"Footwear Campaign", type:"Campaign", description:"Product-forward campaign content for a footwear launch.", coverImage:"images/work/placeholder-fashion-3.jpg", heroVideo:"videos/placeholder-project.mp4", galleryImages:["images/work/placeholder-fashion-3.jpg","images/work/placeholder-fashion-1.jpg"], supportingVideos:[], services:["Content Creation","Photography"] },
-  { slug:"beauty-editorial", category:"fashion-beauty", title:"Beauty Editorial", type:"Editorial", description:"A clean, close-up beauty editorial focused on skin and finish.", coverImage:"images/work/placeholder-fashion-1.jpg", heroVideo:"videos/placeholder-project.mp4", galleryImages:["images/work/placeholder-fashion-1.jpg","images/work/placeholder-fashion-2.jpg"], supportingVideos:[], services:["Creative Direction","Photography"] },
-  { slug:"creative-brand-shoot", category:"fashion-beauty", title:"Creative Brand Shoot", type:"Brand Shoot", description:"A concept-driven shoot built to establish a brand's visual identity.", coverImage:"images/work/placeholder-fashion-2.jpg", heroVideo:"videos/placeholder-project.mp4", galleryImages:["images/work/placeholder-fashion-2.jpg"], supportingVideos:[], services:["Creative Direction","Strategy","Content Creation"] },
-  { slug:"seasonal-product-campaign", category:"fashion-beauty", title:"Seasonal Product Campaign", type:"Campaign", description:"Seasonal product storytelling built for paid and organic use.", coverImage:"images/work/placeholder-fashion-3.jpg", heroVideo:"videos/placeholder-project.mp4", galleryImages:["images/work/placeholder-fashion-3.jpg"], supportingVideos:[], services:["Content Creation","Strategy"] },
-  { slug:"fashion-photography-content", category:"fashion-beauty", title:"Fashion Photography Content", type:"Content", description:"Ongoing photography content built for a fashion brand's feed.", coverImage:"images/work/placeholder-fashion-1.jpg", heroVideo:"videos/placeholder-project.mp4", galleryImages:["images/work/placeholder-fashion-1.jpg"], supportingVideos:[], services:["Photography","Content Creation"] },
-  { slug:"personal-branding-editorial", category:"fashion-beauty", title:"Personal Branding Editorial", type:"Editorial", description:"A personal-brand editorial built around a founder's story.", coverImage:"images/work/placeholder-fashion-2.jpg", heroVideo:"videos/placeholder-project.mp4", galleryImages:["images/work/placeholder-fashion-2.jpg"], supportingVideos:[], services:["Creative Direction","Photography","Social Media Management"] },
+  {
+    slug: "all-american-summer", category: "fashion-beauty",
+    title: "all american-summer", type: "social campaign management",
+    description: "Filmed and edited reels plus carousel design for a photographer and stylist.",
+    result: "55k+ views overall",
+    coverImage: "images/campaigns/all-american-summer/01.jpg",
+    heroVideo: "videos/campaigns/all-american-summer/01.mp4",
+    galleryImages: [], supportingVideos: [],
+    services: ["Content Creation", "Video Editing"]
+  },
+  {
+    slug: "rhode", category: "fashion-beauty",
+    title: "rhode campaign", type: "creative direction",
+    description: "Filming, digital cam photos, and an edited reel.",
+    result: "4k+ views on the reel",
+    coverImage: "images/campaigns/rhode/01.jpg",
+    heroVideo: "videos/campaigns/rhode/reel.mp4",
+    galleryImages: [], supportingVideos: [],
+    services: ["Creative Direction", "Photography", "Video Editing"],
+    credit: "moisés alcalá"
+  },
+  {
+    slug: "vanlinker", category: "fashion-beauty",
+    title: "vanlinker campaigns", type: "content creation",
+    description: "Multi-season campaign content created for both a photographer and a stylist.",
+    result: "40k+ views overall",
+    coverImage: "images/campaigns/vanlinker/01.jpg",
+    heroVideo: "videos/campaigns/vanlinker/01.mp4",
+    galleryImages: [], supportingVideos: [],
+    services: ["Content Creation", "Photography"]
+  },
+  {
+    slug: "fl-mag", category: "fashion-beauty",
+    title: "fort lauderdale mag", type: "content creation",
+    description: "Winter edition coverage created for both a photographer and a stylist.",
+    result: "15k+ views overall",
+    coverImage: "images/campaigns/fl-mag/01.jpg",
+    heroVideo: "videos/campaigns/fl-mag/01.mp4",
+    galleryImages: [], supportingVideos: [],
+    services: ["Content Creation", "Photography"]
+  },
+  {
+    slug: "fashion-editorial-carousels", category: "fashion-beauty",
+    title: "fashion editorial", type: "creative direction",
+    description: "Creative carousels and reels created for a fashion photographer's account, plus campaign content coverage.",
+    coverImage: "images/campaigns/fashion-editorial-carousels/01.jpg",
+    heroVideo: "videos/campaigns/fashion-editorial-carousels/01.mp4",
+    galleryImages: [], supportingVideos: [],
+    services: ["Creative Direction", "Content Creation"]
+  },
+  {
+    slug: "commercial-productions", category: "fashion-beauty",
+    title: "big brand commercial productions", type: "content creation",
+    description: "BTS and final content creation — reels and carousels — for major brand commercial productions.",
+    coverImage: "images/campaigns/commercial-productions/01.jpg",
+    heroVideo: "videos/campaigns/commercial-productions/01.mp4",
+    galleryImages: [], supportingVideos: [],
+    services: ["Content Creation", "Video Editing"]
+  },
 
   // ── Events ──
-  { slug:"new-york-fashion-week", category:"events", title:"New York Fashion Week", type:"Event Coverage", description:"Backstage and runway coverage from New York Fashion Week.", coverImage:"images/work/placeholder-events-1.jpg", heroVideo:"videos/placeholder-project.mp4", galleryImages:["images/work/placeholder-events-1.jpg","images/work/placeholder-events-2.jpg"], supportingVideos:["videos/placeholder-project.mp4"], services:["Content Creation","Video Editing","Social Media Management"] },
-  { slug:"miami-swim-week", category:"events", title:"Miami Swim Week", type:"Event Coverage", description:"Runway and backstage storytelling from Miami Swim Week.", coverImage:"images/work/placeholder-events-2.jpg", heroVideo:"videos/placeholder-project.mp4", galleryImages:["images/work/placeholder-events-2.jpg"], supportingVideos:[], services:["Content Creation","Photography"] },
-  { slug:"fort-lauderdale-fashion-week", category:"events", title:"Fort Lauderdale Fashion Week", type:"Event Coverage", description:"Live coverage and same-day content from FLL Fashion Week.", coverImage:"images/work/placeholder-events-1.jpg", heroVideo:"videos/placeholder-project.mp4", galleryImages:["images/work/placeholder-events-1.jpg"], supportingVideos:[], services:["Content Creation","Video Editing"] },
-  { slug:"award-show-coverage", category:"events", title:"Award Show Coverage", type:"Event Coverage", description:"Red carpet and stage coverage for an award show client.", coverImage:"images/work/placeholder-events-2.jpg", heroVideo:"videos/placeholder-project.mp4", galleryImages:["images/work/placeholder-events-2.jpg"], supportingVideos:[], services:["Content Creation","Photography","Social Media Management"] },
-  { slug:"brand-activation", category:"events", title:"Brand Activation", type:"Activation", description:"On-site content for a brand's live activation event.", coverImage:"images/work/placeholder-events-1.jpg", heroVideo:"videos/placeholder-project.mp4", galleryImages:["images/work/placeholder-events-1.jpg"], supportingVideos:[], services:["Strategy","Content Creation"] },
+  {
+    slug: "nyfw-runway7", category: "events",
+    title: "nyfw · runway7", type: "backstage & event coverage",
+    description: "Managed backstage social content, sponsor marketing, runway socials, and designer and audience interview coverage.",
+    coverImage: "images/campaigns/nyfw-runway7/01.jpg",
+    heroVideo: "videos/campaigns/nyfw-runway7/01.mp4",
+    galleryImages: [], supportingVideos: [],
+    services: ["Content Creation", "Video Editing", "Social Media Management"]
+  },
+  {
+    slug: "mfw", category: "events",
+    title: "milano fashion week", type: "bts coverage",
+    description: "BTS coverage for a brand later recognized in Forbes 30 Under 30 Asia 2024.",
+    coverImage: "images/campaigns/mfw/01.jpg",
+    heroVideo: "videos/campaigns/mfw/reel.mp4",
+    galleryImages: [], supportingVideos: [],
+    services: ["Content Creation", "Video Editing"]
+  },
+  {
+    slug: "miami-swim-week", category: "events",
+    title: "miami swim week", type: "bts & runway coverage",
+    description: "BTS and runway social coverage — both video and digital cam photos — across the Paraiso and Oceanus shows.",
+    coverImage: "images/campaigns/miami-swim-week/01.jpg",
+    heroVideo: "videos/campaigns/miami-swim-week/01.mp4",
+    galleryImages: [], supportingVideos: [],
+    services: ["Content Creation", "Photography", "Video Editing"]
+  },
+  {
+    slug: "fllfw", category: "events",
+    title: "fllfw", type: "backstage & runway coverage",
+    description: "Covered both fall and summer shows — backstage and runway social content.",
+    coverImage: "images/campaigns/fllfw/01.jpg",
+    heroVideo: "videos/campaigns/fllfw/01.mp4",
+    galleryImages: [], supportingVideos: [],
+    services: ["Content Creation", "Video Editing"]
+  },
 
   // ── Kids Brands ──
-  { slug:"kids-brand-launch", category:"kids-brands", title:"Kids Brand Launch", type:"Launch Campaign", description:"Launch content built to introduce a new children's brand.", coverImage:"images/work/placeholder-kids-1.jpg", heroVideo:"videos/placeholder-project.mp4", galleryImages:["images/work/placeholder-kids-1.jpg"], supportingVideos:[], services:["Creative Direction","Content Creation"] },
-  { slug:"holiday-campaign", category:"kids-brands", title:"Holiday Campaign", type:"Campaign", description:"Seasonal holiday content for a children's retail brand.", coverImage:"images/work/placeholder-kids-2.jpg", heroVideo:"videos/placeholder-project.mp4", galleryImages:["images/work/placeholder-kids-2.jpg"], supportingVideos:[], services:["Content Creation","Social Media Management"] },
-  { slug:"retail-store-content", category:"kids-brands", title:"Retail Store Content", type:"Content", description:"In-store content built to support a retail launch.", coverImage:"images/work/placeholder-kids-1.jpg", heroVideo:"videos/placeholder-project.mp4", galleryImages:["images/work/placeholder-kids-1.jpg"], supportingVideos:[], services:["Photography","Content Creation"] },
-  { slug:"behind-the-scenes", category:"kids-brands", title:"Behind the Scenes", type:"BTS Content", description:"Behind-the-scenes storytelling from a kids brand shoot day.", coverImage:"images/work/placeholder-kids-2.jpg", heroVideo:"videos/placeholder-project.mp4", galleryImages:["images/work/placeholder-kids-2.jpg"], supportingVideos:["videos/placeholder-project.mp4"], services:["Video Editing","Content Creation"] },
+  {
+    slug: "lola-campaign", category: "kids-brands",
+    title: "lola & the boys · campaign", type: "campaign content",
+    description: "Campaign photoshoot content, video and digital cam photos plus edited reels.",
+    coverImage: "images/campaigns/lola-campaign/01.jpg",
+    heroVideo: "videos/campaigns/lola-campaign/01.mp4",
+    galleryImages: [], supportingVideos: [],
+    services: ["Content Creation", "Photography", "Video Editing"]
+  },
+  {
+    slug: "lola-store", category: "kids-brands",
+    title: "lola & the boys · in-store", type: "in-store content",
+    description: "In-store content across both Miami locations — Aventura and Dadeland Mall.",
+    coverImage: "images/campaigns/lola-store/01.jpg",
+    heroVideo: "videos/campaigns/lola-store/01.mp4",
+    galleryImages: [], supportingVideos: [],
+    services: ["Content Creation", "Photography"]
+  },
+  {
+    slug: "rooie", category: "kids-brands",
+    title: "rooie", type: "full social management",
+    description: "Full social media management and strategy — content editing, posting, engagement, and meta ad support.",
+    result: "+900% account growth",
+    coverImage: "images/campaigns/rooie/01.jpg",
+    heroVideo: "videos/campaigns/rooie/01.mp4",
+    galleryImages: [], supportingVideos: [],
+    services: ["Social Media Management", "Strategy", "Content Creation"]
+  },
+  {
+    slug: "kids-other", category: "kids-brands",
+    title: "kids content", type: "bts coverage & edited reels",
+    description: "BTS coverage and edited reels for child models and creators — social content across several kids styling shoots.",
+    coverImage: "images/campaigns/kids-other/01.jpg",
+    heroVideo: "videos/campaigns/kids-other/01.mp4",
+    galleryImages: [], supportingVideos: [],
+    services: ["Content Creation", "Video Editing"]
+  },
 
   // ── Lifestyle & Hospitality ──
-  { slug:"luxury-hotel-content", category:"lifestyle-hospitality", title:"Luxury Hotel Content", type:"Content", description:"Editorial content built for a luxury hotel's social presence.", coverImage:"images/work/placeholder-lifestyle-1.jpg", heroVideo:"videos/placeholder-project.mp4", galleryImages:["images/work/placeholder-lifestyle-1.jpg"], supportingVideos:[], services:["Creative Direction","Content Creation","Social Media Management"] },
-  { slug:"lifestyle-editorial", category:"lifestyle-hospitality", title:"Lifestyle Editorial", type:"Editorial", description:"A lifestyle editorial built around mood and setting.", coverImage:"images/work/placeholder-lifestyle-2.jpg", heroVideo:"videos/placeholder-project.mp4", galleryImages:["images/work/placeholder-lifestyle-2.jpg"], supportingVideos:[], services:["Creative Direction","Photography"] },
-  { slug:"destination-campaign", category:"lifestyle-hospitality", title:"Destination Campaign", type:"Campaign", description:"Travel-led campaign content for a destination client.", coverImage:"images/work/placeholder-lifestyle-1.jpg", heroVideo:"videos/placeholder-project.mp4", galleryImages:["images/work/placeholder-lifestyle-1.jpg"], supportingVideos:[], services:["Strategy","Content Creation"] },
-  { slug:"property-showcase", category:"lifestyle-hospitality", title:"Property Showcase", type:"Showcase", description:"A property showcase built to highlight design and atmosphere.", coverImage:"images/work/placeholder-lifestyle-2.jpg", heroVideo:"videos/placeholder-project.mp4", galleryImages:["images/work/placeholder-lifestyle-2.jpg"], supportingVideos:[], services:["Photography","Content Creation"] }
+  {
+    slug: "matias", category: "lifestyle-hospitality",
+    title: "creator content · matias", type: "influencer content",
+    description: "Social content created for a creator with a multi-million follower audience across TikTok and Instagram.",
+    result: "5k+ views · 40k+ likes",
+    coverImage: "images/campaigns/matias/01.jpg",
+    heroVideo: "videos/campaigns/matias/reel.mp4",
+    galleryImages: [], supportingVideos: [],
+    services: ["Content Creation"]
+  },
+  {
+    slug: "sammis-reyes", category: "lifestyle-hospitality",
+    title: "galore campaign", type: "bts content",
+    description: "Covered BTS social content for a campaign featuring a former NFL player, in collaboration with a stylist.",
+    result: "65k+ views",
+    coverImage: "images/campaigns/sammis-reyes/01.jpg",
+    heroVideo: "videos/campaigns/sammis-reyes/reel.mp4",
+    galleryImages: [], supportingVideos: [],
+    services: ["Content Creation", "Video Editing"]
+  },
+  {
+    slug: "alexis-fleming", category: "lifestyle-hospitality",
+    title: "creator content", type: "campaign content",
+    description: "Created social content across various campaigns for a creator with a sizeable engaged following.",
+    coverImage: "images/campaigns/alexis-fleming/01.jpg",
+    heroVideo: "videos/campaigns/alexis-fleming/reel.mp4",
+    galleryImages: [], supportingVideos: [],
+    services: ["Content Creation"]
+  },
+  {
+    slug: "myhotbod-pilates", category: "lifestyle-hospitality",
+    title: "myhotbod pilates", type: "launch content",
+    description: "Covered social content for an opening class launch — video, digital cam photos, story, carousel, and reel.",
+    coverImage: "images/campaigns/myhotbod-pilates/01.jpg",
+    heroVideo: "videos/campaigns/myhotbod-pilates/01.mp4",
+    galleryImages: [], supportingVideos: [],
+    services: ["Content Creation", "Photography", "Video Editing"]
+  }
 ];
 
 function getCategory(slug){ return WORK_CATEGORIES.find(c => c.slug === slug); }
