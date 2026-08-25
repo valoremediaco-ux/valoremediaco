@@ -893,3 +893,26 @@ body.wm-open #cr .crlogo-light{opacity:0 !important;}
   .wm-modal{padding:3rem 1.8rem;}
   .wm-eyebrow{font-size:1.6rem;}
 }
+
+/* ══ CAMPAIGN CARD — project detail inside work overlay ══ */
+.ccard-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:1.5rem;}
+.ccard{background:var(--du);border-radius:2px;overflow:hidden;}
+.ccard-media{position:relative;aspect-ratio:4/5;background:#1a1a1a;}
+.ccard-media img,.ccard-media video{width:100%;height:100%;object-fit:cover;display:block;}
+.photo-credit{position:absolute;left:.9rem;bottom:.8rem;font-size:.68rem;color:rgba(237,235,230,.75);font-family:var(--CG);font-style:italic;font-weight:300;text-shadow:0 1px 4px rgba(0,0,0,.5);}
+.ccard-header{display:flex;align-items:center;justify-content:space-between;padding:1.1rem 1.3rem;cursor:none;}
+.ccard-title{font-family:var(--P);font-weight:700;font-size:.88rem;letter-spacing:-.005em;text-transform:lowercase;}
+.ccard-arrow{font-size:.72rem;color:var(--ta);opacity:.5;transition:transform .35s cubic-bezier(.16,1,.3,1);flex-shrink:0;}
+.ccard:hover .ccard-arrow,.ccard.open .ccard-arrow{transform:rotate(180deg);opacity:1;}
+.ccard-body-wrap{max-height:0;overflow:hidden;transition:max-height .45s cubic-bezier(.16,1,.3,1),padding .35s ease;padding:0 1.3rem;}
+.ccard:hover .ccard-body-wrap,.ccard.open .ccard-body-wrap{max-height:260px;padding:0 1.3rem 1.3rem;}
+.ccard-row{display:flex;flex-direction:column;gap:.15rem;margin-bottom:.8rem;}
+.ccard-lbl{font-size:.62rem;letter-spacing:.1em;text-transform:lowercase;color:var(--ta);opacity:.75;font-weight:500;}
+.ccard-val{font-size:.8rem;line-height:1.6;color:rgba(0,0,0,.55);font-weight:300;}
+.ccard-tags{display:flex;flex-wrap:wrap;gap:.35rem;margin-bottom:.6rem;}
+.ccard-note{font-size:.68rem;letter-spacing:.03em;color:var(--ta);opacity:.8;font-style:italic;font-family:var(--CG);}
+@media(max-width:768px){
+  .ccard-grid{grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:1rem;}
+  .ccard-body-wrap{max-height:0;}
+  .ccard.open .ccard-body-wrap{max-height:320px;}
+}
