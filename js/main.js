@@ -2,7 +2,7 @@
 var cr=document.getElementById('cr'),mx=0,my=0,cx=0,cy=0;
 document.addEventListener('mousemove',function(e){mx=e.clientX;my=e.clientY;},{passive:true});
 (function loop(){cx+=(mx-cx)*.12;cy+=(my-cy)*.12;cr.style.left=cx+'px';cr.style.top=cy+'px';requestAnimationFrame(loop);})();
-var _hs='a,button,.itab,.blo,.vw,.scard,.tc,.s-pill,.skill-pill,.acc-item,.pstep,.skill-cat,.scard-header,.acc-header,.skill-cat-header,.iview,.stmt-cta,.nc,.ctlnk,.ctbtn,.ov-back';
+var _hs='a,button,.blo,.vw,.scard,.tc,.s-pill,.skill-pill,.acc-item,.ccard-header,.pstep,.skill-cat,.scard-header,.acc-header,.skill-cat-header,.iview,.stmt-cta,.nc,.ctlnk,.ctbtn,.ov-back';
 document.addEventListener('mouseover',function(e){if(e.target.closest(_hs))document.body.classList.add('ch');},{passive:true,capture:true});
 document.addEventListener('mouseout',function(e){if(!document.elementFromPoint(mx,my)||!document.elementFromPoint(mx,my).closest(_hs))document.body.classList.remove('ch');},{passive:true,capture:true});
 function hov(){}
@@ -61,64 +61,63 @@ var vobs=new IntersectionObserver(function(entries){
 },{rootMargin:'200px'});
 document.querySelectorAll('.vw[data-src]').forEach(function(w){vobs.observe(w);});
 
-/* ── INDUSTRY PHONE — one video ── */
-var phVids={
-  fashion:'videos/video-01-f3641e43.mp4',
-  kids:'videos/video-07-8d5898a0.mp4',
-  lifestyle:'videos/video-11-15d56820.mp4',
-  events:'videos/video-14-5746e90a.mp4'
-};
-var phLabels={fashion:'fashion & beauty',kids:'kids',lifestyle:'lifestyle',events:'events'};
-var curInd='fashion';
-var phoneVid=document.getElementById('phoneVid');
-var phoneVidSrc=document.getElementById('phoneVidSrc');
-var phLabel=document.getElementById('phIndLabel');
-
-function swInd(ind){
-  if(ind===curInd)return;
-  curInd=ind;
-  // Swap phone video
-  phoneVid.style.opacity='0';
-  phoneVid.style.transition='opacity .3s';
-  setTimeout(function(){
-    phoneVidSrc.src=phVids[ind];
-    phoneVid.load();
-    phoneVid.play().catch(function(){});
-    phoneVid.style.opacity='1';
-    if(phLabel)phLabel.textContent=phLabels[ind]||ind;
-    var label=phLabels[ind]||ind;
-    document.getElementById('iview-btn').textContent='view all '+label+' work →';
-  },300);
-}
-
-document.querySelectorAll('.itab').forEach(function(t){
-  t.addEventListener('click',function(){
-    document.querySelectorAll('.itab').forEach(function(x){x.classList.remove('on');});
-    t.classList.add('on');swInd(t.dataset.ind);
-  });
-});
-
-/* ── OVERLAY ── */
-var indGrids={'fashion':'\n  <div class="vrow vr3"><div class="vc "><div class="vw" data-src="videos/video-01-f3641e43.mp4"><video loop playsinline preload="none" muted><source type="video/mp4"></video><button class="vsnd" onclick="ts(this)" title="Toggle sound"><svg class="io" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M11 5L6 9H2v6h4l5 4V5z"/><line x1="17" y1="9" x2="23" y2="15"/><line x1="23" y1="9" x2="17" y2="15"/></svg><svg class="in2" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" style="display:none"><path d="M11 5L6 9H2v6h4l5 4V5z"/><path d="M19.07 4.93a10 10 0 010 14.14M15.54 8.46a5 5 0 010 7.07"/></svg></button></div><div class="vm"><span class="vc2">fashion</span><span class="vt">altar\'d state · josie</span></div></div><div class="vc "><div class="vw" data-src="videos/video-02-9ca577d2.mp4"><video loop playsinline preload="none" muted><source type="video/mp4"></video><button class="vsnd" onclick="ts(this)" title="Toggle sound"><svg class="io" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M11 5L6 9H2v6h4l5 4V5z"/><line x1="17" y1="9" x2="23" y2="15"/><line x1="23" y1="9" x2="17" y2="15"/></svg><svg class="in2" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" style="display:none"><path d="M11 5L6 9H2v6h4l5 4V5z"/><path d="M19.07 4.93a10 10 0 010 14.14M15.54 8.46a5 5 0 010 7.07"/></svg></button></div><div class="vm"><span class="vc2">fashion · nyfw</span><span class="vt">street style · runway7</span></div></div><div class="vc "><div class="vw" data-src="videos/video-03-39329ecc.mp4"><video loop playsinline preload="none" muted><source type="video/mp4"></video><button class="vsnd" onclick="ts(this)" title="Toggle sound"><svg class="io" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M11 5L6 9H2v6h4l5 4V5z"/><line x1="17" y1="9" x2="23" y2="15"/><line x1="23" y1="9" x2="17" y2="15"/></svg><svg class="in2" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" style="display:none"><path d="M11 5L6 9H2v6h4l5 4V5z"/><path d="M19.07 4.93a10 10 0 010 14.14M15.54 8.46a5 5 0 010 7.07"/></svg></button></div><div class="vm"><span class="vc2">fashion</span><span class="vt">altar\'d state · utah</span></div></div></div>\n  <div class="vrow vr2"><div class="vc "><div class="vw" data-src="videos/video-04-4c23202c.mp4"><video loop playsinline preload="none" muted><source type="video/mp4"></video><button class="vsnd" onclick="ts(this)" title="Toggle sound"><svg class="io" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M11 5L6 9H2v6h4l5 4V5z"/><line x1="17" y1="9" x2="23" y2="15"/><line x1="23" y1="9" x2="17" y2="15"/></svg><svg class="in2" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" style="display:none"><path d="M11 5L6 9H2v6h4l5 4V5z"/><path d="M19.07 4.93a10 10 0 010 14.14M15.54 8.46a5 5 0 010 7.07"/></svg></button></div><div class="vm"><span class="vc2">fashion · editorial</span><span class="vt">sammis reyes</span></div></div><div class="vc "><div class="vw" data-src="videos/video-05-057ecd0d.mp4"><video loop playsinline preload="none" muted><source type="video/mp4"></video><button class="vsnd" onclick="ts(this)" title="Toggle sound"><svg class="io" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M11 5L6 9H2v6h4l5 4V5z"/><line x1="17" y1="9" x2="23" y2="15"/><line x1="23" y1="9" x2="17" y2="15"/></svg><svg class="in2" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" style="display:none"><path d="M11 5L6 9H2v6h4l5 4V5z"/><path d="M19.07 4.93a10 10 0 010 14.14M15.54 8.46a5 5 0 010 7.07"/></svg></button></div><div class="vm"><span class="vc2">fashion</span><span class="vt">maeline</span></div></div></div>\n','kids':'\n  <div class="vrow vr4"><div class="vc "><div class="vw" data-src="videos/video-06-c35f4ce0.mp4"><video loop playsinline preload="none" muted><source type="video/mp4"></video><button class="vsnd" onclick="ts(this)" title="Toggle sound"><svg class="io" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M11 5L6 9H2v6h4l5 4V5z"/><line x1="17" y1="9" x2="23" y2="15"/><line x1="23" y1="9" x2="17" y2="15"/></svg><svg class="in2" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" style="display:none"><path d="M11 5L6 9H2v6h4l5 4V5z"/><path d="M19.07 4.93a10 10 0 010 14.14M15.54 8.46a5 5 0 010 7.07"/></svg></button></div><div class="vm"><span class="vc2">kids</span><span class="vt">rooie sweatshirt</span></div></div><div class="vc "><div class="vw" data-src="videos/video-07-8d5898a0.mp4"><video loop playsinline preload="none" muted><source type="video/mp4"></video><button class="vsnd" onclick="ts(this)" title="Toggle sound"><svg class="io" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M11 5L6 9H2v6h4l5 4V5z"/><line x1="17" y1="9" x2="23" y2="15"/><line x1="23" y1="9" x2="17" y2="15"/></svg><svg class="in2" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" style="display:none"><path d="M11 5L6 9H2v6h4l5 4V5z"/><path d="M19.07 4.93a10 10 0 010 14.14M15.54 8.46a5 5 0 010 7.07"/></svg></button></div><div class="vm"><span class="vc2">kids</span><span class="vt">pov kids · lola & the boys</span></div></div><div class="vc "><div class="vw" data-src="videos/video-08-717b8f9d.mp4"><video loop playsinline preload="none" muted><source type="video/mp4"></video><button class="vsnd" onclick="ts(this)" title="Toggle sound"><svg class="io" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M11 5L6 9H2v6h4l5 4V5z"/><line x1="17" y1="9" x2="23" y2="15"/><line x1="23" y1="9" x2="17" y2="15"/></svg><svg class="in2" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" style="display:none"><path d="M11 5L6 9H2v6h4l5 4V5z"/><path d="M19.07 4.93a10 10 0 010 14.14M15.54 8.46a5 5 0 010 7.07"/></svg></button></div><div class="vm"><span class="vc2">kids</span><span class="vt">barbie × lola & the boys</span></div></div><div class="vc "><div class="vw" data-src="videos/video-09-458cec28.mp4"><video loop playsinline preload="none" muted><source type="video/mp4"></video><button class="vsnd" onclick="ts(this)" title="Toggle sound"><svg class="io" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M11 5L6 9H2v6h4l5 4V5z"/><line x1="17" y1="9" x2="23" y2="15"/><line x1="23" y1="9" x2="17" y2="15"/></svg><svg class="in2" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" style="display:none"><path d="M11 5L6 9H2v6h4l5 4V5z"/><path d="M19.07 4.93a10 10 0 010 14.14M15.54 8.46a5 5 0 010 7.07"/></svg></button></div><div class="vm"><span class="vc2">kids · campaign</span><span class="vt">coming soon · rooie</span></div></div></div>\n  <div class="vrow vr4"><div class="vc "><div class="vw" data-src="videos/video-10-9428fbf1.mp4"><video loop playsinline preload="none" muted><source type="video/mp4"></video><button class="vsnd" onclick="ts(this)" title="Toggle sound"><svg class="io" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M11 5L6 9H2v6h4l5 4V5z"/><line x1="17" y1="9" x2="23" y2="15"/><line x1="23" y1="9" x2="17" y2="15"/></svg><svg class="in2" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" style="display:none"><path d="M11 5L6 9H2v6h4l5 4V5z"/><path d="M19.07 4.93a10 10 0 010 14.14M15.54 8.46a5 5 0 010 7.07"/></svg></button></div><div class="vm"><span class="vc2">kids</span><span class="vt">house tour</span></div></div><div class="vc "><div class="vw pi"><img src="images/image-09-3e1bf97a.jpg" alt="lola + the boys miami" loading="lazy" style="width:100%;height:100%;object-fit:cover;object-position:center;display:block;"></div><div class="vm"><span class="vc2">kids · lola miami</span><span class="vt">lola + the boys miami</span></div></div><div class="vc "><div class="vw pi"><img src="images/image-10-fcb4686d.jpg" alt="lola miami · store" loading="lazy" style="width:100%;height:100%;object-fit:cover;object-position:center;display:block;"></div><div class="vm"><span class="vc2">kids · lola miami</span><span class="vt">lola miami · store</span></div></div><div class="vc "><div class="vw pi"><img src="images/image-11-4290f338.jpg" alt="lola + the boys miami" loading="lazy" style="width:100%;height:100%;object-fit:cover;object-position:center;display:block;"></div><div class="vm"><span class="vc2">kids · lola miami</span><span class="vt">lola + the boys miami</span></div></div></div>\n  <div class="vrow vr4"><div class="vc "><div class="vw pi"><img src="images/image-12-b802a1c3.jpg" alt="lola miami · store" loading="lazy" style="width:100%;height:100%;object-fit:cover;object-position:center;display:block;"></div><div class="vm"><span class="vc2">kids · lola miami</span><span class="vt">lola miami · store</span></div></div><div class="vc "><div class="vw pi"><img src="images/image-13-bd4fd37e.jpg" alt="tennis court · lola" loading="lazy" style="width:100%;height:100%;object-fit:cover;object-position:center;display:block;"></div><div class="vm"><span class="vc2">kids · lola & the boys</span><span class="vt">tennis court · lola</span></div></div><div class="vc "><div class="vw pi"><img src="images/image-14-91b9c544.jpg" alt="beach day · lola" loading="lazy" style="width:100%;height:100%;object-fit:cover;object-position:center;display:block;"></div><div class="vm"><span class="vc2">kids · lola & the boys</span><span class="vt">beach day · lola</span></div></div><div class="vc "><div class="vw pi"><img src="images/image-15-0d4b1eab.jpg" alt="accessories · lola" loading="lazy" style="width:100%;height:100%;object-fit:cover;object-position:center;display:block;"></div><div class="vm"><span class="vc2">kids · lola & the boys</span><span class="vt">accessories · lola</span></div></div></div>\n','lifestyle':'\n  <div class="vrow vr3"><div class="vc "><div class="vw" data-src="videos/video-11-15d56820.mp4"><video loop playsinline preload="none" muted><source type="video/mp4"></video><button class="vsnd" onclick="ts(this)" title="Toggle sound"><svg class="io" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M11 5L6 9H2v6h4l5 4V5z"/><line x1="17" y1="9" x2="23" y2="15"/><line x1="23" y1="9" x2="17" y2="15"/></svg><svg class="in2" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" style="display:none"><path d="M11 5L6 9H2v6h4l5 4V5z"/><path d="M19.07 4.93a10 10 0 010 14.14M15.54 8.46a5 5 0 010 7.07"/></svg></button></div><div class="vm"><span class="vc2">lifestyle · swimwear</span><span class="vt">palmola swim</span></div></div><div class="vc "><div class="vw" data-src="videos/video-12-d7e43f5b.mp4"><video loop playsinline preload="none" muted><source type="video/mp4"></video><button class="vsnd" onclick="ts(this)" title="Toggle sound"><svg class="io" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M11 5L6 9H2v6h4l5 4V5z"/><line x1="17" y1="9" x2="23" y2="15"/><line x1="23" y1="9" x2="17" y2="15"/></svg><svg class="in2" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" style="display:none"><path d="M11 5L6 9H2v6h4l5 4V5z"/><path d="M19.07 4.93a10 10 0 010 14.14M15.54 8.46a5 5 0 010 7.07"/></svg></button></div><div class="vm"><span class="vc2">lifestyle</span><span class="vt">nikki beach bts</span></div></div><div class="vc "><div class="vw" data-src="videos/video-13-1e84933c.mp4"><video loop playsinline preload="none" muted><source type="video/mp4"></video><button class="vsnd" onclick="ts(this)" title="Toggle sound"><svg class="io" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M11 5L6 9H2v6h4l5 4V5z"/><line x1="17" y1="9" x2="23" y2="15"/><line x1="23" y1="9" x2="17" y2="15"/></svg><svg class="in2" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" style="display:none"><path d="M11 5L6 9H2v6h4l5 4V5z"/><path d="M19.07 4.93a10 10 0 010 14.14M15.54 8.46a5 5 0 010 7.07"/></svg></button></div><div class="vm"><span class="vc2">lifestyle · hotels</span><span class="vt">balfour hotel miami</span></div></div></div>\n  <div class="vrow vr4"><div class="vc "><div class="vw pi"><img src="images/image-16-6a67be5a.jpg" alt="palmola swim · campaign" loading="lazy" style="width:100%;height:100%;object-fit:cover;object-position:center;display:block;"></div><div class="vm"><span class="vc2">lifestyle · swimwear</span><span class="vt">palmola swim · campaign</span></div></div><div class="vc "><div class="vw pi"><img src="images/image-17-2cf3be5b.jpg" alt="palmola swim · detail" loading="lazy" style="width:100%;height:100%;object-fit:cover;object-position:center;display:block;"></div><div class="vm"><span class="vc2">lifestyle · swimwear</span><span class="vt">palmola swim · detail</span></div></div><div class="vc "><div class="vw pi"><img src="images/image-18-9097d333.jpg" alt="palmola swim · editorial" loading="lazy" style="width:100%;height:100%;object-fit:cover;object-position:center;display:block;"></div><div class="vm"><span class="vc2">lifestyle · swimwear</span><span class="vt">palmola swim · editorial</span></div></div><div class="vc "><div class="vw pi"><img src="images/image-19-c1465475.jpg" alt="palmola swim · beach" loading="lazy" style="width:100%;height:100%;object-fit:cover;object-position:center;display:block;"></div><div class="vm"><span class="vc2">lifestyle · swimwear</span><span class="vt">palmola swim · beach</span></div></div></div>\n','events':'\n  <div class="vrow vr2"><div class="vc "><div class="vw" data-src="videos/video-14-5746e90a.mp4"><video loop playsinline preload="none" muted><source type="video/mp4"></video><button class="vsnd" onclick="ts(this)" title="Toggle sound"><svg class="io" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M11 5L6 9H2v6h4l5 4V5z"/><line x1="17" y1="9" x2="23" y2="15"/><line x1="23" y1="9" x2="17" y2="15"/></svg><svg class="in2" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" style="display:none"><path d="M11 5L6 9H2v6h4l5 4V5z"/><path d="M19.07 4.93a10 10 0 010 14.14M15.54 8.46a5 5 0 010 7.07"/></svg></button></div><div class="vm"><span class="vc2">events</span><span class="vt">fllfw backstage · carlos</span></div></div><div class="vc "><div class="vw pi"><img src="images/image-20-31d065d3.jpg" alt="poolside · lola" loading="lazy" style="width:100%;height:100%;object-fit:cover;object-position:center;display:block;"></div><div class="vm"><span class="vc2">events · kids</span><span class="vt">poolside · lola</span></div></div></div>\n'};
+/* ── WORK OVERLAY: category grid → project detail, sourced from work-data.js ── */
 var overlay=document.getElementById('ind-overlay');
 var ovBody=document.getElementById('ov-body');
 var ovTitle=document.getElementById('ov-title');
+var curCat=null;
 
-function openOv(ind){
-  if(!overlay||!ovBody||!ovTitle)return;
-  var label=phLabels[ind]||ind;
-  ovTitle.textContent=label;
-  ovBody.innerHTML='<div class="vgrid">'+(indGrids[ind]||'')+'</div>';
+function projectCardHtml(p){
+  var hasMultiple=(p.galleryImages&&p.galleryImages.length>1)||(p.supportingVideos&&p.supportingVideos.length>0);
+  var cover=p.coverImage?'<img src="'+p.coverImage+'" alt="'+p.title+'" loading="lazy" style="width:100%;height:100%;object-fit:cover;object-position:center;display:block;">':'';
+  var svcTags=(p.services||[]).map(function(s){return '<span class="s-pill" style="font-size:.62rem;padding:.28rem .7rem;">'+s+'</span>';}).join('');
+  var creditHtml=p.credit?'<span class="photo-credit">photographed by: '+p.credit+'</span>':'';
+  return ''
+    +'<div class="ccard">'
+    +'  <div class="vw ccard-media" data-src="'+(p.heroVideo||'')+'">'
+    +      cover
+    +      (p.heroVideo?'<video loop playsinline preload="none" muted><source type="video/mp4"></video>':'')
+    +      creditHtml
+    +'  </div>'
+    +'  <div class="ccard-header" onclick="toggleCcard(this)">'
+    +'    <span class="ccard-title">'+p.title+'</span>'
+    +'    <span class="ccard-arrow">↓</span>'
+    +'  </div>'
+    +'  <div class="ccard-body-wrap">'
+    +'    <div class="ccard-row"><span class="ccard-lbl">type</span><span class="ccard-val">'+(p.type||'')+'</span></div>'
+    +'    <div class="ccard-row"><span class="ccard-lbl">approach</span><span class="ccard-val">'+(p.description||'')+'</span></div>'
+    +(p.result?'    <div class="ccard-row"><span class="ccard-lbl">result</span><span class="ccard-val">'+p.result+'</span></div>':'')
+    +(svcTags?'    <div class="ccard-tags">'+svcTags+'</div>':'')
+    +(hasMultiple?'    <div class="ccard-note">multiple pieces of content</div>':'')
+    +'  </div>'
+    +'</div>';
+}
+
+function renderCategory(slug){
+  var cat=getCategory(slug);
+  var projects=getProjectsByCategory(slug);
+  curCat=slug;
+  ovTitle.textContent=cat?cat.name.toLowerCase():slug;
+  var grid='<div class="ccard-grid">'+projects.map(projectCardHtml).join('')+'</div>';
+  ovBody.innerHTML=grid;
+  ovBody.querySelectorAll('.vw[data-src]').forEach(function(w){if(w.dataset.src)vobs.observe(w);});
+  ovBody.querySelectorAll('.rf,.rc').forEach(function(el){setTimeout(function(){el.classList.add('in');},80);});
+}
+
+function toggleCcard(header){
+  var card=header.closest('.ccard');
+  if(!card)return;
+  card.classList.toggle('open');
+}
+
+function openOv(slug){
+  if(!overlay||!ovBody||!ovTitle)return false;
+  renderCategory(slug);
   overlay.classList.add('open');
   document.body.classList.add('ov-open');
   document.body.style.overflow='hidden';
-  // Lazy load videos in overlay
-  ovBody.querySelectorAll('.vw[data-src]').forEach(function(w){vobs.observe(w);});
-  // Trigger reveals
-  ovBody.querySelectorAll('.rf,.rc').forEach(function(el){setTimeout(function(){el.classList.add('in');},80);});
   overlay.scrollTop=0;
-  // Re-add hover to new elements
-  hov('#ov-body .vw,#ov-body button');
+  return false;
 }
 function closeOv(){
   if(!overlay)return;
