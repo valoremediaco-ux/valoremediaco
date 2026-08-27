@@ -897,8 +897,17 @@ body.wm-open #cr .crlogo-light{opacity:0 !important;}
 /* ══ CAMPAIGN CARD — project detail inside work overlay ══ */
 .ccard-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:1.5rem;}
 .ccard{background:var(--du);border-radius:2px;overflow:hidden;}
-.ccard-media{position:relative;aspect-ratio:4/5;background:#1a1a1a;}
-.ccard-media img,.ccard-media video{width:100%;height:100%;object-fit:cover;display:block;}
+.ccard-media{position:relative;aspect-ratio:4/5;background:#1a1a1a;overflow:hidden;cursor:none;}
+.ccard-media img,.ccard-media video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;}
+.ccard-media video{opacity:0;transition:opacity .4s ease;}
+.ccard-media.playing video{opacity:1;}
+.ccard-play{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:42px;height:42px;
+  border-radius:50%;background:rgba(13,13,13,.42);backdrop-filter:blur(3px);
+  display:flex;align-items:center;justify-content:center;opacity:.88;
+  transition:opacity .3s ease,transform .3s ease;pointer-events:none;z-index:2;}
+.ccard-play svg{width:13px;height:13px;fill:rgba(237,235,230,.92);margin-left:2px;}
+.ccard-media:hover .ccard-play{transform:translate(-50%,-50%) scale(1.08);}
+.ccard-media.playing .ccard-play{opacity:0;transform:translate(-50%,-50%) scale(.85);}
 .photo-credit{position:absolute;left:.9rem;bottom:.8rem;font-size:.68rem;color:rgba(237,235,230,.75);font-family:var(--CG);font-style:italic;font-weight:300;text-shadow:0 1px 4px rgba(0,0,0,.5);}
 .ccard-header{display:flex;align-items:center;justify-content:space-between;padding:1.1rem 1.3rem;cursor:none;}
 .ccard-title{font-family:var(--P);font-weight:700;font-size:.88rem;letter-spacing:-.005em;text-transform:lowercase;}
