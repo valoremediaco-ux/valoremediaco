@@ -63,9 +63,9 @@ const WORK_PROJECTS = [
   // ── Fashion & Beauty ──
   {
     slug: "all-american-summer", category: "fashion-beauty",
-    title: "all american-summer", type: "social campaign management",
-    description: "Filmed and edited reels plus carousel design for a photographer and stylist.",
-    result: "55k+ views overall",
+    title: "all-american summer", type: "social campaign management",
+    description: "Developed and produced a season's worth of reels and curated carousel content for a photographer-stylist duo, translating a summer collection into scroll-stopping social storytelling.",
+    result: "55K+ views generated across the campaign",
     coverImage: "",
     heroVideo: "Valore Media- My Work all/Fashion & Beauty/all-american summer/All-American Summer Reel.mp4",
     galleryImages: [], supportingVideos: ["Valore Media- My Work all/Fashion & Beauty/all-american summer/Camp USA BTS Reel.mp4"],
@@ -74,8 +74,8 @@ const WORK_PROJECTS = [
   {
     slug: "rhode", category: "fashion-beauty",
     title: "rhode campaign", type: "creative direction",
-    description: "Filming, digital cam photos, and an edited reel.",
-    result: "4k+ views on the reel",
+    description: "Creative-directed and filmed an editorial-style reel with digital camera photography, crafting a tactile, sun-soaked visual narrative built around the brand's world.",
+    result: "4K+ views on the reel alone",
     coverImage: "Valore Media- My Work all/Fashion & Beauty/rhode/Image 1.jpg",
     heroVideo: "Valore Media- My Work all/Fashion & Beauty/rhode/rhode reel.mp4",
     galleryImages: ["Valore Media- My Work all/Fashion & Beauty/rhode/Image 2.jpg", "Valore Media- My Work all/Fashion & Beauty/rhode/Image 3.webp", "Valore Media- My Work all/Fashion & Beauty/rhode/Image 4.jpg"], supportingVideos: [],
@@ -85,8 +85,8 @@ const WORK_PROJECTS = [
   {
     slug: "vanlinker", category: "fashion-beauty",
     title: "vanlinker campaigns", type: "content creation",
-    description: "Multi-season campaign content created for both a photographer and a stylist.",
-    result: "40k+ views overall",
+    description: "Led multi-season campaign content across two creative partners — a photographer and a stylist — building a cohesive visual throughline season over season.",
+    result: "40K+ views across the campaign",
     coverImage: "",
     heroVideo: "Valore Media- My Work all/Fashion & Beauty/vanlinker/reel1 vanlinker.mp4",
     galleryImages: [], supportingVideos: ["Valore Media- My Work all/Fashion & Beauty/vanlinker/reel2 vanlinker.mp4", "Valore Media- My Work all/Fashion & Beauty/vanlinker/reel3 vanlinker.mp4", "Valore Media- My Work all/Fashion & Beauty/vanlinker/reel4 vanlinker.mp4", "Valore Media- My Work all/Fashion & Beauty/vanlinker/reel5 vanlinker.mp4"],
@@ -94,9 +94,9 @@ const WORK_PROJECTS = [
   },
   {
     slug: "fl-mag", category: "fashion-beauty",
-    title: "fort lauderdale mag", type: "content creation",
-    description: "Winter edition coverage created for both a photographer and a stylist.",
-    result: "15k+ views overall",
+    title: "fort lauderdale magazine", type: "content creation",
+    description: "Directed winter-edition editorial coverage for a photographer-stylist duo, delivering a polished seasonal story built for both print and digital impact.",
+    result: "15K+ views across the release",
     coverImage: "",
     heroVideo: "Valore Media- My Work all/Fashion & Beauty/ft. lauderdale mag/fll mag reel.mp4",
     galleryImages: [], supportingVideos: ["Valore Media- My Work all/Fashion & Beauty/ft. lauderdale mag/fll mag creator reel.mp4"],
@@ -105,7 +105,7 @@ const WORK_PROJECTS = [
   {
     slug: "fashion-editorial-carousels", category: "fashion-beauty",
     title: "fashion editorial", type: "creative direction",
-    description: "Creative carousels and reels created for a fashion photographer's account, plus campaign content coverage.",
+    description: "Creative-directed a series of editorial carousels and reels for a fashion photographer's account, layering campaign coverage into an elevated, cohesive feed strategy.",
     coverImage: "",
     heroVideo: "Valore Media- My Work all/Fashion & Beauty/altar'd state x as revival/Altard State BTS vs Final Reel.mp4",
     galleryImages: [], supportingVideos: [],
@@ -113,8 +113,8 @@ const WORK_PROJECTS = [
   },
   {
     slug: "commercial-productions", category: "fashion-beauty",
-    title: "big brand commercial productions", type: "content creation",
-    description: "BTS and final content creation — reels and carousels — for major brand commercial productions.",
+    title: "commercial productions", type: "commercial production",
+    description: "Produced behind-the-scenes and final social content — reels and carousels — for major national brand commercial productions, translating high-budget sets into authentic digital storytelling.",
     coverImage: "",
     heroVideo: "Valore Media- My Work all/Lifestyle & Influencer Marketing/Commercial BTS/tom brady x ferrero.mp4",
     galleryImages: [], supportingVideos: ["Valore Media- My Work all/Lifestyle & Influencer Marketing/Commercial BTS/land o'lakes butter.mp4", "Valore Media- My Work all/Lifestyle & Influencer Marketing/Commercial BTS/lucky strike.mp4", "Valore Media- My Work all/Lifestyle & Influencer Marketing/Commercial BTS/on x jd.mp4", "Valore Media- My Work all/Lifestyle & Influencer Marketing/Commercial BTS/visit fort myers.mp4"],
@@ -125,7 +125,7 @@ const WORK_PROJECTS = [
   {
     slug: "nyfw-runway7", category: "events",
     title: "nyfw · runway7", type: "backstage & event coverage",
-    description: "Managed backstage social content, sponsor marketing, runway socials, and designer and audience interview coverage.",
+    description: "Directed end-to-end social coverage for a New York Fashion Week show — backstage access, sponsor integrations, runway moments, and designer interviews — under Runway7's global spotlight.",
     coverImage: "Valore Media- My Work all/Events/NYFW/Product Marketing/runway7 merch/cafenyfw1.jpg",
     heroVideo: "Valore Media- My Work all/Events/NYFW/Product Marketing/runway7 merch/runway7 merch.mp4",
     galleryImages: ["Valore Media- My Work all/Events/NYFW/Product Marketing/runway7 merch/cafenyfw2.jpg", "Valore Media- My Work all/Events/NYFW/Product Marketing/hard rock cafe/image1nyfwhardrock.jpg", "Valore Media- My Work all/Events/NYFW/Product Marketing/hard rock cafe/image2nyfwhardrock.jpg"], supportingVideos: ["Valore Media- My Work all/Events/NYFW/Product Marketing/runway7 merch/cafenyfw3.mp4", "Valore Media- My Work all/Events/NYFW/Product Marketing/hard rock cafe/videonyfwhardrock.mp4"],
@@ -134,7 +134,7 @@ const WORK_PROJECTS = [
   {
     slug: "mfw", category: "events",
     title: "milano fashion week", type: "bts coverage",
-    description: "BTS coverage for a brand later recognized in Forbes 30 Under 30 Asia 2024.",
+    description: "Captured behind-the-scenes coverage in Milan for a brand that would go on to be named to Forbes 30 Under 30 Asia the following year.",
     coverImage: "images/campaigns/mfw/01.jpg",
     heroVideo: "videos/campaigns/mfw/reel.mp4",
     galleryImages: [], supportingVideos: [],
@@ -143,7 +143,7 @@ const WORK_PROJECTS = [
   {
     slug: "miami-swim-week", category: "events",
     title: "miami swim week", type: "bts & runway coverage",
-    description: "BTS and runway social coverage — both video and digital cam photos — across the Paraiso and Oceanus shows.",
+    description: "Led on-the-ground social coverage across two Miami Swim Week shows — Paraiso and Oceanus — pairing runway footage with digital camera photography for a full editorial arc.",
     coverImage: "Valore Media- My Work all/Events/Miami Swim Week/image1msw.jpg",
     heroVideo: "Valore Media- My Work all/Events/Miami Swim Week/miami swim week reel.mp4",
     galleryImages: ["Valore Media- My Work all/Events/Miami Swim Week/image2msw.jpg", "Valore Media- My Work all/Events/Miami Swim Week/image3msw.jpg", "Valore Media- My Work all/Events/Miami Swim Week/image4msw.jpg", "Valore Media- My Work all/Events/Miami Swim Week/image5msw.jpg", "Valore Media- My Work all/Events/Miami Swim Week/image6msw.jpg", "Valore Media- My Work all/Events/Miami Swim Week/image7msw.jpg", "Valore Media- My Work all/Events/Miami Swim Week/image8msw.jpg", "Valore Media- My Work all/Events/Miami Swim Week/image9msw.jpg"], supportingVideos: ["Valore Media- My Work all/Events/Miami Swim Week/runway footage.mp4"],
@@ -151,8 +151,8 @@ const WORK_PROJECTS = [
   },
   {
     slug: "fllfw", category: "events",
-    title: "fllfw", type: "backstage & runway coverage",
-    description: "Covered both fall and summer shows — backstage and runway social content.",
+    title: "fort lauderdale fashion week", type: "backstage & runway coverage",
+    description: "Provided season-spanning coverage of Fort Lauderdale Fashion Week — backstage and runway — across both the fall and summer showcases.",
     coverImage: "",
     heroVideo: "Valore Media- My Work all/Events/FLLFW/fllfw runway.mp4",
     galleryImages: [], supportingVideos: ["Valore Media- My Work all/Events/FLLFW/backstage carlos merchan designer.mp4", "Valore Media- My Work all/Events/FLLFW/theo azael bts.mp4"],
@@ -163,7 +163,7 @@ const WORK_PROJECTS = [
   {
     slug: "lola-campaign", category: "kids-brands",
     title: "lola & the boys · campaign", type: "campaign content",
-    description: "Campaign photoshoot content, video and digital cam photos plus edited reels.",
+    description: "Creative-directed a full campaign photoshoot for a children's fashion label — video, digital camera photography, and edited reels brought together into one cohesive launch story.",
     coverImage: "",
     heroVideo: "Valore Media- My Work all/Kids Brands/lola & the boys/campaigns/GRWM final.mp4",
     galleryImages: [], supportingVideos: [],
@@ -172,7 +172,7 @@ const WORK_PROJECTS = [
   {
     slug: "lola-store", category: "kids-brands",
     title: "lola & the boys · in-store", type: "in-store content",
-    description: "In-store content across both Miami locations — Aventura and Dadeland Mall.",
+    description: "Produced in-store lifestyle content across both Miami retail locations, translating the in-person shopping experience into scroll-stopping social moments.",
     coverImage: "",
     heroVideo: "Valore Media- My Work all/Kids Brands/lola & the boys/in-store/cutest kids store.mp4",
     galleryImages: [], supportingVideos: [],
@@ -181,8 +181,8 @@ const WORK_PROJECTS = [
   {
     slug: "rooie", category: "kids-brands",
     title: "rooie", type: "full social management",
-    description: "Full social media management and strategy — content editing, posting, engagement, and meta ad support.",
-    result: "+900% account growth",
+    description: "Ran full social strategy and management — content editing, publishing cadence, community engagement, and Meta ad support — driving sustained account growth over time.",
+    result: "900%+ account growth achieved through consistent strategy",
     coverImage: "",
     heroVideo: "Valore Media- My Work all/Kids Brands/rooie/rooie fun reel.mp4",
     galleryImages: [], supportingVideos: ["Valore Media- My Work all/Kids Brands/rooie/pizza boxes reel.mp4", "Valore Media- My Work all/Kids Brands/rooie/rooie blonde girl.mp4", "Valore Media- My Work all/Kids Brands/rooie/rooie ss26 launch.mp4", "Valore Media- My Work all/Kids Brands/rooie/rooie times of the day.mp4"],
@@ -191,7 +191,7 @@ const WORK_PROJECTS = [
   {
     slug: "kids-other", category: "kids-brands",
     title: "kids content", type: "bts coverage & edited reels",
-    description: "BTS coverage and edited reels for child models and creators — social content across several kids styling shoots.",
+    description: "Delivered behind-the-scenes coverage and edited reels across several children's styling shoots, working directly with young models and creators.",
     coverImage: "images/campaigns/kids-other/01.jpg",
     heroVideo: "videos/campaigns/kids-other/01.mp4",
     galleryImages: [], supportingVideos: [],
@@ -202,8 +202,8 @@ const WORK_PROJECTS = [
   {
     slug: "matias", category: "lifestyle-hospitality",
     title: "creator content · matias", type: "influencer content",
-    description: "Social content created for a creator with a multi-million follower audience across TikTok and Instagram.",
-    result: "5k+ views · 40k+ likes",
+    description: "Developed social content for a creator commanding a multi-million-follower audience — 15.1M on TikTok and 3.6M on Instagram — crafting content built to perform at that scale.",
+    result: "5K+ views and 40K+ likes on a single piece of content",
     coverImage: "Valore Media- My Work all/Lifestyle & Influencer Marketing/Matias/matiasimage1.png",
     heroVideo: "Valore Media- My Work all/Lifestyle & Influencer Marketing/Matias/matias reel.mp4",
     galleryImages: ["Valore Media- My Work all/Lifestyle & Influencer Marketing/Matias/matiasimage2.png", "Valore Media- My Work all/Lifestyle & Influencer Marketing/Matias/matiasimage3.png"], supportingVideos: [],
@@ -212,8 +212,8 @@ const WORK_PROJECTS = [
   {
     slug: "sammis-reyes", category: "lifestyle-hospitality",
     title: "galore campaign", type: "bts content",
-    description: "Covered BTS social content for a campaign featuring a former NFL player, in collaboration with a stylist.",
-    result: "65k+ views",
+    description: "Directed behind-the-scenes social coverage for a campaign starring former NFL player Sammis Reyes — whose following spans 1.2M on Instagram and 113K on TikTok — in collaboration with a stylist.",
+    result: "65K+ views",
     coverImage: "",
     heroVideo: "Valore Media- My Work all/Lifestyle & Influencer Marketing/Sammis Reyes/sammis reyes reel.mp4",
     galleryImages: [], supportingVideos: [],
@@ -221,8 +221,8 @@ const WORK_PROJECTS = [
   },
   {
     slug: "alexis-fleming", category: "lifestyle-hospitality",
-    title: "creator content", type: "campaign content",
-    description: "Created social content across various campaigns for a creator with a sizeable engaged following.",
+    title: "creator content · alexis fleming", type: "campaign content",
+    description: "Produced social content across multiple campaigns for a creator with a 209K-strong, highly engaged following.",
     coverImage: "",
     heroVideo: "Valore Media- My Work all/Lifestyle & Influencer Marketing/Alexis Fleming/alexis reel.mp4",
     galleryImages: [], supportingVideos: [],
@@ -231,7 +231,7 @@ const WORK_PROJECTS = [
   {
     slug: "myhotbod-pilates", category: "lifestyle-hospitality",
     title: "myhotbod pilates", type: "launch content",
-    description: "Covered social content for an opening class launch — video, digital cam photos, story, carousel, and reel.",
+    description: "Directed launch-day social coverage for a new pilates studio's opening class — video, digital camera photography, stories, a carousel, and a reel — building anticipation from day one.",
     coverImage: "Valore Media- My Work all/Lifestyle & Influencer Marketing/myhotbod/Carousel/1.png",
     heroVideo: "Valore Media- My Work all/Lifestyle & Influencer Marketing/myhotbod/adjusted story pilates essentials.mp4",
     galleryImages: [], supportingVideos: [],
