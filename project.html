@@ -22,6 +22,8 @@
 
   .proj-hero-media{width:100%;background:#0a0a0a;aspect-ratio:16/9;position:relative;overflow:hidden;}
   .proj-hero-media video,.proj-hero-media img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;}
+  .proj-hero-media video{opacity:0;transition:opacity .4s ease;}
+  .proj-hero-media video.ready{opacity:1;}
   .proj-sound-btn{position:absolute;bottom:1.2rem;right:1.2rem;z-index:5;width:42px;height:42px;border-radius:50%;
     background:rgba(13,13,13,.55);backdrop-filter:blur(6px);border:1px solid rgba(255,255,255,.25);
     display:flex;align-items:center;justify-content:center;cursor:pointer;transition:background .2s;}
@@ -151,13 +153,13 @@
     svcWrap.appendChild(span);
   });
 
-  // hero media — lazy: only build the video element (which itself uses preload=none)
-  // once this project page has actually been opened by the user.
+  // hero media — metadata loads immediately (small, lightweight) so a real
+  // frame shows right away even if the browser blocks autoplay; full
+  // playback (with looping) then takes over once it succeeds.
   var heroWrap = document.getElementById('projHeroMedia');
   if(project.heroVideo){
     heroWrap.innerHTML =
-      '<video id="heroVid" muted loop playsinline preload="none" poster="' + (project.coverImage||'') + '">' +
-      '<source src="' + project.heroVideo + '" type="video/mp4"></video>' +
+      '<video id="heroVid" muted loop playsinline preload="metadata" poster="' + (project.coverImage||'') + '" src="' + project.heroVideo + '"></video>' +
       '<div class="proj-sound-btn" id="soundBtn" role="button" aria-label="toggle sound">' +
       '<svg id="soundIconOn" viewBox="0 0 24 24" style="display:none;"><path d="M4 9v6h4l5 5V4L8 9H4z"/><path d="M16 8a5 5 0 010 8"/><path d="M18.5 5.5a9 9 0 010 13"/></svg>' +
       '<svg id="soundIconOff" viewBox="0 0 24 24"><path d="M4 9v6h4l5 5V4L8 9H4z"/><line x1="16" y1="9" x2="21" y2="14"/><line x1="21" y1="9" x2="16" y2="14"/></svg>' +
@@ -166,6 +168,15 @@
     var soundBtn = document.getElementById('soundBtn');
     var iconOn = document.getElementById('soundIconOn');
     var iconOff = document.getElementById('soundIconOff');
+    // Fallback: grab a real frame as soon as metadata is available, so the
+    // hero never sits as a blank black box even if autoplay gets blocked.
+    heroVid.addEventListener('loadedmetadata', function(){
+      if(heroVid.paused){
+        try { heroVid.currentTime = Math.min(0.15, (heroVid.duration || 1) / 4); } catch(e){}
+      }
+    }, { once: true });
+    heroVid.addEventListener('seeked', function(){ heroVid.classList.add('ready'); }, { once: true });
+    heroVid.addEventListener('playing', function(){ heroVid.classList.add('ready'); });
     heroVid.play().catch(function(){});
     soundBtn.addEventListener('click', function(){
       heroVid.muted = !heroVid.muted;
