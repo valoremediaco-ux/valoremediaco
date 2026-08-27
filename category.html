@@ -134,7 +134,7 @@
       a.href = 'project.html?id=' + encodeURIComponent(p.slug);
       a.innerHTML =
         '<div class="cat-card-img-wrap" data-src="' + (p.heroVideo || '') + '">' +
-          '<img src="' + p.coverImage + '" alt="' + p.title + '" loading="lazy" decoding="async">' +
+          (p.coverImage ? '<img src="' + p.coverImage + '" alt="' + p.title + '" loading="lazy" decoding="async">' : '') +
           (p.heroVideo ? '<video muted loop playsinline preload="none"><source type="video/mp4"></video><span class="cat-card-play" aria-hidden="true"><svg viewBox="0 0 24 24"><polygon points="9,7 9,17 17,12"/></svg></span>' : '') +
         '</div>' +
         '<p class="cat-card-type">' + p.type + '</p>' +
