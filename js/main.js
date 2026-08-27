@@ -76,7 +76,7 @@ function projectCardHtml(p){
     +'<div class="ccard">'
     +'  <div class="vw ccard-media" data-src="'+(p.heroVideo||'')+'">'
     +      cover
-    +      (p.heroVideo?'<video loop playsinline preload="none" muted><source type="video/mp4"></video>':'')
+    +      (p.heroVideo?'<video loop playsinline preload="none" muted><source type="video/mp4"></video><span class="ccard-play" aria-hidden="true"><svg viewBox="0 0 24 24"><polygon points="9,7 9,17 17,12"/></svg></span>':'')
     +      creditHtml
     +'  </div>'
     +'  <div class="ccard-header" onclick="toggleCcard(this)">'
@@ -100,7 +100,8 @@ function renderCategory(slug){
   ovTitle.textContent=cat?cat.name.toLowerCase():slug;
   var grid='<div class="ccard-grid">'+projects.map(projectCardHtml).join('')+'</div>';
   ovBody.innerHTML=grid;
-  ovBody.querySelectorAll('.vw[data-src]').forEach(function(w){if(w.dataset.src)vobs.observe(w);});
+  // Note: ccard-media videos are intentionally NOT registered with vobs here.
+  // They load and play only on hover/tap — see the hover-to-play block below.
   ovBody.querySelectorAll('.rf,.rc').forEach(function(el){setTimeout(function(){el.classList.add('in');},80);});
 }
 
@@ -127,6 +128,63 @@ function closeOv(){
 }
 // ESC key to close overlay
 document.addEventListener('keydown',function(e){if(e.key==='Escape')closeOv();});
+
+/* ── PROJECT VIDEOS: play with sound only on hover (tap-to-toggle on touch) ── */
+var noHover = window.matchMedia && window.matchMedia('(hover: none)').matches;
+
+function ccardEnsureLoaded(media, vid){
+  var src = media.dataset.src;
+  if(src){
+    var source = vid.querySelector('source');
+    if(source && !source.src){ source.src = src; vid.load(); }
+    delete media.dataset.src;
+  }
+}
+function ccardPlay(media, vid){
+  ccardEnsureLoaded(media, vid);
+  vid.muted = false;
+  vid.play().then(function(){
+    media.classList.add('playing');
+  }).catch(function(){
+    // Some browsers block unmuted autoplay even on hover — fall back to muted.
+    vid.muted = true;
+    vid.play().then(function(){ media.classList.add('playing'); }).catch(function(){});
+  });
+}
+function ccardStop(media, vid){
+  vid.pause();
+  vid.currentTime = 0;
+  vid.muted = true;
+  media.classList.remove('playing');
+}
+
+if(!noHover){
+  ovBody.addEventListener('mouseover', function(e){
+    var media = e.target.closest && e.target.closest('.ccard-media');
+    if(!media || media._hoverTimer) return;
+    var vid = media.querySelector('video');
+    if(!vid) return;
+    media._hoverTimer = setTimeout(function(){ media._hoverTimer=null; ccardPlay(media, vid); }, 120);
+  }, {capture:true, passive:true});
+
+  ovBody.addEventListener('mouseout', function(e){
+    var media = e.target.closest && e.target.closest('.ccard-media');
+    if(!media) return;
+    if(e.relatedTarget && media.contains(e.relatedTarget)) return;
+    clearTimeout(media._hoverTimer); media._hoverTimer=null;
+    var vid = media.querySelector('video');
+    if(vid) ccardStop(media, vid);
+  }, {capture:true, passive:true});
+} else {
+  ovBody.addEventListener('click', function(e){
+    var media = e.target.closest && e.target.closest('.ccard-media');
+    if(!media) return;
+    var vid = media.querySelector('video');
+    if(!vid) return;
+    e.preventDefault();
+    if(vid.paused) ccardPlay(media, vid); else ccardStop(media, vid);
+  });
+}
 
 /* ── SOUND TOGGLE ── */
 function ts(btn){
