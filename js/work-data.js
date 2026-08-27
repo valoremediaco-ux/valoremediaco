@@ -68,7 +68,7 @@ const WORK_PROJECTS = [
     result: "55k+ views overall",
     coverImage: "",
     heroVideo: "Valore Media- My Work all/Fashion & Beauty/all-american summer/All-American Summer Reel.mp4",
-    galleryImages: [], supportingVideos: [],
+    galleryImages: [], supportingVideos: ["Valore Media- My Work all/Fashion & Beauty/all-american summer/Camp USA BTS Reel.mp4"],
     services: ["Content Creation", "Video Editing"]
   },
   {
@@ -78,7 +78,7 @@ const WORK_PROJECTS = [
     result: "4k+ views on the reel",
     coverImage: "Valore Media- My Work all/Fashion & Beauty/rhode/Image 1.jpg",
     heroVideo: "Valore Media- My Work all/Fashion & Beauty/rhode/rhode reel.mp4",
-    galleryImages: [], supportingVideos: [],
+    galleryImages: ["Valore Media- My Work all/Fashion & Beauty/rhode/Image 2.jpg", "Valore Media- My Work all/Fashion & Beauty/rhode/Image 3.webp", "Valore Media- My Work all/Fashion & Beauty/rhode/Image 4.jpg"], supportingVideos: [],
     services: ["Creative Direction", "Photography", "Video Editing"],
     credit: "moisés alcalá"
   },
@@ -89,7 +89,7 @@ const WORK_PROJECTS = [
     result: "40k+ views overall",
     coverImage: "",
     heroVideo: "Valore Media- My Work all/Fashion & Beauty/vanlinker/reel1 vanlinker.mp4",
-    galleryImages: [], supportingVideos: [],
+    galleryImages: [], supportingVideos: ["Valore Media- My Work all/Fashion & Beauty/vanlinker/reel2 vanlinker.mp4", "Valore Media- My Work all/Fashion & Beauty/vanlinker/reel3 vanlinker.mp4", "Valore Media- My Work all/Fashion & Beauty/vanlinker/reel4 vanlinker.mp4", "Valore Media- My Work all/Fashion & Beauty/vanlinker/reel5 vanlinker.mp4"],
     services: ["Content Creation", "Photography"]
   },
   {
@@ -99,7 +99,7 @@ const WORK_PROJECTS = [
     result: "15k+ views overall",
     coverImage: "",
     heroVideo: "Valore Media- My Work all/Fashion & Beauty/ft. lauderdale mag/fll mag reel.mp4",
-    galleryImages: [], supportingVideos: [],
+    galleryImages: [], supportingVideos: ["Valore Media- My Work all/Fashion & Beauty/ft. lauderdale mag/fll mag creator reel.mp4"],
     services: ["Content Creation", "Photography"]
   },
   {
@@ -117,7 +117,7 @@ const WORK_PROJECTS = [
     description: "BTS and final content creation — reels and carousels — for major brand commercial productions.",
     coverImage: "",
     heroVideo: "Valore Media- My Work all/Lifestyle & Influencer Marketing/Commercial BTS/tom brady x ferrero.mp4",
-    galleryImages: [], supportingVideos: [],
+    galleryImages: [], supportingVideos: ["Valore Media- My Work all/Lifestyle & Influencer Marketing/Commercial BTS/land o'lakes butter.mp4", "Valore Media- My Work all/Lifestyle & Influencer Marketing/Commercial BTS/lucky strike.mp4", "Valore Media- My Work all/Lifestyle & Influencer Marketing/Commercial BTS/on x jd.mp4", "Valore Media- My Work all/Lifestyle & Influencer Marketing/Commercial BTS/visit fort myers.mp4"],
     services: ["Content Creation", "Video Editing"]
   },
 
@@ -128,7 +128,7 @@ const WORK_PROJECTS = [
     description: "Managed backstage social content, sponsor marketing, runway socials, and designer and audience interview coverage.",
     coverImage: "Valore Media- My Work all/Events/NYFW/Product Marketing/runway7 merch/cafenyfw1.jpg",
     heroVideo: "Valore Media- My Work all/Events/NYFW/Product Marketing/runway7 merch/runway7 merch.mp4",
-    galleryImages: [], supportingVideos: [],
+    galleryImages: ["Valore Media- My Work all/Events/NYFW/Product Marketing/runway7 merch/cafenyfw2.jpg", "Valore Media- My Work all/Events/NYFW/Product Marketing/hard rock cafe/image1nyfwhardrock.jpg", "Valore Media- My Work all/Events/NYFW/Product Marketing/hard rock cafe/image2nyfwhardrock.jpg"], supportingVideos: ["Valore Media- My Work all/Events/NYFW/Product Marketing/runway7 merch/cafenyfw3.mp4", "Valore Media- My Work all/Events/NYFW/Product Marketing/hard rock cafe/videonyfwhardrock.mp4"],
     services: ["Content Creation", "Video Editing", "Social Media Management"]
   },
   {
@@ -146,7 +146,7 @@ const WORK_PROJECTS = [
     description: "BTS and runway social coverage — both video and digital cam photos — across the Paraiso and Oceanus shows.",
     coverImage: "Valore Media- My Work all/Events/Miami Swim Week/image1msw.jpg",
     heroVideo: "Valore Media- My Work all/Events/Miami Swim Week/miami swim week reel.mp4",
-    galleryImages: [], supportingVideos: [],
+    galleryImages: ["Valore Media- My Work all/Events/Miami Swim Week/image2msw.jpg", "Valore Media- My Work all/Events/Miami Swim Week/image3msw.jpg", "Valore Media- My Work all/Events/Miami Swim Week/image4msw.jpg", "Valore Media- My Work all/Events/Miami Swim Week/image5msw.jpg", "Valore Media- My Work all/Events/Miami Swim Week/image6msw.jpg", "Valore Media- My Work all/Events/Miami Swim Week/image7msw.jpg", "Valore Media- My Work all/Events/Miami Swim Week/image8msw.jpg", "Valore Media- My Work all/Events/Miami Swim Week/image9msw.jpg"], supportingVideos: ["Valore Media- My Work all/Events/Miami Swim Week/runway footage.mp4"],
     services: ["Content Creation", "Photography", "Video Editing"]
   },
   {
@@ -155,7 +155,7 @@ const WORK_PROJECTS = [
     description: "Covered both fall and summer shows — backstage and runway social content.",
     coverImage: "",
     heroVideo: "Valore Media- My Work all/Events/FLLFW/fllfw runway.mp4",
-    galleryImages: [], supportingVideos: [],
+    galleryImages: [], supportingVideos: ["Valore Media- My Work all/Events/FLLFW/backstage carlos merchan designer.mp4", "Valore Media- My Work all/Events/FLLFW/theo azael bts.mp4"],
     services: ["Content Creation", "Video Editing"]
   },
 
@@ -185,7 +185,7 @@ const WORK_PROJECTS = [
     result: "+900% account growth",
     coverImage: "",
     heroVideo: "Valore Media- My Work all/Kids Brands/rooie/rooie fun reel.mp4",
-    galleryImages: [], supportingVideos: [],
+    galleryImages: [], supportingVideos: ["Valore Media- My Work all/Kids Brands/rooie/pizza boxes reel.mp4", "Valore Media- My Work all/Kids Brands/rooie/rooie blonde girl.mp4", "Valore Media- My Work all/Kids Brands/rooie/rooie ss26 launch.mp4", "Valore Media- My Work all/Kids Brands/rooie/rooie times of the day.mp4"],
     services: ["Social Media Management", "Strategy", "Content Creation"]
   },
   {
@@ -206,7 +206,7 @@ const WORK_PROJECTS = [
     result: "5k+ views · 40k+ likes",
     coverImage: "Valore Media- My Work all/Lifestyle & Influencer Marketing/Matias/matiasimage1.png",
     heroVideo: "Valore Media- My Work all/Lifestyle & Influencer Marketing/Matias/matias reel.mp4",
-    galleryImages: [], supportingVideos: [],
+    galleryImages: ["Valore Media- My Work all/Lifestyle & Influencer Marketing/Matias/matiasimage2.png", "Valore Media- My Work all/Lifestyle & Influencer Marketing/Matias/matiasimage3.png"], supportingVideos: [],
     services: ["Content Creation"]
   },
   {
