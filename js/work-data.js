@@ -23,21 +23,21 @@ const WORK_CATEGORIES = [
   },
   {
     slug: "events",
-    name: "Events",
+    name: "Events & Productions",
     description: "Backstage coverage, fashion weeks, brand activations, and live event storytelling.",
     coverImage: "images/cover-events.jpg",
     coverVideo: "videos/cover-events.mp4"
   },
   {
     slug: "kids-brands",
-    name: "Kids Brands",
+    name: "Kids",
     description: "Campaigns, retail content, product launches, and storytelling created for children's brands.",
     coverImage: "images/cover-kids-brands.jpg",
     coverVideo: "videos/cover-kids-brands.mp4"
   },
   {
     slug: "lifestyle-hospitality",
-    name: "Lifestyle & Influencers",
+    name: "Lifestyle & Influencer Marketing",
     description: "Editorial content, influencer collaborations, and social storytelling for lifestyle and hospitality brands.",
     coverImage: "images/cover-lifestyle-hospitality.jpg",
     coverVideo: "videos/cover-lifestyle-hospitality.mp4"
