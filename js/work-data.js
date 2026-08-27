@@ -1,16 +1,16 @@
 /* ══════════════════════════════════════════════════════════
    VALORÉ MEDIA — WORK DATA
    Central data source for the entire Work section.
-   Add, remove, or edit projects here — the homepage tiles and
-   the work overlay (see main.js) both read from this file.
-   Nothing else needs to be touched when content changes.
+   Add, remove, or edit projects here — the homepage tiles,
+   category.html, and project.html all read from this file.
 
-   FILE UPLOAD CONVENTION
-   Push real assets to GitHub using this folder pattern, then
-   the paths below will resolve automatically — no code edits
-   needed once files land:
-     videos/campaigns/[slug]/01.mp4, 02.mp4 ...
-     images/campaigns/[slug]/01.jpg, 02.jpg ...
+   FILE PATH CONVENTION
+   Paths point directly at your real folder structure — the same
+   one you use on your Mac, uploaded as-is into the repo root
+   under a top-level folder named "Valore Media- My Work all".
+   Example: "Valore Media- My Work all/Fashion & Beauty/rhode/rhode reel.mp4"
+   No renaming needed — just push your folders and update the
+   path here to match if a filename changes.
    ══════════════════════════════════════════════════════════ */
 
 const WORK_CATEGORIES = [
@@ -37,8 +37,8 @@ const WORK_CATEGORIES = [
   },
   {
     slug: "lifestyle-hospitality",
-    name: "Lifestyle & Hospitality",
-    description: "Editorial content and social storytelling for hospitality, travel, and lifestyle brands.",
+    name: "Lifestyle & Influencers",
+    description: "Editorial content, influencer collaborations, and social storytelling for lifestyle and hospitality brands.",
     coverImage: "images/cover-lifestyle-hospitality.jpg",
     coverVideo: "videos/cover-lifestyle-hospitality.mp4"
   }
@@ -66,8 +66,8 @@ const WORK_PROJECTS = [
     title: "all american-summer", type: "social campaign management",
     description: "Filmed and edited reels plus carousel design for a photographer and stylist.",
     result: "55k+ views overall",
-    coverImage: "images/campaigns/all-american-summer/01.jpg",
-    heroVideo: "videos/campaigns/all-american-summer/01.mp4",
+    coverImage: "",
+    heroVideo: "Valore Media- My Work all/Fashion & Beauty/all-american summer/All-American Summer Reel.mp4",
     galleryImages: [], supportingVideos: [],
     services: ["Content Creation", "Video Editing"]
   },
@@ -76,8 +76,8 @@ const WORK_PROJECTS = [
     title: "rhode campaign", type: "creative direction",
     description: "Filming, digital cam photos, and an edited reel.",
     result: "4k+ views on the reel",
-    coverImage: "images/campaigns/rhode/01.jpg",
-    heroVideo: "videos/campaigns/rhode/reel.mp4",
+    coverImage: "Valore Media- My Work all/Fashion & Beauty/rhode/Image 1.jpg",
+    heroVideo: "Valore Media- My Work all/Fashion & Beauty/rhode/rhode reel.mp4",
     galleryImages: [], supportingVideos: [],
     services: ["Creative Direction", "Photography", "Video Editing"],
     credit: "moisés alcalá"
@@ -87,8 +87,8 @@ const WORK_PROJECTS = [
     title: "vanlinker campaigns", type: "content creation",
     description: "Multi-season campaign content created for both a photographer and a stylist.",
     result: "40k+ views overall",
-    coverImage: "images/campaigns/vanlinker/01.jpg",
-    heroVideo: "videos/campaigns/vanlinker/01.mp4",
+    coverImage: "",
+    heroVideo: "Valore Media- My Work all/Fashion & Beauty/vanlinker/reel1 vanlinker.mp4",
     galleryImages: [], supportingVideos: [],
     services: ["Content Creation", "Photography"]
   },
@@ -97,8 +97,8 @@ const WORK_PROJECTS = [
     title: "fort lauderdale mag", type: "content creation",
     description: "Winter edition coverage created for both a photographer and a stylist.",
     result: "15k+ views overall",
-    coverImage: "images/campaigns/fl-mag/01.jpg",
-    heroVideo: "videos/campaigns/fl-mag/01.mp4",
+    coverImage: "",
+    heroVideo: "Valore Media- My Work all/Fashion & Beauty/ft. lauderdale mag/fll mag reel.mp4",
     galleryImages: [], supportingVideos: [],
     services: ["Content Creation", "Photography"]
   },
@@ -106,8 +106,8 @@ const WORK_PROJECTS = [
     slug: "fashion-editorial-carousels", category: "fashion-beauty",
     title: "fashion editorial", type: "creative direction",
     description: "Creative carousels and reels created for a fashion photographer's account, plus campaign content coverage.",
-    coverImage: "images/campaigns/fashion-editorial-carousels/01.jpg",
-    heroVideo: "videos/campaigns/fashion-editorial-carousels/01.mp4",
+    coverImage: "",
+    heroVideo: "Valore Media- My Work all/Fashion & Beauty/altar'd state x as revival/Altard State BTS vs Final Reel.mp4",
     galleryImages: [], supportingVideos: [],
     services: ["Creative Direction", "Content Creation"]
   },
@@ -115,8 +115,8 @@ const WORK_PROJECTS = [
     slug: "commercial-productions", category: "fashion-beauty",
     title: "big brand commercial productions", type: "content creation",
     description: "BTS and final content creation — reels and carousels — for major brand commercial productions.",
-    coverImage: "images/campaigns/commercial-productions/01.jpg",
-    heroVideo: "videos/campaigns/commercial-productions/01.mp4",
+    coverImage: "",
+    heroVideo: "Valore Media- My Work all/Lifestyle & Influencer Marketing/Commercial BTS/tom brady x ferrero.mp4",
     galleryImages: [], supportingVideos: [],
     services: ["Content Creation", "Video Editing"]
   },
@@ -126,8 +126,8 @@ const WORK_PROJECTS = [
     slug: "nyfw-runway7", category: "events",
     title: "nyfw · runway7", type: "backstage & event coverage",
     description: "Managed backstage social content, sponsor marketing, runway socials, and designer and audience interview coverage.",
-    coverImage: "images/campaigns/nyfw-runway7/01.jpg",
-    heroVideo: "videos/campaigns/nyfw-runway7/01.mp4",
+    coverImage: "Valore Media- My Work all/Events/NYFW/Product Marketing/runway7 merch/cafenyfw1.jpg",
+    heroVideo: "Valore Media- My Work all/Events/NYFW/Product Marketing/runway7 merch/runway7 merch.mp4",
     galleryImages: [], supportingVideos: [],
     services: ["Content Creation", "Video Editing", "Social Media Management"]
   },
@@ -144,8 +144,8 @@ const WORK_PROJECTS = [
     slug: "miami-swim-week", category: "events",
     title: "miami swim week", type: "bts & runway coverage",
     description: "BTS and runway social coverage — both video and digital cam photos — across the Paraiso and Oceanus shows.",
-    coverImage: "images/campaigns/miami-swim-week/01.jpg",
-    heroVideo: "videos/campaigns/miami-swim-week/01.mp4",
+    coverImage: "Valore Media- My Work all/Events/Miami Swim Week/image1msw.jpg",
+    heroVideo: "Valore Media- My Work all/Events/Miami Swim Week/miami swim week reel.mp4",
     galleryImages: [], supportingVideos: [],
     services: ["Content Creation", "Photography", "Video Editing"]
   },
@@ -153,8 +153,8 @@ const WORK_PROJECTS = [
     slug: "fllfw", category: "events",
     title: "fllfw", type: "backstage & runway coverage",
     description: "Covered both fall and summer shows — backstage and runway social content.",
-    coverImage: "images/campaigns/fllfw/01.jpg",
-    heroVideo: "videos/campaigns/fllfw/01.mp4",
+    coverImage: "",
+    heroVideo: "Valore Media- My Work all/Events/FLLFW/fllfw runway.mp4",
     galleryImages: [], supportingVideos: [],
     services: ["Content Creation", "Video Editing"]
   },
@@ -164,8 +164,8 @@ const WORK_PROJECTS = [
     slug: "lola-campaign", category: "kids-brands",
     title: "lola & the boys · campaign", type: "campaign content",
     description: "Campaign photoshoot content, video and digital cam photos plus edited reels.",
-    coverImage: "images/campaigns/lola-campaign/01.jpg",
-    heroVideo: "videos/campaigns/lola-campaign/01.mp4",
+    coverImage: "",
+    heroVideo: "Valore Media- My Work all/Kids Brands/lola & the boys/campaigns/GRWM final.mp4",
     galleryImages: [], supportingVideos: [],
     services: ["Content Creation", "Photography", "Video Editing"]
   },
@@ -173,8 +173,8 @@ const WORK_PROJECTS = [
     slug: "lola-store", category: "kids-brands",
     title: "lola & the boys · in-store", type: "in-store content",
     description: "In-store content across both Miami locations — Aventura and Dadeland Mall.",
-    coverImage: "images/campaigns/lola-store/01.jpg",
-    heroVideo: "videos/campaigns/lola-store/01.mp4",
+    coverImage: "",
+    heroVideo: "Valore Media- My Work all/Kids Brands/lola & the boys/in-store/cutest kids store.mp4",
     galleryImages: [], supportingVideos: [],
     services: ["Content Creation", "Photography"]
   },
@@ -183,8 +183,8 @@ const WORK_PROJECTS = [
     title: "rooie", type: "full social management",
     description: "Full social media management and strategy — content editing, posting, engagement, and meta ad support.",
     result: "+900% account growth",
-    coverImage: "images/campaigns/rooie/01.jpg",
-    heroVideo: "videos/campaigns/rooie/01.mp4",
+    coverImage: "",
+    heroVideo: "Valore Media- My Work all/Kids Brands/rooie/rooie fun reel.mp4",
     galleryImages: [], supportingVideos: [],
     services: ["Social Media Management", "Strategy", "Content Creation"]
   },
@@ -204,8 +204,8 @@ const WORK_PROJECTS = [
     title: "creator content · matias", type: "influencer content",
     description: "Social content created for a creator with a multi-million follower audience across TikTok and Instagram.",
     result: "5k+ views · 40k+ likes",
-    coverImage: "images/campaigns/matias/01.jpg",
-    heroVideo: "videos/campaigns/matias/reel.mp4",
+    coverImage: "Valore Media- My Work all/Lifestyle & Influencer Marketing/Matias/matiasimage1.png",
+    heroVideo: "Valore Media- My Work all/Lifestyle & Influencer Marketing/Matias/matias reel.mp4",
     galleryImages: [], supportingVideos: [],
     services: ["Content Creation"]
   },
@@ -214,8 +214,8 @@ const WORK_PROJECTS = [
     title: "galore campaign", type: "bts content",
     description: "Covered BTS social content for a campaign featuring a former NFL player, in collaboration with a stylist.",
     result: "65k+ views",
-    coverImage: "images/campaigns/sammis-reyes/01.jpg",
-    heroVideo: "videos/campaigns/sammis-reyes/reel.mp4",
+    coverImage: "",
+    heroVideo: "Valore Media- My Work all/Lifestyle & Influencer Marketing/Sammis Reyes/sammis reyes reel.mp4",
     galleryImages: [], supportingVideos: [],
     services: ["Content Creation", "Video Editing"]
   },
@@ -223,8 +223,8 @@ const WORK_PROJECTS = [
     slug: "alexis-fleming", category: "lifestyle-hospitality",
     title: "creator content", type: "campaign content",
     description: "Created social content across various campaigns for a creator with a sizeable engaged following.",
-    coverImage: "images/campaigns/alexis-fleming/01.jpg",
-    heroVideo: "videos/campaigns/alexis-fleming/reel.mp4",
+    coverImage: "",
+    heroVideo: "Valore Media- My Work all/Lifestyle & Influencer Marketing/Alexis Fleming/alexis reel.mp4",
     galleryImages: [], supportingVideos: [],
     services: ["Content Creation"]
   },
@@ -232,8 +232,8 @@ const WORK_PROJECTS = [
     slug: "myhotbod-pilates", category: "lifestyle-hospitality",
     title: "myhotbod pilates", type: "launch content",
     description: "Covered social content for an opening class launch — video, digital cam photos, story, carousel, and reel.",
-    coverImage: "images/campaigns/myhotbod-pilates/01.jpg",
-    heroVideo: "videos/campaigns/myhotbod-pilates/01.mp4",
+    coverImage: "Valore Media- My Work all/Lifestyle & Influencer Marketing/myhotbod/Carousel/1.png",
+    heroVideo: "Valore Media- My Work all/Lifestyle & Influencer Marketing/myhotbod/adjusted story pilates essentials.mp4",
     galleryImages: [], supportingVideos: [],
     services: ["Content Creation", "Photography", "Video Editing"]
   }
