@@ -20,13 +20,13 @@
   .proj-services{padding:0 var(--pad) 3rem;display:flex;flex-wrap:wrap;gap:.6rem;}
   .proj-service-pill{font-size:.72rem;letter-spacing:.03em;color:var(--bk);border:1px solid rgba(0,0,0,.15);padding:.45rem 1rem;border-radius:2px;opacity:.75;}
 
-  .proj-hero-wrap{width:100%;padding:5rem var(--pad) 1.5rem;background:var(--du);display:flex;justify-content:center;}
-  .proj-reel-stage{display:flex;align-items:center;justify-content:center;gap:1.5rem;}
-  .proj-reel-arrow{width:44px;height:44px;border-radius:50%;border:1px solid rgba(0,0,0,.15);background:var(--pa);
-    display:flex;align-items:center;justify-content:center;font-size:1.4rem;color:var(--bk);cursor:pointer;
-    transition:all .25s;flex-shrink:0;opacity:.7;}
-  .proj-reel-arrow:hover{opacity:1;background:var(--bk);color:var(--pa);border-color:var(--bk);}
-  .proj-phone{width:300px;max-width:70vw;background:#0a0a0a;border-radius:44px;padding:14px;
+  .proj-hero-wrap{width:100%;padding:5rem var(--pad) 1.5rem;background:var(--du);}
+  .proj-reel-row{display:flex;gap:2rem;overflow-x:auto;padding:0 var(--pad) .5rem;scroll-snap-type:x proximity;
+    justify-content:center;-webkit-overflow-scrolling:touch;}
+  .proj-reel-row::-webkit-scrollbar{height:6px;}
+  .proj-reel-row::-webkit-scrollbar-thumb{background:rgba(0,0,0,.15);border-radius:3px;}
+  .proj-phone-item{flex-shrink:0;scroll-snap-align:center;display:flex;flex-direction:column;align-items:center;}
+  .proj-phone{width:260px;max-width:70vw;background:#0a0a0a;border-radius:44px;padding:14px;
     box-shadow:0 40px 100px rgba(0,0,0,.28),0 0 0 1px rgba(0,0,0,.08);flex-shrink:0;}
   .proj-phone-notch{width:90px;height:22px;background:#0a0a0a;border-radius:0 0 16px 16px;margin:0 auto 9px;}
   .proj-hero-media{border-radius:32px;overflow:hidden;position:relative;aspect-ratio:9/16;background:#111;}
@@ -38,10 +38,14 @@
     display:flex;align-items:center;justify-content:center;cursor:pointer;transition:background .2s;}
   .proj-sound-btn:hover{background:rgba(13,13,13,.8);}
   .proj-sound-btn svg{width:16px;height:16px;fill:none;stroke:#fff;stroke-width:1.6;}
-  .proj-reel-counter{text-align:center;margin:1.2rem 0 4rem;font-size:.72rem;letter-spacing:.1em;color:rgba(0,0,0,.4);}
+  .proj-reel-hint{text-align:center;margin:1.2rem 0 .3rem;font-size:.72rem;letter-spacing:.1em;color:rgba(0,0,0,.4);}
+  .proj-credit{text-align:center;margin:0 0 4rem;font-size:.6rem;letter-spacing:.04em;color:rgba(0,0,0,.32);font-style:italic;}
+  .proj-credit:empty{display:none;}
 
-  .proj-gallery{padding:0 var(--pad) 5rem;display:grid;grid-template-columns:repeat(2,1fr);gap:1.5rem;}
+  .proj-gallery{padding:0 var(--pad) 1rem;display:grid;grid-template-columns:repeat(2,1fr);gap:1.5rem;}
   .proj-gallery img{width:100%;display:block;aspect-ratio:4/5;object-fit:cover;background:#e5e0d8;}
+  .proj-gallery-credit{padding:0 var(--pad) 4rem;text-align:center;font-size:.6rem;letter-spacing:.04em;color:rgba(0,0,0,.32);font-style:italic;}
+  .proj-gallery-credit:empty{display:none;}
 
   .proj-nav{border-top:1px solid rgba(0,0,0,.08);padding:2.5rem var(--pad);display:flex;justify-content:space-between;align-items:center;gap:1.5rem;flex-wrap:wrap;}
   .proj-nav-link{font-size:.85rem;color:var(--bk);text-decoration:none;opacity:.6;transition:opacity .2s;display:flex;flex-direction:column;gap:.3rem;}
@@ -53,8 +57,8 @@
 
   @media(max-width:768px){
     .proj-hero{padding:8.5rem var(--pad) 2rem;}
-    .proj-reel-stage{gap:.5rem;}
-    .proj-reel-arrow{width:34px;height:34px;font-size:1.1rem;}
+    .proj-reel-row{justify-content:flex-start;gap:1.2rem;}
+    .proj-phone{width:220px;}
     .proj-gallery{grid-template-columns:1fr;padding:0 var(--pad) 3rem;}
     .proj-nav{flex-direction:column;align-items:flex-start;}
   }
@@ -111,21 +115,16 @@
   <!-- ══ SERVICES ══ -->
   <div class="proj-services" id="projServices"></div>
 
-  <!-- ══ HERO MEDIA (phone mockup carousel — lazy: only loads once opened) ══ -->
+  <!-- ══ HERO MEDIA (row of phones, one per video — lazy: only loads once opened) ══ -->
   <div class="proj-hero-wrap">
-    <div class="proj-reel-stage">
-      <button class="proj-reel-arrow" id="reelPrev" aria-label="previous video">‹</button>
-      <div class="proj-phone">
-        <div class="proj-phone-notch"></div>
-        <div class="proj-hero-media" id="projHeroMedia"></div>
-      </div>
-      <button class="proj-reel-arrow" id="reelNext" aria-label="next video">›</button>
-    </div>
+    <div class="proj-reel-row" id="projReelRow"></div>
   </div>
-  <p class="proj-reel-counter" id="reelCounter"></p>
+  <p class="proj-reel-hint" id="reelHint"></p>
+  <p class="proj-credit" id="reelCredit"></p>
 
   <!-- ══ GALLERY ══ -->
   <div class="proj-gallery" id="projGallery"></div>
+  <p class="proj-gallery-credit" id="galleryCredit"></p>
 
   <!-- ══ PREV / NEXT / BACK ══ -->
   <div class="proj-nav" id="projNav"></div>
@@ -168,91 +167,104 @@
     svcWrap.appendChild(span);
   });
 
-  // The phone carousel shows every vertical video for this project in one
-  // sequence — the hero video first, then any supporting videos — so
-  // nothing lives in a separate cropped grid anymore.
+  // Every vertical video for this project (hero video first, then any
+  // supporting videos) gets its own phone frame, shown side by side in a
+  // horizontally scrollable row — no clicking through required to see them all.
   var reels = [];
   if(project.heroVideo) reels.push({ src: project.heroVideo, poster: project.coverImage || '' });
   (project.supportingVideos || []).forEach(function(src){ reels.push({ src: src, poster: '' }); });
 
-  var heroWrap = document.getElementById('projHeroMedia');
-  var prevBtn = document.getElementById('reelPrev');
-  var nextBtn = document.getElementById('reelNext');
-  var counterEl = document.getElementById('reelCounter');
-  var reelIdx = 0;
-  var reelMuted = true; // preserved across navigation so unmuting once keeps sound on for the next reel too
+  var rowWrap = document.getElementById('projReelRow');
+  var hintEl = document.getElementById('reelHint');
 
-  function renderReel(i){
-    reelIdx = i;
-    var reel = reels[reelIdx];
-    heroWrap.innerHTML =
-      '<video id="heroVid" muted loop playsinline preload="metadata"' +
-        (reel.poster ? ' poster="' + reel.poster + '"' : '') +
-        ' src="' + reel.src + '"></video>' +
-      '<div class="proj-sound-btn" id="soundBtn" role="button" aria-label="toggle sound">' +
-      '<svg id="soundIconOn" viewBox="0 0 24 24" style="display:none;"><path d="M4 9v6h4l5 5V4L8 9H4z"/><path d="M16 8a5 5 0 010 8"/><path d="M18.5 5.5a9 9 0 010 13"/></svg>' +
-      '<svg id="soundIconOff" viewBox="0 0 24 24"><path d="M4 9v6h4l5 5V4L8 9H4z"/><line x1="16" y1="9" x2="21" y2="14"/><line x1="21" y1="9" x2="16" y2="14"/></svg>' +
+  function buildPhone(reel, index){
+    var item = document.createElement('div');
+    item.className = 'proj-phone-item';
+    item.innerHTML =
+      '<div class="proj-phone">' +
+        '<div class="proj-phone-notch"></div>' +
+        '<div class="proj-hero-media">' +
+          '<video muted loop playsinline preload="metadata"' +
+            (reel.poster ? ' poster="' + reel.poster + '"' : '') +
+            ' src="' + reel.src + '"></video>' +
+          '<div class="proj-sound-btn" role="button" aria-label="toggle sound">' +
+            '<svg class="sound-icon-on" viewBox="0 0 24 24" style="display:none;"><path d="M4 9v6h4l5 5V4L8 9H4z"/><path d="M16 8a5 5 0 010 8"/><path d="M18.5 5.5a9 9 0 010 13"/></svg>' +
+            '<svg class="sound-icon-off" viewBox="0 0 24 24"><path d="M4 9v6h4l5 5V4L8 9H4z"/><line x1="16" y1="9" x2="21" y2="14"/><line x1="21" y1="9" x2="16" y2="14"/></svg>' +
+          '</div>' +
+        '</div>' +
       '</div>';
-    var heroVid = document.getElementById('heroVid');
-    var soundBtn = document.getElementById('soundBtn');
-    var iconOn = document.getElementById('soundIconOn');
-    var iconOff = document.getElementById('soundIconOff');
+
+    var vid = item.querySelector('video');
+    var soundBtn = item.querySelector('.proj-sound-btn');
+    var iconOn = item.querySelector('.sound-icon-on');
+    var iconOff = item.querySelector('.sound-icon-off');
 
     function syncIcons(){
-      iconOn.style.display = heroVid.muted ? 'none' : 'block';
-      iconOff.style.display = heroVid.muted ? 'block' : 'none';
+      iconOn.style.display = vid.muted ? 'none' : 'block';
+      iconOff.style.display = vid.muted ? 'block' : 'none';
     }
-
-    heroVid.muted = reelMuted;
-    heroVid.volume = 1;
     syncIcons();
 
-    heroVid.addEventListener('loadedmetadata', function(){
-      if(heroVid.paused){
-        try { heroVid.currentTime = Math.min(0.15, (heroVid.duration || 1) / 4); } catch(e){}
+    vid.addEventListener('loadedmetadata', function(){
+      if(vid.paused){
+        try { vid.currentTime = Math.min(0.15, (vid.duration || 1) / 4); } catch(e){}
       }
     }, { once: true });
-    heroVid.addEventListener('seeked', function(){ heroVid.classList.add('ready'); }, { once: true });
-    heroVid.addEventListener('playing', function(){ heroVid.classList.add('ready'); });
-    heroVid.play().catch(function(){});
+    vid.addEventListener('seeked', function(){ vid.classList.add('ready'); }, { once: true });
+    vid.addEventListener('playing', function(){ vid.classList.add('ready'); });
+    vid.play().catch(function(){});
 
     soundBtn.addEventListener('click', function(){
-      reelMuted = !reelMuted;
-      heroVid.muted = reelMuted;
-      heroVid.volume = 1;
-      // Some browsers need play() called again right after an unmute to
-      // actually start the audio pipeline — this makes the toggle reliable.
-      if(!reelMuted){ heroVid.play().catch(function(){}); }
+      // Unmuting one phone mutes the others, so only one video plays with
+      // sound at a time — otherwise every clip would play over each other.
+      rowWrap.querySelectorAll('video').forEach(function(v){
+        if(v !== vid){ v.muted = true; }
+      });
+      rowWrap.querySelectorAll('.proj-sound-btn').forEach(function(btn){
+        if(btn !== soundBtn){
+          btn.querySelector('.sound-icon-on').style.display = 'none';
+          btn.querySelector('.sound-icon-off').style.display = 'block';
+        }
+      });
+      vid.muted = !vid.muted;
+      vid.volume = 1;
+      if(!vid.muted){ vid.play().catch(function(){}); }
       syncIcons();
     });
 
-    if(counterEl) counterEl.textContent = reels.length > 1 ? (reelIdx + 1) + ' / ' + reels.length : '';
+    return item;
   }
 
   if(reels.length > 0){
-    renderReel(0);
+    reels.forEach(function(reel, i){ rowWrap.appendChild(buildPhone(reel, i)); });
     if(reels.length > 1){
-      prevBtn.addEventListener('click', function(){ renderReel((reelIdx - 1 + reels.length) % reels.length); });
-      nextBtn.addEventListener('click', function(){ renderReel((reelIdx + 1) % reels.length); });
-    } else {
-      prevBtn.style.display = 'none';
-      nextBtn.style.display = 'none';
+      hintEl.textContent = reels.length + ' videos · swipe to see all';
+    }
+    if(project.credit){
+      document.getElementById('reelCredit').textContent = 'photographer: ' + project.credit;
     }
   } else if(project.coverImage){
-    heroWrap.innerHTML = '<img src="' + project.coverImage + '" alt="' + project.title + '" loading="lazy" decoding="async">';
-    prevBtn.style.display = 'none';
-    nextBtn.style.display = 'none';
+    var item = document.createElement('div');
+    item.className = 'proj-phone-item';
+    item.innerHTML =
+      '<div class="proj-phone"><div class="proj-phone-notch"></div>' +
+        '<div class="proj-hero-media"><img src="' + project.coverImage + '" alt="' + project.title + '" loading="lazy" decoding="async"></div>' +
+      '</div>';
+    rowWrap.appendChild(item);
   } else {
     document.querySelector('.proj-hero-wrap').style.display = 'none';
   }
 
-  // gallery — lazy-loaded images only (videos now live in the reel carousel above)
+  // gallery — lazy-loaded images only (videos now live in the phone row above)
   var galWrap = document.getElementById('projGallery');
   (project.galleryImages || []).forEach(function(src){
     var img = document.createElement('img');
     img.src = src; img.alt = project.title; img.loading = 'lazy'; img.decoding = 'async';
     galWrap.appendChild(img);
   });
+  if(project.credit && (project.galleryImages || []).length > 0){
+    document.getElementById('galleryCredit').textContent = 'photographer: ' + project.credit;
+  }
 
   // prev / next within same category
   var siblings = getProjectsByCategory(project.category);
