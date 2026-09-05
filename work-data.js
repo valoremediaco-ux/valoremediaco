@@ -65,12 +65,12 @@ const WORK_PROJECTS = [
   {
     slug: "all-american-summer", category: "fashion-beauty",
     title: "all-american summer", type: "social campaign management",
-    description: "Developed and produced a season's worth of reels and curated carousel content for a photographer-stylist duo, translating a summer collection into scroll-stopping social storytelling.",
+    description: "Filmed and edited a season's worth of reels and curated carousel content for a photographer-stylist duo, layering in social strategy to translate a summer collection into scroll-stopping storytelling.",
     result: "55K+ views generated across the campaign",
     coverImage: "",
     heroVideo: "Valore Media- My Work all/Fashion & Beauty/all-american summer/All-American Summer Reel.mp4",
     galleryImages: [], supportingVideos: ["Valore Media- My Work all/Fashion & Beauty/all-american summer/Camp USA BTS Reel.mp4"],
-    services: ["Content Creation", "Video Editing"]
+    services: ["Filming", "Content Creation", "Social Strategy", "Video Editing"]
   },
   {
     slug: "rhode", category: "fashion-beauty",
@@ -91,26 +91,26 @@ const WORK_PROJECTS = [
     coverImage: "",
     heroVideo: "Valore Media- My Work all/Fashion & Beauty/vanlinker/reel1 vanlinker.mp4",
     galleryImages: [], supportingVideos: ["Valore Media- My Work all/Fashion & Beauty/vanlinker/reel2 vanlinker.mp4", "Valore Media- My Work all/Fashion & Beauty/vanlinker/reel3 vanlinker.mp4", "Valore Media- My Work all/Fashion & Beauty/vanlinker/reel4 vanlinker.mp4", "Valore Media- My Work all/Fashion & Beauty/vanlinker/reel5 vanlinker.mp4"],
-    services: ["Content Creation", "Photography"]
+    services: ["Video Editing", "Social Strategy", "Content Creation"]
   },
   {
     slug: "fl-mag", category: "fashion-beauty",
-    title: "fort lauderdale magazine", type: "content creation",
-    description: "Directed winter-edition editorial coverage for a photographer-stylist duo, delivering a polished seasonal story built for both print and digital impact.",
+    title: "fort lauderdale magazine", type: "filming & social strategy",
+    description: "Filmed and edited winter-edition coverage for a photographer-stylist duo, pairing the footage with social strategy to deliver a polished seasonal story for both print and digital impact.",
     result: "15K+ views across the release",
     coverImage: "",
     heroVideo: "Valore Media- My Work all/Fashion & Beauty/ft. lauderdale mag/fll mag reel.mp4",
     galleryImages: [], supportingVideos: ["Valore Media- My Work all/Fashion & Beauty/ft. lauderdale mag/fll mag creator reel.mp4"],
-    services: ["Content Creation", "Photography"]
+    services: ["Filming", "Social Strategy", "Video Editing"]
   },
   {
     slug: "fashion-editorial-carousels", category: "fashion-beauty",
-    title: "altar'd state editorial", type: "creative direction",
-    description: "Creative-directed a series of editorial carousels and reels for a fashion photographer's account, layering campaign coverage into an elevated, cohesive feed strategy.",
+    title: "altar'd state editorial", type: "video editing & social strategy",
+    description: "Edited a series of BTS-versus-final reels for a fashion photographer's account, pairing precise video editing with social strategy to give behind-the-scenes footage a polished, cohesive feed presence.",
     coverImage: "",
     heroVideo: "Valore Media- My Work all/Fashion & Beauty/altar'd state x as revival/Altard State BTS vs Final Reel.mp4",
     galleryImages: [], supportingVideos: [],
-    services: ["Creative Direction", "Content Creation"],
+    services: ["Video Editing", "Social Strategy"],
     credit: "beth studenberg"
   },
   {

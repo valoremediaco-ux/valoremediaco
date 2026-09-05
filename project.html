@@ -239,9 +239,6 @@
 
   if(reels.length > 0){
     reels.forEach(function(reel, i){ rowWrap.appendChild(buildPhone(reel, i)); });
-    if(project.credit){
-      document.getElementById('reelCredit').textContent = 'photographer: ' + project.credit;
-    }
   } else if(project.coverImage){
     var item = document.createElement('div');
     item.className = 'proj-phone-item';
@@ -261,8 +258,12 @@
     img.src = src; img.alt = project.title; img.loading = 'lazy'; img.decoding = 'async';
     galWrap.appendChild(img);
   });
-  if(project.credit && (project.galleryImages || []).length > 0){
-    document.getElementById('galleryCredit').textContent = 'photographer: ' + project.credit;
+  if(project.credit){
+    if((project.galleryImages || []).length > 0){
+      document.getElementById('galleryCredit').textContent = 'photographer: ' + project.credit;
+    } else if(reels.length > 0){
+      document.getElementById('reelCredit').textContent = 'photographer: ' + project.credit;
+    }
   }
 
   // prev / next within same category
