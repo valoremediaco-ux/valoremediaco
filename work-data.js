@@ -81,7 +81,7 @@ const WORK_PROJECTS = [
     heroVideo: "Valore Media- My Work all/Fashion & Beauty/rhode/rhode reel.mp4",
     galleryImages: ["Valore Media- My Work all/Fashion & Beauty/rhode/Image 2.jpg", "Valore Media- My Work all/Fashion & Beauty/rhode/Image 3.webp", "Valore Media- My Work all/Fashion & Beauty/rhode/Image 4.jpg"], supportingVideos: [],
     services: ["Creative Direction", "Photography", "Video Editing"],
-    credit: "moisés alcalá"
+    credit: "moises alcala"
   },
   {
     slug: "vanlinker", category: "fashion-beauty",
