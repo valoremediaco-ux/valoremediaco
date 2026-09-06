@@ -189,7 +189,7 @@
   // supporting videos) gets its own phone frame, shown side by side in a
   // horizontally scrollable row — no clicking through required to see them all.
   var reels = [];
-  if(project.heroVideo) reels.push({ src: project.heroVideo, poster: project.coverImage || '' });
+  if(project.heroVideo) reels.push({ src: project.heroVideo, poster: project.noVideoCover ? '' : (project.coverImage || '') });
   (project.supportingVideos || []).forEach(function(src){ reels.push({ src: src, poster: '' }); });
 
   var rowWrap = document.getElementById('projReelRow');

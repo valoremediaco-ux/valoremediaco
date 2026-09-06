@@ -74,6 +74,15 @@ const WORK_CATEGORIES = [
                    label shows by default — set this (e.g. "carousel", or a
                    combined string like "creative direction, photographer:
                    x") only for projects that want one
+   noVideoCover    optional, true to stop the hero video from using
+                   coverImage as its click-to-play poster on the project
+                   page — use when coverImage should still serve the
+                   category grid/gallery but the reel itself should just
+                   autoplay normally
+   previewVideo    optional, a different video used only for the category
+                   grid's hover preview, when it should differ from
+                   heroVideo (e.g. heroVideo tells the full project story,
+                   but the cover image was pulled from a different clip)
 */
 const WORK_PROJECTS = [
   // ── Fashion & Beauty ──
@@ -84,6 +93,7 @@ const WORK_PROJECTS = [
     result: "4K+ views on the reel alone",
     coverImage: "Valore Media- My Work all/Fashion & Beauty/rhode/Image 1.jpg",
     heroVideo: "Valore Media- My Work all/Fashion & Beauty/rhode/rhode reel.mp4",
+    noVideoCover: true,
     galleryImages: ["Valore Media- My Work all/Fashion & Beauty/rhode/Image 1.jpg", "Valore Media- My Work all/Fashion & Beauty/rhode/Image 2.jpg", "Valore Media- My Work all/Fashion & Beauty/rhode/Image 3.webp", "Valore Media- My Work all/Fashion & Beauty/rhode/Image 4.jpg"], supportingVideos: [],
     galleryLabel: "creative direction: valore media<br>photographer: moises alcala",
     services: ["Creative Direction", "Capturing Social Content", "Video Editing"],
@@ -95,6 +105,7 @@ const WORK_PROJECTS = [
     description: "Created a range of social designs and content across multiple seasons and apparel lines for altar'd state and altar'd state revival, pairing precise video editing with social strategy to give the work a polished, cohesive presence, featured on altar'd state's Instagram account.",
     coverImage: "Valore Media- My Work all/Fashion & Beauty/altar'd state x as revival/altard state cover.jpg",
     heroVideo: "Valore Media- My Work all/Fashion & Beauty/altar'd state x as revival/Altard State BTS vs Final Reel.mp4",
+    previewVideo: "Valore Media- My Work all/Fashion & Beauty/altar'd state x as revival/AS Revival Carousel Tennis.mp4",
     galleryImages: [], supportingVideos: ["Valore Media- My Work all/Fashion & Beauty/altar'd state x as revival/AS Revival Carousel Tennis.mp4", "Valore Media- My Work all/Fashion & Beauty/altar'd state x as revival/AS Revival Sports Series.mp4", "Valore Media- My Work all/Fashion & Beauty/altar'd state x as revival/AS summer solstice.mp4", "Valore Media- My Work all/Fashion & Beauty/altar'd state x as revival/AS the movement series.mp4", "Valore Media- My Work all/Fashion & Beauty/altar'd state x as revival/Altar'd State Carousel Volleyball.mp4", "Valore Media- My Work all/Fashion & Beauty/altar'd state x as revival/Altar'd state swim salt + sun carousel.mp4"],
     videoLabels: ["bts vs final", "carousel design", "carousel design", "carousel design", "carousel design", "carousel design", "carousel design"],
     services: ["Video Editing", "Social Strategy", "Carousel Design"],

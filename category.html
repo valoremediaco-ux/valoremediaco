@@ -134,7 +134,7 @@
       a.innerHTML =
         '<div class="cat-card-img-wrap">' +
           (p.coverImage ? '<img src="' + p.coverImage + '" alt="' + p.title + '" loading="lazy" decoding="async">' : '') +
-          (p.heroVideo ? '<video class="cat-card-vid" muted loop playsinline preload="metadata" src="' + p.heroVideo + '"></video><span class="cat-card-play" aria-hidden="true"><svg viewBox="0 0 24 24"><polygon points="9,7 9,17 17,12"/></svg></span>' : '') +
+          (p.heroVideo ? '<video class="cat-card-vid" muted loop playsinline preload="metadata" src="' + (p.previewVideo || p.heroVideo) + '"></video><span class="cat-card-play" aria-hidden="true"><svg viewBox="0 0 24 24"><polygon points="9,7 9,17 17,12"/></svg></span>' : '') +
         '</div>' +
         '<p class="cat-card-type">' + p.type + '</p>' +
         '<h3 class="cat-card-title">' + p.title + '</h3>' +
