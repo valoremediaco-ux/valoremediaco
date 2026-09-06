@@ -29,6 +29,7 @@
   .proj-reel-row::-webkit-scrollbar-thumb{background:rgba(0,0,0,.15);border-radius:3px;}
   .proj-phone-item{flex-shrink:0;scroll-snap-align:center;display:flex;flex-direction:column;align-items:center;}
   .proj-phone-label{font-size:.65rem;letter-spacing:.08em;color:rgba(0,0,0,.4);margin-bottom:.8rem;text-align:center;}
+  .proj-phone-credit{font-size:.5rem;letter-spacing:.04em;color:rgba(0,0,0,.28);font-style:italic;margin-top:.6rem;text-align:center;}
   .proj-phone{width:260px;max-width:70vw;background:#0a0a0a;border-radius:44px;padding:14px;
     box-shadow:0 40px 100px rgba(0,0,0,.28),0 0 0 1px rgba(0,0,0,.08);flex-shrink:0;}
   .proj-phone-notch{width:90px;height:22px;background:#0a0a0a;border-radius:0 0 16px 16px;margin:0 auto 9px;}
@@ -187,6 +188,7 @@
     var item = document.createElement('div');
     item.className = 'proj-phone-item';
     var labelText = (project.videoLabels && project.videoLabels[index]) || 'reel';
+    var videoCredit = project.videoCredits && project.videoCredits[index];
     item.innerHTML =
       '<p class="proj-phone-label">' + labelText + '</p>' +
       '<div class="proj-phone">' +
@@ -200,7 +202,8 @@
             '<svg class="sound-icon-off" viewBox="0 0 24 24"><path d="M4 9v6h4l5 5V4L8 9H4z"/><line x1="16" y1="9" x2="21" y2="14"/><line x1="21" y1="9" x2="16" y2="14"/></svg>' +
           '</div>' +
         '</div>' +
-      '</div>';
+      '</div>' +
+      (videoCredit ? '<p class="proj-phone-credit">photographer: ' + videoCredit + '</p>' : '');
 
     var vid = item.querySelector('video');
     var soundBtn = item.querySelector('.proj-sound-btn');
@@ -245,7 +248,7 @@
 
   if(reels.length > 0){
     reels.forEach(function(reel, i){ rowWrap.appendChild(buildPhone(reel, i)); });
-  } else if(project.coverImage){
+  } else if(project.coverImage && (project.galleryImages || []).length === 0){
     var item = document.createElement('div');
     item.className = 'proj-phone-item';
     item.innerHTML =
@@ -259,15 +262,24 @@
 
   // gallery — lazy-loaded images only (videos now live in the phone row above)
   var galWrap = document.getElementById('projGallery');
-  (project.galleryImages || []).forEach(function(src){
+  var galleryImagesToShow = (project.galleryImages || []).slice();
+  if(reels.length === 0 && project.coverImage && galleryImagesToShow.length > 0){
+    galleryImagesToShow.unshift(project.coverImage);
+  }
+  galleryImagesToShow.forEach(function(src){
     var img = document.createElement('img');
     img.src = src; img.alt = project.title; img.loading = 'lazy'; img.decoding = 'async';
     galWrap.appendChild(img);
   });
-  if((project.galleryImages || []).length > 0){
-    document.getElementById('galleryLabel').textContent = 'carousel';
+  // no label shows unless a project explicitly sets one — most galleries are unlabeled
+  if(project.galleryLabel){
+    document.getElementById('galleryLabel').textContent = project.galleryLabel;
   }
-  if(project.credit){
+  // skip the separate credit line if galleryLabel already spells out the credit,
+  // or if per-video credits already cover this project's videos
+  var creditFoldedIntoLabel = project.galleryLabel && project.credit && project.galleryLabel.indexOf(project.credit) !== -1;
+  var hasPerVideoCredits = Array.isArray(project.videoCredits) && project.videoCredits.some(function(c){ return !!c; });
+  if(project.credit && !creditFoldedIntoLabel && !hasPerVideoCredits){
     if((project.galleryImages || []).length > 0){
       document.getElementById('galleryCredit').textContent = 'photographer: ' + project.credit;
     } else if(reels.length > 0){
