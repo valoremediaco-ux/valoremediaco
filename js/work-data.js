@@ -69,7 +69,7 @@ const WORK_PROJECTS = [
     result: "55K+ views generated across the campaign",
     coverImage: "",
     heroVideo: "Valore Media- My Work all/Fashion & Beauty/all-american summer/All-American Summer Reel.mp4",
-    galleryImages: [], supportingVideos: ["Valore Media- My Work all/Fashion & Beauty/all-american summer/Camp USA BTS Reel.mp4"],
+    galleryImages: [], supportingVideos: ["Valore Media- My Work all/Fashion & Beauty/all-american summer/Camp USA BTS Reel.mp4", "Valore Media- My Work all/Fashion & Beauty/all-american summer/Camp USA Carousel.mp4", "Valore Media- My Work all/Fashion & Beauty/all-american summer/Camp USA Carousel 2.mp4"],
     services: ["Filming", "Content Creation", "Social Strategy", "Video Editing"]
   },
   {
@@ -90,7 +90,7 @@ const WORK_PROJECTS = [
     result: "40K+ views across the campaign",
     coverImage: "",
     heroVideo: "Valore Media- My Work all/Fashion & Beauty/vanlinker/reel1 vanlinker.mp4",
-    galleryImages: [], supportingVideos: ["Valore Media- My Work all/Fashion & Beauty/vanlinker/reel2 vanlinker.mp4", "Valore Media- My Work all/Fashion & Beauty/vanlinker/reel3 vanlinker.mp4", "Valore Media- My Work all/Fashion & Beauty/vanlinker/reel4 vanlinker.mp4", "Valore Media- My Work all/Fashion & Beauty/vanlinker/reel5 vanlinker.mp4"],
+    galleryImages: [], supportingVideos: ["Valore Media- My Work all/Fashion & Beauty/vanlinker/reel2 vanlinker.mp4", "Valore Media- My Work all/Fashion & Beauty/vanlinker/reel 3 vanlinker.mp4", "Valore Media- My Work all/Fashion & Beauty/vanlinker/reel 4 vanlinker.mp4", "Valore Media- My Work all/Fashion & Beauty/vanlinker/reel 5 vanlinker.mp4"],
     services: ["Video Editing", "Social Strategy", "Content Creation"]
   },
   {
@@ -100,7 +100,7 @@ const WORK_PROJECTS = [
     result: "15K+ views across the release",
     coverImage: "",
     heroVideo: "Valore Media- My Work all/Fashion & Beauty/ft. lauderdale mag/fll mag reel.mp4",
-    galleryImages: [], supportingVideos: ["Valore Media- My Work all/Fashion & Beauty/ft. lauderdale mag/fll mag creator reel.mp4"],
+    galleryImages: [], supportingVideos: ["Valore Media- My Work all/Fashion & Beauty/ft. lauderdale mag/fll mag creator reel.mp4", "Valore Media- My Work all/Fashion & Beauty/ft. lauderdale mag/fll mag carousel.mp4"],
     services: ["Filming", "Social Strategy", "Video Editing"]
   },
   {
@@ -109,7 +109,7 @@ const WORK_PROJECTS = [
     description: "Edited a series of BTS-versus-final reels for a fashion photographer's account, pairing precise video editing with social strategy to give behind-the-scenes footage a polished, cohesive feed presence.",
     coverImage: "",
     heroVideo: "Valore Media- My Work all/Fashion & Beauty/altar'd state x as revival/Altard State BTS vs Final Reel.mp4",
-    galleryImages: [], supportingVideos: [],
+    galleryImages: [], supportingVideos: ["Valore Media- My Work all/Fashion & Beauty/altar'd state x as revival/AS Revival Carousel Tennis.mp4", "Valore Media- My Work all/Fashion & Beauty/altar'd state x as revival/AS Revival Sports Series.mp4", "Valore Media- My Work all/Fashion & Beauty/altar'd state x as revival/AS summer solstice.mp4", "Valore Media- My Work all/Fashion & Beauty/altar'd state x as revival/AS the movement series.mp4", "Valore Media- My Work all/Fashion & Beauty/altar'd state x as revival/Altar'd State Carousel Volleyball.mp4", "Valore Media- My Work all/Fashion & Beauty/altar'd state x as revival/Altar'd state swim salt + sun carousel.mp4"],
     services: ["Video Editing", "Social Strategy"],
     credit: "beth studenberg"
   },
@@ -137,7 +137,7 @@ const WORK_PROJECTS = [
     slug: "miami-swim-week", category: "events",
     title: "miami swim week", type: "bts & runway coverage",
     description: "Led on-the-ground social coverage across two Miami Swim Week shows, Paraiso and Oceanus, pairing runway footage with digital camera photography for a full editorial arc.",
-    coverImage: "Valore Media- My Work all/Events/Miami Swim Week/image1msw.jpg",
+    coverImage: "Valore Media- My Work all/Events/Miami Swim Week/image1 msw.jpg",
     heroVideo: "Valore Media- My Work all/Events/Miami Swim Week/miami swim week reel.mp4",
     galleryImages: ["Valore Media- My Work all/Events/Miami Swim Week/image2msw.jpg", "Valore Media- My Work all/Events/Miami Swim Week/image3msw.jpg", "Valore Media- My Work all/Events/Miami Swim Week/image4msw.jpg", "Valore Media- My Work all/Events/Miami Swim Week/image5msw.jpg", "Valore Media- My Work all/Events/Miami Swim Week/image6msw.jpg", "Valore Media- My Work all/Events/Miami Swim Week/image7msw.jpg", "Valore Media- My Work all/Events/Miami Swim Week/image8msw.jpg", "Valore Media- My Work all/Events/Miami Swim Week/image9msw.jpg"], supportingVideos: ["Valore Media- My Work all/Events/Miami Swim Week/runway footage.mp4"],
     services: ["Content Creation", "Photography", "Video Editing"]
@@ -158,8 +158,8 @@ const WORK_PROJECTS = [
     title: "lola & the boys · campaign", type: "campaign content",
     description: "Creative-directed a full campaign photoshoot for a children's fashion label, bringing video, digital camera photography, and edited reels together into one cohesive launch story.",
     coverImage: "",
-    heroVideo: "Valore Media- My Work all/Kids Brands/lola & the boys/campaigns/GRWM final.mp4",
-    galleryImages: [], supportingVideos: [],
+    heroVideo: "Valore Media- My Work all/Kids Brands/lola & the boys/campaigns/GRWM final compressed.mp4",
+    galleryImages: [], supportingVideos: ["Valore Media- My Work all/Kids Brands/lola & the boys/campaigns/4th of july final.mp4", "Valore Media- My Work all/Kids Brands/lola & the boys/campaigns/Final POV Kids Clothes LOLA.mp4", "Valore Media- My Work all/Kids Brands/lola & the boys/campaigns/days of the week final.mp4", "Valore Media- My Work all/Kids Brands/lola & the boys/campaigns/final barbie lola reel 1 draft.mp4", "Valore Media- My Work all/Kids Brands/lola & the boys/campaigns/final girlhood lola reel 2.mp4", "Valore Media- My Work all/Kids Brands/lola & the boys/campaigns/the theme is final.mp4"],
     services: ["Content Creation", "Photography", "Video Editing"]
   },
   {
@@ -168,7 +168,7 @@ const WORK_PROJECTS = [
     description: "Produced in-store lifestyle content across both Miami retail locations, translating the in-person shopping experience into scroll-stopping social moments.",
     coverImage: "",
     heroVideo: "Valore Media- My Work all/Kids Brands/lola & the boys/in-store/cutest kids store.mp4",
-    galleryImages: [], supportingVideos: [],
+    galleryImages: [], supportingVideos: ["Valore Media- My Work all/Kids Brands/lola & the boys/in-store/budget.mp4", "Valore Media- My Work all/Kids Brands/lola & the boys/in-store/dont you want to judge me.mp4", "Valore Media- My Work all/Kids Brands/lola & the boys/in-store/events.mp4", "Valore Media- My Work all/Kids Brands/lola & the boys/in-store/im sick final.mp4"],
     services: ["Content Creation", "Photography"]
   },
   {
@@ -218,7 +218,7 @@ const WORK_PROJECTS = [
     description: "Directed launch-day social coverage for a new pilates studio's opening class, bringing together video, digital camera photography, stories, a carousel, and a reel to build anticipation from day one.",
     coverImage: "Valore Media- My Work all/Lifestyle & Influencer Marketing/myhotbod/Carousel/1.png",
     heroVideo: "Valore Media- My Work all/Lifestyle & Influencer Marketing/myhotbod/adjusted story pilates essentials.mp4",
-    galleryImages: [], supportingVideos: [],
+    galleryImages: ["Valore Media- My Work all/Lifestyle & Influencer Marketing/myhotbod/Carousel/2.png", "Valore Media- My Work all/Lifestyle & Influencer Marketing/myhotbod/Carousel/3.png"], supportingVideos: ["Valore Media- My Work all/Lifestyle & Influencer Marketing/myhotbod/adjusted perreo pilates.mp4"],
     services: ["Content Creation", "Photography", "Video Editing"]
   }
 ];
