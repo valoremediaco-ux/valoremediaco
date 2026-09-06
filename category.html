@@ -146,10 +146,14 @@
   /* ── show a real video frame at rest, hover adds motion + sound ── */
   var noHover = window.matchMedia && window.matchMedia('(hover: none)').matches;
 
-  // As soon as each video's metadata is ready, seek a fraction of a second
-  // in and grab that frame as a static "poster" — this only pulls a small
-  // slice of the file, not the whole video, so it stays lightweight.
+  // Only auto-grab a resting frame from the video when the project has no
+  // explicit cover image — otherwise that auto-grabbed frame would just
+  // silently replace the chosen cover the moment it's ready, which is
+  // exactly the bug that made custom cover images seem to never "stick."
   grid.querySelectorAll('.cat-card-vid').forEach(function(vid){
+    var wrap = vid.closest('.cat-card-img-wrap');
+    var hasCover = !!wrap.querySelector('img');
+    if(hasCover) return;
     vid.addEventListener('loadedmetadata', function(){
       try { vid.currentTime = Math.min(0.15, (vid.duration || 1) / 4); } catch(e){}
     }, { once: true });
@@ -161,6 +165,7 @@
   function playPreview(vid){
     vid.currentTime = 0;
     vid.muted = false;
+    vid.classList.add('ready');
     vid.play().catch(function(){
       vid.muted = true;
       vid.play().catch(function(){});
@@ -168,7 +173,14 @@
   }
   function stopPreview(wrap, vid){
     vid.pause(); vid.muted = true;
-    try { vid.currentTime = Math.min(0.15, (vid.duration || 1) / 4); } catch(e){}
+    var hasCover = !!wrap.querySelector('img');
+    if(hasCover){
+      // return to showing the static cover image, not an arbitrary video frame
+      vid.classList.remove('ready');
+      vid.currentTime = 0;
+    } else {
+      try { vid.currentTime = Math.min(0.15, (vid.duration || 1) / 4); } catch(e){}
+    }
   }
   if(!noHover){
     grid.addEventListener('mouseover', function(e){

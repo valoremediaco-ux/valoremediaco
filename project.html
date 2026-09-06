@@ -36,12 +36,17 @@
   .proj-hero-media{border-radius:32px;overflow:hidden;position:relative;aspect-ratio:9/16;background:#111;}
   .proj-hero-media video,.proj-hero-media img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;background:#111;}
   .proj-hero-media video{opacity:0;transition:opacity .4s ease;}
+  .proj-hero-media video[poster]{opacity:1;}
   .proj-hero-media video.ready{opacity:1;}
   .proj-sound-btn{position:absolute;bottom:1rem;right:1rem;z-index:5;width:38px;height:38px;border-radius:50%;
     background:rgba(13,13,13,.55);backdrop-filter:blur(6px);border:1px solid rgba(255,255,255,.25);
     display:flex;align-items:center;justify-content:center;cursor:pointer;transition:background .2s;}
   .proj-sound-btn:hover{background:rgba(13,13,13,.8);}
   .proj-sound-btn svg{width:16px;height:16px;fill:none;stroke:#fff;stroke-width:1.6;}
+  .proj-play-icon{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);z-index:4;
+    width:56px;height:56px;border-radius:50%;background:rgba(13,13,13,.55);backdrop-filter:blur(6px);
+    display:flex;align-items:center;justify-content:center;pointer-events:none;}
+  .proj-play-icon svg{width:20px;height:20px;fill:#fff;margin-left:3px;}
   .proj-credit{text-align:left;padding:1rem var(--pad) 4rem;margin:0;font-size:.5rem;letter-spacing:.04em;color:rgba(0,0,0,.28);font-style:italic;}
   .proj-credit:empty{display:none;}
 
@@ -201,12 +206,14 @@
             '<svg class="sound-icon-on" viewBox="0 0 24 24" style="display:none;"><path d="M4 9v6h4l5 5V4L8 9H4z"/><path d="M16 8a5 5 0 010 8"/><path d="M18.5 5.5a9 9 0 010 13"/></svg>' +
             '<svg class="sound-icon-off" viewBox="0 0 24 24"><path d="M4 9v6h4l5 5V4L8 9H4z"/><line x1="16" y1="9" x2="21" y2="14"/><line x1="21" y1="9" x2="16" y2="14"/></svg>' +
           '</div>' +
+          (reel.poster ? '<span class="proj-play-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><polygon points="9,7 9,17 17,12"/></svg></span>' : '') +
         '</div>' +
       '</div>' +
       (videoCredit ? '<p class="proj-phone-credit">photographer: ' + videoCredit + '</p>' : '');
 
     var vid = item.querySelector('video');
     var soundBtn = item.querySelector('.proj-sound-btn');
+    var playIcon = item.querySelector('.proj-play-icon');
     var iconOn = item.querySelector('.sound-icon-on');
     var iconOff = item.querySelector('.sound-icon-off');
 
@@ -216,14 +223,34 @@
     }
     syncIcons();
 
-    vid.addEventListener('loadedmetadata', function(){
-      if(vid.paused){
-        try { vid.currentTime = Math.min(0.15, (vid.duration || 1) / 4); } catch(e){}
-      }
-    }, { once: true });
-    vid.addEventListener('seeked', function(){ vid.classList.add('ready'); }, { once: true });
-    vid.addEventListener('playing', function(){ vid.classList.add('ready'); });
-    vid.play().catch(function(){});
+    if(reel.poster){
+      // An explicit cover image was chosen for this phone — respect it.
+      // Don't auto-seek or autoplay over it; only play once the person
+      // actually clicks/taps, which is what makes a "cover" meaningful.
+      vid.addEventListener('playing', function(){ vid.classList.add('ready'); });
+      var media = item.querySelector('.proj-hero-media');
+      media.addEventListener('click', function(e){
+        if(e.target.closest('.proj-sound-btn')) return;
+        if(vid.paused){
+          vid.play().catch(function(){});
+          if(playIcon) playIcon.style.display = 'none';
+        } else {
+          vid.pause();
+          vid.classList.remove('ready');
+          vid.currentTime = 0;
+          if(playIcon) playIcon.style.display = '';
+        }
+      });
+    } else {
+      vid.addEventListener('loadedmetadata', function(){
+        if(vid.paused){
+          try { vid.currentTime = Math.min(0.15, (vid.duration || 1) / 4); } catch(e){}
+        }
+      }, { once: true });
+      vid.addEventListener('seeked', function(){ vid.classList.add('ready'); }, { once: true });
+      vid.addEventListener('playing', function(){ vid.classList.add('ready'); });
+      vid.play().catch(function(){});
+    }
 
     soundBtn.addEventListener('click', function(){
       // Unmuting one phone mutes the others, so only one video plays with
