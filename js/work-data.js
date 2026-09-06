@@ -84,8 +84,8 @@ const WORK_PROJECTS = [
     result: "4K+ views on the reel alone",
     coverImage: "Valore Media- My Work all/Fashion & Beauty/rhode/Image 1.jpg",
     heroVideo: "Valore Media- My Work all/Fashion & Beauty/rhode/rhode reel.mp4",
-    galleryImages: ["Valore Media- My Work all/Fashion & Beauty/rhode/Image 2.jpg", "Valore Media- My Work all/Fashion & Beauty/rhode/Image 3.webp", "Valore Media- My Work all/Fashion & Beauty/rhode/Image 4.jpg"], supportingVideos: [],
-    galleryLabel: "creative direction, photographer: moises alcala",
+    galleryImages: ["Valore Media- My Work all/Fashion & Beauty/rhode/Image 1.jpg", "Valore Media- My Work all/Fashion & Beauty/rhode/Image 2.jpg", "Valore Media- My Work all/Fashion & Beauty/rhode/Image 3.webp", "Valore Media- My Work all/Fashion & Beauty/rhode/Image 4.jpg"], supportingVideos: [],
+    galleryLabel: "creative direction: valore media<br>photographer: moises alcala",
     services: ["Creative Direction", "Capturing Social Content", "Video Editing"],
     credit: "moises alcala"
   },
