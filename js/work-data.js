@@ -55,6 +55,12 @@ const WORK_CATEGORIES = [
    heroVideo       optional, first video in the project's phone carousel
    galleryImages   array of additional image paths
    supportingVideos array of additional videos, shown in the phone carousel after heroVideo
+   videoLabels     optional, array of tiny labels shown above each phone, in the
+                   same order as [heroVideo, ...supportingVideos]. Defaults to
+                   "reel" for every video when omitted — set this when a
+                   project's videos are actually separate brands/pieces
+                   (e.g. commercial-productions) so each phone is labeled
+                   with what it actually is instead of a generic "reel"
    services        array of service tags shown on the card
    credit          optional, "photographer: [name]" shown as tiny caption
                    text beneath a project's media when a specific external
@@ -82,6 +88,14 @@ const WORK_PROJECTS = [
     galleryImages: ["Valore Media- My Work all/Fashion & Beauty/rhode/Image 2.jpg", "Valore Media- My Work all/Fashion & Beauty/rhode/Image 3.webp", "Valore Media- My Work all/Fashion & Beauty/rhode/Image 4.jpg"], supportingVideos: [],
     services: ["Creative Direction", "Photography", "Video Editing"],
     credit: "moises alcala"
+  },
+  {
+    slug: "palmola-swim", category: "fashion-beauty",
+    title: "palmola swim", type: "creative direction",
+    description: "Creative-directed, filmed, and photographed a group swimwear campaign on location, then edited the footage and stills into launch-ready content for the brand's social channels.",
+    coverImage: "Valore Media- My Work all/Fashion & Beauty/palmola swim/image-16-6a67be5a.jpg",
+    galleryImages: ["Valore Media- My Work all/Fashion & Beauty/palmola swim/image-17-2cf3be5b.jpg", "Valore Media- My Work all/Fashion & Beauty/palmola swim/image-18-9097d333.jpg", "Valore Media- My Work all/Fashion & Beauty/palmola swim/image-19-c1465475.jpg"], supportingVideos: [],
+    services: ["Creative Direction", "Photography", "Content Creation", "Filming", "Video Editing"]
   },
   {
     slug: "vanlinker", category: "fashion-beauty",
@@ -120,6 +134,7 @@ const WORK_PROJECTS = [
     coverImage: "",
     heroVideo: "Valore Media- My Work all/Lifestyle & Influencer Marketing/Commercial BTS/tom brady x ferrero.mp4",
     galleryImages: [], supportingVideos: ["Valore Media- My Work all/Lifestyle & Influencer Marketing/Commercial BTS/land o'lakes butter.mp4", "Valore Media- My Work all/Lifestyle & Influencer Marketing/Commercial BTS/lucky strike.mp4", "Valore Media- My Work all/Lifestyle & Influencer Marketing/Commercial BTS/on x jd.mp4", "Valore Media- My Work all/Lifestyle & Influencer Marketing/Commercial BTS/visit fort myers.mp4"],
+    videoLabels: ["tom brady x ferrero", "land o'lakes butter", "lucky strike", "on x jd", "visit fort myers"],
     services: ["Content Creation", "Video Editing"]
   },
 
@@ -159,7 +174,7 @@ const WORK_PROJECTS = [
     description: "Creative-directed a full campaign photoshoot for a children's fashion label, bringing video, digital camera photography, and edited reels together into one cohesive launch story.",
     coverImage: "",
     heroVideo: "Valore Media- My Work all/Kids Brands/lola & the boys/campaigns/GRWM final compressed.mp4",
-    galleryImages: [], supportingVideos: ["Valore Media- My Work all/Kids Brands/lola & the boys/campaigns/4th of july final.mp4", "Valore Media- My Work all/Kids Brands/lola & the boys/campaigns/Final POV Kids Clothes LOLA.mp4", "Valore Media- My Work all/Kids Brands/lola & the boys/campaigns/days of the week final.mp4", "Valore Media- My Work all/Kids Brands/lola & the boys/campaigns/final barbie lola reel 1 draft.mp4", "Valore Media- My Work all/Kids Brands/lola & the boys/campaigns/final girlhood lola reel 2.mp4", "Valore Media- My Work all/Kids Brands/lola & the boys/campaigns/the theme is final.mp4"],
+    galleryImages: ["Valore Media- My Work all/Kids Brands/lola & the boys/campaigns/image-13-bd4fd37e.jpg", "Valore Media- My Work all/Kids Brands/lola & the boys/campaigns/image-14-91b9c544.jpg", "Valore Media- My Work all/Kids Brands/lola & the boys/campaigns/image-15-0d4b1eab.jpg"], supportingVideos: ["Valore Media- My Work all/Kids Brands/lola & the boys/campaigns/4th of july final.mp4", "Valore Media- My Work all/Kids Brands/lola & the boys/campaigns/Final POV Kids Clothes LOLA.mp4", "Valore Media- My Work all/Kids Brands/lola & the boys/campaigns/days of the week final.mp4", "Valore Media- My Work all/Kids Brands/lola & the boys/campaigns/final barbie lola reel 1 draft.mp4", "Valore Media- My Work all/Kids Brands/lola & the boys/campaigns/final girlhood lola reel 2.mp4", "Valore Media- My Work all/Kids Brands/lola & the boys/campaigns/the theme is final.mp4"],
     services: ["Content Creation", "Photography", "Video Editing"]
   },
   {
@@ -168,7 +183,7 @@ const WORK_PROJECTS = [
     description: "Produced in-store lifestyle content across both Miami retail locations, translating the in-person shopping experience into scroll-stopping social moments.",
     coverImage: "",
     heroVideo: "Valore Media- My Work all/Kids Brands/lola & the boys/in-store/cutest kids store.mp4",
-    galleryImages: [], supportingVideos: ["Valore Media- My Work all/Kids Brands/lola & the boys/in-store/budget.mp4", "Valore Media- My Work all/Kids Brands/lola & the boys/in-store/dont you want to judge me.mp4", "Valore Media- My Work all/Kids Brands/lola & the boys/in-store/events.mp4", "Valore Media- My Work all/Kids Brands/lola & the boys/in-store/im sick final.mp4"],
+    galleryImages: ["Valore Media- My Work all/Kids Brands/lola & the boys/in-store/image-09-3e1bf97a.jpg", "Valore Media- My Work all/Kids Brands/lola & the boys/in-store/image-10-fcb4686d.jpg", "Valore Media- My Work all/Kids Brands/lola & the boys/in-store/image-11-4290f338.jpg", "Valore Media- My Work all/Kids Brands/lola & the boys/in-store/image-12-b802a1c3.jpg"], supportingVideos: ["Valore Media- My Work all/Kids Brands/lola & the boys/in-store/budget.mp4", "Valore Media- My Work all/Kids Brands/lola & the boys/in-store/dont you want to judge me.mp4", "Valore Media- My Work all/Kids Brands/lola & the boys/in-store/events.mp4", "Valore Media- My Work all/Kids Brands/lola & the boys/in-store/im sick final.mp4"],
     services: ["Content Creation", "Photography"]
   },
   {
