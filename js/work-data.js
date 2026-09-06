@@ -192,6 +192,14 @@ const WORK_PROJECTS = [
     services: ["Content Creation", "Photography", "Creative Direction"]
   },
   {
+    slug: "lola-ecommerce", category: "kids-brands",
+    title: "lola & the boys · e-commerce", type: "e-commerce product photography",
+    description: "Photographed on-location lifestyle imagery for a children's fashion label's online store, styling and directing each shoot to produce clean, on-brand product photography used directly on their e-commerce site.",
+    coverImage: "Valore Media- My Work all/Kids Brands/lola & the boys/e-commerce/american flag tank.jpg",
+    galleryImages: ["Valore Media- My Work all/Kids Brands/lola & the boys/e-commerce/icy bomb pop tank.jpg", "Valore Media- My Work all/Kids Brands/lola & the boys/e-commerce/sunset zig zag set.jpg", "Valore Media- My Work all/Kids Brands/lola & the boys/e-commerce/hello kitty tennis dress.jpg", "Valore Media- My Work all/Kids Brands/lola & the boys/e-commerce/little blossom romper.jpg", "Valore Media- My Work all/Kids Brands/lola & the boys/e-commerce/gingham romper.jpg"], supportingVideos: [],
+    services: ["Photography", "Creative Direction", "Styling"]
+  },
+  {
     slug: "rooie", category: "kids-brands",
     title: "rooie", type: "full social strategy",
     description: "Ran full social strategy and management, including content editing, publishing cadence, community engagement, and Meta ad support, driving sustained account growth over time.",
