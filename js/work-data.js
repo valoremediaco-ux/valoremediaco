@@ -213,7 +213,7 @@ const WORK_PROJECTS = [
   // ── Lifestyle & Hospitality ──
   {
     slug: "matias", category: "lifestyle-hospitality",
-    title: "creator content · matias", type: "influencer content",
+    title: "creator content · matias ochoa", type: "influencer content",
     description: "Developed social content for Matias Ochoa (@matiasochoa02), a creator commanding a multi-million-follower audience, 15.1M on TikTok and 3.6M on Instagram, crafting content built to perform at that scale, featured on his page.",
     result: "500K+ views and 40K+ likes on featured content",
     coverImage: "",
@@ -223,7 +223,7 @@ const WORK_PROJECTS = [
   },
   {
     slug: "sammis-reyes", category: "lifestyle-hospitality",
-    title: "galore campaign", type: "athlete campaign content",
+    title: "galore x sammis reyes", type: "nfl athlete campaign content",
     description: "Covered behind-the-scenes social content for the Galore campaign starring former NFL player Sammis Reyes (@sammisreyes), whose following spans 1.2M on Instagram and 113K on TikTok, in collaboration with a stylist.",
     result: "65K+ views",
     coverImage: "",
