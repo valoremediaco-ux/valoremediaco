@@ -193,11 +193,11 @@ const WORK_PROJECTS = [
   },
   {
     slug: "lola-ecommerce", category: "kids-brands",
-    title: "lola & the boys · e-commerce", type: "e-commerce product photography",
-    description: "Photographed on-location lifestyle imagery for a children's fashion label's online store, styling and directing each shoot to produce clean, on-brand product photography used directly on their e-commerce site.",
+    title: "lola & the boys · e-commerce", type: "social coverage",
+    description: "Captured casual, social-ready content on digital camera during on-location shoots for a children's fashion label, working alongside their photographer. This coverage was later cross-posted and used directly on their e-commerce site.",
     coverImage: "Valore Media- My Work all/Kids Brands/lola & the boys/e-commerce/american flag tank.jpg",
     galleryImages: ["Valore Media- My Work all/Kids Brands/lola & the boys/e-commerce/icy bomb pop tank.jpg", "Valore Media- My Work all/Kids Brands/lola & the boys/e-commerce/sunset zig zag set.jpg", "Valore Media- My Work all/Kids Brands/lola & the boys/e-commerce/hello kitty tennis dress.jpg", "Valore Media- My Work all/Kids Brands/lola & the boys/e-commerce/little blossom romper.jpg", "Valore Media- My Work all/Kids Brands/lola & the boys/e-commerce/gingham romper.jpg"], supportingVideos: [],
-    services: ["Photography", "Creative Direction", "Styling"]
+    services: ["Social Coverage", "Content Creation"]
   },
   {
     slug: "rooie", category: "kids-brands",
@@ -205,8 +205,8 @@ const WORK_PROJECTS = [
     description: "Ran full social strategy and management, including content editing, publishing cadence, community engagement, and Meta ad support, driving sustained account growth over time.",
     result: "900%+ account growth achieved through consistent strategy",
     coverImage: "",
-    heroVideo: "Valore Media- My Work all/Kids Brands/rooie/rooie fun reel.mp4",
-    galleryImages: [], supportingVideos: ["Valore Media- My Work all/Kids Brands/rooie/pizza boxes reel.mp4", "Valore Media- My Work all/Kids Brands/rooie/rooie blonde girl.mp4", "Valore Media- My Work all/Kids Brands/rooie/rooie ss26 launch.mp4", "Valore Media- My Work all/Kids Brands/rooie/rooie times of the day.mp4"],
+    heroVideo: "Valore Media- My Work all/Kids Brands/rooie/pizza boxes reel.mp4",
+    galleryImages: [], supportingVideos: ["Valore Media- My Work all/Kids Brands/rooie/rooie fun reel.mp4", "Valore Media- My Work all/Kids Brands/rooie/rooie blonde girl.mp4", "Valore Media- My Work all/Kids Brands/rooie/rooie ss26 launch.mp4", "Valore Media- My Work all/Kids Brands/rooie/rooie times of the day.mp4"],
     services: ["Social Media Management", "Strategy", "Content Creation", "Editing"]
   },
   {
