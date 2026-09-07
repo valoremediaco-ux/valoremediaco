@@ -5,7 +5,7 @@
   var show=function(id){var el=g(id);if(el)el.classList.add('in');};
   var seen=false;
   try{seen=sessionStorage.getItem('vm_intro_seen')==='1';}catch(e){}
-  var delay=seen?0:3200;
+  var delay=seen?0:1500;
   // Show logo immediately
   if(li)li.style.opacity='1';
   if(lb)lb.style.width='180px';
@@ -14,7 +14,7 @@
     if(ld)ld.classList.add('gone');
     show('hEye');
     show('hType');
-    setTimeout(function(){show('hSub');show('hScrl');},seen?0:400);
+    setTimeout(function(){show('hSub');show('hScrl');},seen?0:200);
     show('heroImg');
     var navEl=g('nav');if(navEl)navEl.classList.add('vis');
     var pv=g('phoneVid');
