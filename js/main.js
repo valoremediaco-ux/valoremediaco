@@ -197,6 +197,25 @@ function ts(btn){
   if(t)t.addEventListener('click',function(){dd.classList.toggle('open');});
 })();
 
+/* ── CREDENTIALS: click/tap toggle for each item, plus an expand-all button
+   (mobile has no hover, so this is the only way to open items there) ── */
+(function(){
+  var items=document.querySelectorAll('.cred-grid .acc-item');
+  items.forEach(function(item){
+    var header=item.querySelector('.acc-header');
+    if(header)header.addEventListener('click',function(){item.classList.toggle('open');});
+  });
+  var btn=document.getElementById('credExpandAll');
+  if(!btn)return;
+  var dd=document.querySelector('.acc-dropdown');
+  btn.addEventListener('click',function(){
+    var expanding=btn.textContent.trim()==='expand all';
+    items.forEach(function(item){item.classList.toggle('open',expanding);});
+    if(dd)dd.classList.toggle('open',expanding);
+    btn.textContent=expanding?'collapse all':'expand all';
+  });
+})();
+
 /* ── CONTACT FORM: submit without leaving the page ── */
 (function(){
   var f=document.querySelector('.ctform');

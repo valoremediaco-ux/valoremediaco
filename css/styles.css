@@ -730,6 +730,9 @@ footer{background:#060606;border-top:1px solid rgba(255,255,255,.04);padding:2.5
 /* ── ABOUT ACCORDIONS ── */
 .acc-section { margin-top:2.5rem; }
 .acc-title { font-family:var(--P);font-weight:700;font-size:.88rem;margin-bottom:.5rem;text-transform:lowercase;color:rgba(0,0,0,.55); }
+.cred-expand-all{font-family:var(--P);font-size:.78rem;letter-spacing:.03em;color:var(--bk);background:transparent;
+  border:1px solid rgba(0,0,0,.2);border-radius:2px;padding:.6rem 1.4rem;cursor:pointer;transition:background .2s,opacity .2s;}
+.cred-expand-all:hover{background:rgba(0,0,0,.04);}
 .acc-item {
   border-bottom:1px solid rgba(0,0,0,.07);
   overflow:hidden;
