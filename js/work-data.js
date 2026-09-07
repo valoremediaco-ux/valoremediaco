@@ -83,6 +83,13 @@ const WORK_CATEGORIES = [
                    grid's hover preview, when it should differ from
                    heroVideo (e.g. heroVideo tells the full project story,
                    but the cover image was pulled from a different clip)
+   imageCaptions   optional, array of tiny caption strings shown directly
+                   under one specific gallery image, in the same order as
+                   the final displayed gallery (coverImage first, if it's
+                   folded into the plain gallery, then galleryImages in
+                   order). Use null for images that don't need a caption —
+                   e.g. clarifying only one photo in a multi-photo screenshot
+                   is actually this project's work
 */
 const WORK_PROJECTS = [
   // ── Fashion & Beauty ──
@@ -207,7 +214,8 @@ const WORK_PROJECTS = [
     title: "lola & the boys · e-commerce", type: "social coverage",
     description: "Captured casual, social-ready content on digital camera during on-location shoots for a children's fashion label, working alongside their photographer. This coverage was later cross-posted and used directly on their e-commerce site.",
     coverImage: "Valore Media- My Work all/Kids Brands/lola & the boys/e-commerce/american flag tank.jpg",
-    galleryImages: ["Valore Media- My Work all/Kids Brands/lola & the boys/e-commerce/icy bomb pop tank.jpg", "Valore Media- My Work all/Kids Brands/lola & the boys/e-commerce/sunset zig zag set.jpg", "Valore Media- My Work all/Kids Brands/lola & the boys/e-commerce/hello kitty tennis dress.jpg", "Valore Media- My Work all/Kids Brands/lola & the boys/e-commerce/little blossom romper.jpg", "Valore Media- My Work all/Kids Brands/lola & the boys/e-commerce/gingham romper.jpg"], supportingVideos: [],
+    galleryImages: ["Valore Media- My Work all/Kids Brands/lola & the boys/e-commerce/icy bomb pop tank.jpg", "Valore Media- My Work all/Kids Brands/lola & the boys/e-commerce/sunset zig zag set.jpg", "Valore Media- My Work all/Kids Brands/lola & the boys/e-commerce/hello kitty tennis dress.jpg", "Valore Media- My Work all/Kids Brands/lola & the boys/e-commerce/little blossom romper.jpg", "Valore Media- My Work all/Kids Brands/lola & the boys/e-commerce/instagram carousel.jpg"], supportingVideos: [],
+    imageCaptions: [null, null, null, null, null, "Only the first photo shown here is Valoré Media's work. The other images in this Instagram post are from different creators."],
     services: ["Social Coverage", "Content Creation"]
   },
   {
