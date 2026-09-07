@@ -1,31 +1,26 @@
-/* ── CURSOR ── */
-var cr=document.getElementById('cr'),mx=0,my=0,cx=0,cy=0;
-document.addEventListener('mousemove',function(e){mx=e.clientX;my=e.clientY;},{passive:true});
-(function loop(){cx+=(mx-cx)*.12;cy+=(my-cy)*.12;cr.style.left=cx+'px';cr.style.top=cy+'px';requestAnimationFrame(loop);})();
-var _hs='a,button,.blo,.vw,.scard,.tc,.s-pill,.skill-pill,.acc-item,.ccard-header,.pstep,.skill-cat,.scard-header,.acc-header,.skill-cat-header,.iview,.stmt-cta,.nc,.ctlnk,.ctbtn,.ov-back';
-document.addEventListener('mouseover',function(e){if(e.target.closest(_hs))document.body.classList.add('ch');},{passive:true,capture:true});
-document.addEventListener('mouseout',function(e){if(!document.elementFromPoint(mx,my)||!document.elementFromPoint(mx,my).closest(_hs))document.body.classList.remove('ch');},{passive:true,capture:true});
-function hov(){}
-
-/* ── LOADER — fast cream fade ── */
+/* ── LOADER — fast cream fade, skipped on repeat visits within the same session ── */
 (function(){
   var li=document.getElementById('li'),lb=document.getElementById('lb'),ld=document.getElementById('ld');
   var g=function(id){return document.getElementById(id);};
   var show=function(id){var el=g(id);if(el)el.classList.add('in');};
+  var seen=false;
+  try{seen=sessionStorage.getItem('vm_intro_seen')==='1';}catch(e){}
+  var delay=seen?0:1500;
   // Show logo immediately
   if(li)li.style.opacity='1';
   if(lb)lb.style.width='180px';
-  // Fade out loader quickly
+  // Fade out loader quickly (instantly on repeat visits this session)
   setTimeout(function(){
     if(ld)ld.classList.add('gone');
     show('hEye');
     show('hType');
-    setTimeout(function(){show('hSub');show('hScrl');},200);
+    setTimeout(function(){show('hSub');show('hScrl');},seen?0:200);
     show('heroImg');
     var navEl=g('nav');if(navEl)navEl.classList.add('vis');
     var pv=g('phoneVid');
     if(pv){pv.load();pv.play().catch(function(){});}
-  },1500);
+    try{sessionStorage.setItem('vm_intro_seen','1');}catch(e){}
+  },delay);
 })();
 
 /* ── REVEALS ── */
