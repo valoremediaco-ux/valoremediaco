@@ -24,7 +24,7 @@ const WORK_CATEGORIES = [
   {
     slug: "events",
     name: "Events & Productions",
-    description: "Backstage coverage, fashion weeks, brand activations, and live event storytelling.",
+    description: "Backstage coverage, fashion weeks, brand activations, commercial production social coverage, and live event storytelling.",
     coverImage: "images/cover-events.jpg",
     coverVideo: "videos/cover-events.mp4"
   },
@@ -90,12 +90,13 @@ const WORK_CATEGORIES = [
                    order). Use null for images that don't need a caption —
                    e.g. clarifying only one photo in a multi-photo screenshot
                    is actually this project's work
-   galleryColumns  optional, set to 1 to force a single-column gallery
-                   instead of the default 2-column grid — use this when a
-                   project's images have wildly different aspect ratios
-                   (e.g. mixed screenshots), since pairing a very tall image
-                   with a short one in the same grid row leaves a visible
-                   empty gap next to the shorter one
+   galleryLayout   optional, set to "masonry" to use a flowing 2-column
+                   layout instead of the default row-based 2-column grid —
+                   use this when a project's images have wildly different
+                   aspect ratios (e.g. mixed screenshots), since the default
+                   grid matches row heights to the tallest item in each row,
+                   leaving a visible empty gap next to shorter images.
+                   Masonry lets each column flow independently instead
 */
 const WORK_PROJECTS = [
   // ── Fashion & Beauty ──
@@ -222,7 +223,7 @@ const WORK_PROJECTS = [
     coverImage: "Valore Media- My Work all/Kids Brands/lola & the boys/e-commerce/american flag tank.jpg",
     galleryImages: ["Valore Media- My Work all/Kids Brands/lola & the boys/e-commerce/icy bomb pop tank.jpg", "Valore Media- My Work all/Kids Brands/lola & the boys/e-commerce/sunset zig zag set.jpg", "Valore Media- My Work all/Kids Brands/lola & the boys/e-commerce/hello kitty tennis dress.jpg", "Valore Media- My Work all/Kids Brands/lola & the boys/e-commerce/little blossom romper.jpg", "Valore Media- My Work all/Kids Brands/lola & the boys/e-commerce/instagram carousel.jpg"], supportingVideos: [],
     imageCaptions: [null, null, null, null, null, "Only the first photo shown here is Valoré Media's work. The other images in this Instagram post are from different creators."],
-    galleryColumns: 1,
+    galleryLayout: "masonry",
     services: ["Social Coverage", "Content Creation"]
   },
   {
