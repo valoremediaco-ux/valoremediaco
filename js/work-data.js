@@ -90,6 +90,12 @@ const WORK_CATEGORIES = [
                    order). Use null for images that don't need a caption —
                    e.g. clarifying only one photo in a multi-photo screenshot
                    is actually this project's work
+   galleryColumns  optional, set to 1 to force a single-column gallery
+                   instead of the default 2-column grid — use this when a
+                   project's images have wildly different aspect ratios
+                   (e.g. mixed screenshots), since pairing a very tall image
+                   with a short one in the same grid row leaves a visible
+                   empty gap next to the shorter one
 */
 const WORK_PROJECTS = [
   // ── Fashion & Beauty ──
@@ -216,6 +222,7 @@ const WORK_PROJECTS = [
     coverImage: "Valore Media- My Work all/Kids Brands/lola & the boys/e-commerce/american flag tank.jpg",
     galleryImages: ["Valore Media- My Work all/Kids Brands/lola & the boys/e-commerce/icy bomb pop tank.jpg", "Valore Media- My Work all/Kids Brands/lola & the boys/e-commerce/sunset zig zag set.jpg", "Valore Media- My Work all/Kids Brands/lola & the boys/e-commerce/hello kitty tennis dress.jpg", "Valore Media- My Work all/Kids Brands/lola & the boys/e-commerce/little blossom romper.jpg", "Valore Media- My Work all/Kids Brands/lola & the boys/e-commerce/instagram carousel.jpg"], supportingVideos: [],
     imageCaptions: [null, null, null, null, null, "Only the first photo shown here is Valoré Media's work. The other images in this Instagram post are from different creators."],
+    galleryColumns: 1,
     services: ["Social Coverage", "Content Creation"]
   },
   {

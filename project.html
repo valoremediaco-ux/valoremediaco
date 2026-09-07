@@ -53,9 +53,11 @@
   .proj-credit:empty{display:none;}
 
   .proj-gallery{padding:0 var(--pad) 1rem;display:grid;grid-template-columns:repeat(2,1fr);gap:1.5rem;}
+  .proj-gallery.single-col{grid-template-columns:1fr;max-width:36rem;}
   .proj-gallery-label{padding:0 var(--pad);margin:0 0 1.2rem;font-size:.65rem;letter-spacing:.08em;color:rgba(0,0,0,.4);line-height:1.8;}
   .proj-gallery-label:empty{display:none;}
   .proj-gallery img{width:100%;display:block;height:auto;background:#e5e0d8;}
+  .proj-image-caption{font-size:.55rem;letter-spacing:.03em;color:rgba(0,0,0,.4);font-style:italic;margin-top:.5rem;line-height:1.5;}
   .proj-gallery-credit{padding:0 var(--pad) 4rem;margin:0;text-align:left;font-size:.5rem;letter-spacing:.04em;color:rgba(0,0,0,.28);font-style:italic;}
   .proj-gallery-credit:empty{display:none;}
 
@@ -294,14 +296,25 @@
 
   // gallery — lazy-loaded images only (videos now live in the phone row above)
   var galWrap = document.getElementById('projGallery');
+  if(project.galleryColumns === 1){ galWrap.classList.add('single-col'); }
   var galleryImagesToShow = (project.galleryImages || []).slice();
   if(reels.length === 0 && project.coverImage && galleryImagesToShow.length > 0){
     galleryImagesToShow.unshift(project.coverImage);
   }
-  galleryImagesToShow.forEach(function(src){
+  galleryImagesToShow.forEach(function(src, i){
+    var item = document.createElement('div');
+    item.className = 'proj-gallery-item';
     var img = document.createElement('img');
     img.src = src; img.alt = project.title; img.loading = 'lazy'; img.decoding = 'async';
-    galWrap.appendChild(img);
+    item.appendChild(img);
+    var caption = project.imageCaptions && project.imageCaptions[i];
+    if(caption){
+      var cap = document.createElement('p');
+      cap.className = 'proj-image-caption';
+      cap.textContent = caption;
+      item.appendChild(cap);
+    }
+    galWrap.appendChild(item);
   });
   // no label shows unless a project explicitly sets one — most galleries are unlabeled
   if(project.galleryLabel){
