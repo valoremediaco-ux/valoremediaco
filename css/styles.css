@@ -136,7 +136,9 @@ nav.inv .nc{color:var(--pa);border-color:rgba(255,255,255,.25);}
 .s-intro{font-size:.9rem;line-height:2.1;color:rgba(0,0,0,.5);font-weight:300;}
 .s-pills{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:1.5rem;}
 .s-pill{font-size:.68rem;letter-spacing:.04em;padding:.35rem .9rem;border:1px solid rgba(0,0,0,.12);color:rgba(0,0,0,.5);font-weight:400;transition:all .25s;cursor:default;}
-.s-pill:hover{background:var(--bk);color:var(--pa);border-color:var(--bk);}
+@media (hover: hover) and (pointer: fine) {
+  .s-pill:hover{background:var(--bk);color:var(--pa);border-color:var(--bk);}
+}
 .svcs-grid{border-top:1px solid rgba(0,0,0,.08);}
 .scard{
   border-bottom:1px solid rgba(0,0,0,.08);
@@ -144,7 +146,9 @@ nav.inv .nc{color:var(--pa);border-color:rgba(255,255,255,.25);}
   transition:background .25s;
 }
 .scard:last-child{border-bottom:none;}
-.scard:hover{background:var(--du);}
+@media (hover: hover) and (pointer: fine) {
+  .scard:hover{background:var(--du);}
+}
 .scard-header{
   display:flex;align-items:center;justify-content:space-between;
   padding:1.6rem 2rem;cursor:none;
@@ -157,16 +161,18 @@ nav.inv .nc{color:var(--pa);border-color:rgba(255,255,255,.25);}
   transition:transform .35s cubic-bezier(.16,1,.3,1);
   flex-shrink:0;
 }
-.scard:hover .scard-arrow{transform:rotate(180deg);opacity:1;}
+@media (hover: hover) and (pointer: fine) {
+  .scard:hover .scard-arrow{transform:rotate(180deg);opacity:1;}
+}
 .scard.open .scard-arrow{transform:rotate(180deg);opacity:1;}
 .scard-body-wrap{
   max-height:0;overflow:hidden;
   transition:max-height .45s cubic-bezier(.16,1,.3,1),padding .35s ease;
   padding:0 2rem;
 }
-.scard:hover .scard-body-wrap{max-height:300px;padding:0 2rem 1.8rem;}
-.scard.open .scard-body-wrap{max-height:300px;padding:0 2rem 1.8rem;}
-.scard.open .scard-arrow{transform:rotate(180deg);opacity:1;}
+@media (hover: hover) and (pointer: fine) {
+  .scard:hover .scard-body-wrap{max-height:300px;padding:0 2rem 1.8rem;}
+}
 .scard.open .scard-body-wrap{max-height:300px;padding:0 2rem 1.8rem;}
 .scard-body{font-size:.82rem;line-height:2;color:rgba(0,0,0,.48);font-weight:300;margin-bottom:1rem;}
 .scard-list{list-style:none;}

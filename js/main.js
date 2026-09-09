@@ -106,6 +106,12 @@ function toggleCcard(header){
   card.classList.toggle('open');
 }
 
+function toggleCard(header){
+  var card=header.closest('.scard');
+  if(!card)return;
+  card.classList.toggle('open');
+}
+
 function openOv(slug){
   if(!overlay||!ovBody||!ovTitle)return false;
   renderCategory(slug);

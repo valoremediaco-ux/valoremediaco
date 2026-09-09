@@ -163,7 +163,7 @@ const WORK_PROJECTS = [
     description: "Filmed and edited content for a season's worth of reels and curated carousel content, layering in social strategy to translate a summer collection into scroll-stopping storytelling for fashion professionals.",
     result: "55K+ views generated across the campaign",
     coverImage: "",
-    heroVideo: "Valore Media- My Work all/Fashion & Beauty/all-american summer/All-American Summer Reel.mp4",
+    heroVideo: "Valore Media- My Work all/Fashion & Beauty/all-american summer/All-American_Summer_Reel_audio.mp4",
     galleryImages: [], supportingVideos: ["Valore Media- My Work all/Fashion & Beauty/all-american summer/Camp USA BTS Reel.mp4", "Valore Media- My Work all/Fashion & Beauty/all-american summer/Camp USA Carousel.mp4", "Valore Media- My Work all/Fashion & Beauty/all-american summer/Camp USA Carousel 2.mp4"],
     videoLabels: ["reel", "reel", "carousel design", "carousel design"],
     videoCredits: [null, null, "beth studenberg", "beth studenberg"],
@@ -182,10 +182,11 @@ const WORK_PROJECTS = [
   {
     slug: "nyfw-runway7", category: "events",
     title: "nyfw · runway7", type: "product marketing & event coverage",
-    description: "Directed and captured social coverage for a season's New York Fashion Week show for Runway7, spanning backstage access, sponsor and product marketing integrations, runway moments, and interviews with designers and high-profile guests.",
+    description: "Directed and captured social coverage for a season's New York Fashion Week show for Runway7, spanning backstage access, sponsor and product marketing integrations, runway moments, and interviews with designers and high-profile guests, including Chilean actress and singer Kel Calderon, who has 1.8M followers on Instagram.",
     coverImage: "Valore Media- My Work all/Events/NYFW/Product Marketing/runway7 merch/cafenyfw1.jpg",
     heroVideo: "Valore Media- My Work all/Events/NYFW/Product Marketing/runway7 merch/runway7 merch.mp4",
-    galleryImages: ["Valore Media- My Work all/Events/NYFW/Product Marketing/runway7 merch/cafenyfw2.jpg", "Valore Media- My Work all/Events/NYFW/Product Marketing/hard rock cafe/image1nyfwhardrock.jpg", "Valore Media- My Work all/Events/NYFW/Product Marketing/hard rock cafe/image2nyfwhardrock.jpg"], supportingVideos: ["Valore Media- My Work all/Events/NYFW/Product Marketing/runway7 merch/cafenyfw3.mp4", "Valore Media- My Work all/Events/NYFW/Product Marketing/hard rock cafe/videonyfwhardrock.mp4"],
+    galleryImages: ["Valore Media- My Work all/Events/NYFW/Product Marketing/runway7 merch/cafenyfw2.jpg", "Valore Media- My Work all/Events/NYFW/Product Marketing/hard rock cafe/image1nyfwhardrock.jpg", "Valore Media- My Work all/Events/NYFW/Product Marketing/hard rock cafe/image2nyfwhardrock.jpg"], supportingVideos: ["Valore Media- My Work all/Events/NYFW/Product Marketing/runway7 merch/cafenyfw3.mp4", "Valore Media- My Work all/Events/NYFW/Product Marketing/hard rock cafe/videonyfwhardrock.mp4", "Valore Media- My Work all/Events/NYFW/kel_calderon_nyfw.mp4"],
+    videoLabels: ["", "", "", "interview · kel calderon"],
     services: ["Social Strategy", "Content Creation", "Video Editing", "Interviews"]
   },
   {
@@ -245,6 +246,17 @@ const WORK_PROJECTS = [
     heroVideo: "Valore Media- My Work all/Kids Brands/lola & the boys/campaigns/GRWM final compressed.mp4",
     galleryImages: ["Valore Media- My Work all/Kids Brands/lola & the boys/campaigns/image-13-bd4fd37e.jpg", "Valore Media- My Work all/Kids Brands/lola & the boys/campaigns/image-14-91b9c544.jpg", "Valore Media- My Work all/Kids Brands/lola & the boys/campaigns/image-15-0d4b1eab.jpg"], supportingVideos: ["Valore Media- My Work all/Kids Brands/lola & the boys/campaigns/4th of july final.mp4", "Valore Media- My Work all/Kids Brands/lola & the boys/campaigns/Final POV Kids Clothes LOLA.mp4", "Valore Media- My Work all/Kids Brands/lola & the boys/campaigns/days of the week final.mp4", "Valore Media- My Work all/Kids Brands/lola & the boys/campaigns/final barbie lola reel 1 draft.mp4", "Valore Media- My Work all/Kids Brands/lola & the boys/campaigns/final girlhood lola reel 2.mp4", "Valore Media- My Work all/Kids Brands/lola & the boys/campaigns/the theme is final.mp4"],
     services: ["Content Creation", "Photography", "Filming", "Video Editing"]
+  },
+  {
+    slug: "kids-creators", category: "kids-brands",
+    title: "kids content creators", type: "creator content & collaborations",
+    description: "Created content for a photographer's Instagram account, in collaboration with kids' content creator @kynlee_the_great, whose account reaches 1.4M followers on Instagram.",
+    result: "50K+ views on the collaboration video",
+    coverImage: "",
+    heroVideo: "Valore Media- My Work all/Kids Brands/kids content creators/kynlee reel lola and the boys.mp4",
+    galleryImages: [], supportingVideos: [],
+    services: ["Content Creation", "Creative Direction"],
+    credit: "beth studenberg"
   },
   // ── Lifestyle & Hospitality ──
   {
