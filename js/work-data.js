@@ -102,7 +102,7 @@ const WORK_PROJECTS = [
   // ── Fashion & Beauty ──
   {
     slug: "rhode", category: "fashion-beauty",
-    title: "rhode campaign", type: "creative direction & social content",
+    title: "rhode editorial", type: "creative direction & social content",
     description: "Creative-directed and captured social-ready content, shaping an editorial-style reel into a tactile, sun-soaked visual narrative built around the brand's world, in collaboration with a team of creatives.",
     result: "4K+ views on the reel alone",
     coverImage: "Valore Media- My Work all/Fashion & Beauty/rhode/Image 1.jpg",
@@ -115,13 +115,14 @@ const WORK_PROJECTS = [
   },
   {
     slug: "fashion-editorial-carousels", category: "fashion-beauty",
-    title: "altar'd state editorial", type: "content creation & social strategy",
-    description: "Created a range of social designs and content across multiple seasons and apparel lines in collaboration with altar'd state's brand photographer, pairing precise video editing with social strategy to give the work a polished, cohesive presence, with pieces featured on altar'd state and altar'd state revival's Instagram accounts.",
-    coverImage: "Valore Media- My Work all/Fashion & Beauty/altar'd state x as revival/altard state cover.jpg",
-    heroVideo: "Valore Media- My Work all/Fashion & Beauty/altar'd state x as revival/Altard State BTS vs Final Reel.mp4",
+    title: "altar'd state campaigns", type: "content creation & social strategy",
+    description: "Designed and edited a range of social content across multiple seasons and apparel lines using imagery from altar'd state's brand photographer, pairing polished video editing with carousel design + social strategy to give the work a polished, cohesive presence, with design featured on altar'd state revival's Instagram account.",
+    result: "150K+ views overall",
+    coverImage: "",
+    heroVideo: "Valore Media- My Work all/Fashion & Beauty/altar'd state x as revival/AS Revival Carousel Tennis.mp4",
     previewVideo: "Valore Media- My Work all/Fashion & Beauty/altar'd state x as revival/AS Revival Carousel Tennis.mp4",
-    galleryImages: [], supportingVideos: ["Valore Media- My Work all/Fashion & Beauty/altar'd state x as revival/AS Revival Carousel Tennis.mp4", "Valore Media- My Work all/Fashion & Beauty/altar'd state x as revival/AS Revival Sports Series.mp4", "Valore Media- My Work all/Fashion & Beauty/altar'd state x as revival/AS summer solstice.mp4", "Valore Media- My Work all/Fashion & Beauty/altar'd state x as revival/AS the movement series.mp4", "Valore Media- My Work all/Fashion & Beauty/altar'd state x as revival/Altar'd State Carousel Volleyball.mp4", "Valore Media- My Work all/Fashion & Beauty/altar'd state x as revival/Altar'd state swim salt + sun carousel.mp4"],
-    videoLabels: ["bts vs final", "carousel design", "carousel design", "carousel design", "carousel design", "carousel design", "carousel design"],
+    galleryImages: [], supportingVideos: ["Valore Media- My Work all/Fashion & Beauty/altar'd state x as revival/Altard State BTS vs Final Reel.mp4", "Valore Media- My Work all/Fashion & Beauty/altar'd state x as revival/AS Revival Sports Series.mp4", "Valore Media- My Work all/Fashion & Beauty/altar'd state x as revival/AS the movement series.mp4", "Valore Media- My Work all/Fashion & Beauty/altar'd state x as revival/Altar'd State Carousel Volleyball.mp4", "Valore Media- My Work all/Fashion & Beauty/altar'd state x as revival/Altar'd state swim salt + sun carousel.mp4"],
+    videoLabels: ["carousel design", "bts vs final", "carousel design", "carousel design", "carousel design", "carousel design"],
     services: ["Video Editing", "Social Strategy", "Carousel Design"],
     credit: "beth studenberg"
   },
@@ -210,7 +211,7 @@ const WORK_PROJECTS = [
   {
     slug: "lola-store", category: "kids-brands",
     title: "lola & the boys · in-store", type: "in-store content",
-    description: "Independently concepted, filmed, and edited in-store lifestyle content across both Miami retail locations, directing model casting and styling on the ground to translate the in-person shopping experience into scroll-stopping social moments.",
+    description: "Concepted, filmed, and edited in-store lifestyle content across various south florida retail locations, directing/managing child talent, and styling on the ground to translate the in-person shopping experience into scroll-stopping viral social moments generating over 100k views overall.",
     coverImage: "",
     heroVideo: "Valore Media- My Work all/Kids Brands/lola & the boys/in-store/cutest kids store.mp4",
     galleryImages: ["Valore Media- My Work all/Kids Brands/lola & the boys/in-store/image-09-3e1bf97a.jpg", "Valore Media- My Work all/Kids Brands/lola & the boys/in-store/image-10-fcb4686d.jpg", "Valore Media- My Work all/Kids Brands/lola & the boys/in-store/image-11-4290f338.jpg", "Valore Media- My Work all/Kids Brands/lola & the boys/in-store/image-12-b802a1c3.jpg"], supportingVideos: ["Valore Media- My Work all/Kids Brands/lola & the boys/in-store/budget.mp4", "Valore Media- My Work all/Kids Brands/lola & the boys/in-store/dont you want to judge me.mp4", "Valore Media- My Work all/Kids Brands/lola & the boys/in-store/events.mp4", "Valore Media- My Work all/Kids Brands/lola & the boys/in-store/im sick final.mp4"],
@@ -239,7 +240,7 @@ const WORK_PROJECTS = [
   {
     slug: "lola-campaign", category: "kids-brands",
     title: "lola & the boys · campaign", type: "campaign social coverage",
-    description: "Managed and executed a full social campaign across seasonal photoshoots for a children's fashion label recognized among the Inc. 5000 fastest-growing companies, developing the concepts, filming, and editing video and photography into one cohesive launch story.",
+    description: "Covered social content & campaign across various photoshoots for a children's fashion label recognized among the Inc. 5000 fastest-growing companies, developing the concepts, filming, and editing video and photography into cohesive launch stories, all tailored to the season/ branding voice.",
     coverImage: "",
     heroVideo: "Valore Media- My Work all/Kids Brands/lola & the boys/campaigns/GRWM final compressed.mp4",
     galleryImages: ["Valore Media- My Work all/Kids Brands/lola & the boys/campaigns/image-13-bd4fd37e.jpg", "Valore Media- My Work all/Kids Brands/lola & the boys/campaigns/image-14-91b9c544.jpg", "Valore Media- My Work all/Kids Brands/lola & the boys/campaigns/image-15-0d4b1eab.jpg"], supportingVideos: ["Valore Media- My Work all/Kids Brands/lola & the boys/campaigns/4th of july final.mp4", "Valore Media- My Work all/Kids Brands/lola & the boys/campaigns/Final POV Kids Clothes LOLA.mp4", "Valore Media- My Work all/Kids Brands/lola & the boys/campaigns/days of the week final.mp4", "Valore Media- My Work all/Kids Brands/lola & the boys/campaigns/final barbie lola reel 1 draft.mp4", "Valore Media- My Work all/Kids Brands/lola & the boys/campaigns/final girlhood lola reel 2.mp4", "Valore Media- My Work all/Kids Brands/lola & the boys/campaigns/the theme is final.mp4"],
@@ -278,7 +279,7 @@ const WORK_PROJECTS = [
   {
     slug: "myhotbod-pilates", category: "lifestyle-hospitality",
     title: "myhotbod pilates", type: "launch content",
-    description: "Directed launch-day social coverage for a new pilates studio's opening class, bringing together video, digital camera photography, stories, a carousel, and a reel to build anticipation from day one.",
+    description: "Directed social coverage for a new pilates studio's launch, blending video and digital camera photography into content built to create anticipation and reflect their brand voice from day one.",
     coverImage: "Valore Media- My Work all/Lifestyle & Influencer Marketing/myhotbod/Carousel/1.png",
     heroVideo: "Valore Media- My Work all/Lifestyle & Influencer Marketing/myhotbod/adjusted story pilates essentials.mp4",
     galleryImages: ["Valore Media- My Work all/Lifestyle & Influencer Marketing/myhotbod/Carousel/2.png", "Valore Media- My Work all/Lifestyle & Influencer Marketing/myhotbod/Carousel/3.png"], supportingVideos: ["Valore Media- My Work all/Lifestyle & Influencer Marketing/myhotbod/adjusted perreo pilates.mp4"],
