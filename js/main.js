@@ -112,6 +112,12 @@ function toggleCard(header){
   card.classList.toggle('open');
 }
 
+function toggleStep(header){
+  var step=header.closest('.pstep');
+  if(!step)return;
+  step.classList.toggle('open');
+}
+
 function openOv(slug){
   if(!overlay||!ovBody||!ovTitle)return false;
   renderCategory(slug);

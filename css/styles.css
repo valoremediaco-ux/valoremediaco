@@ -186,7 +186,9 @@ nav.inv .nc{color:var(--pa);border-color:rgba(255,255,255,.25);}
 .proc-steps{border-top:1px solid rgba(0,0,0,.08);margin-top:.3vh;}
 .pstep{border-bottom:1px solid rgba(0,0,0,.08);overflow:hidden;transition:background .25s;}
 .pstep:last-child{border-bottom:none;}
-.pstep:hover{background:rgba(0,0,0,.02);}
+@media (hover: hover) and (pointer: fine) {
+  .pstep:hover{background:rgba(0,0,0,.02);}
+}
 .pstep-header{
   display:flex;align-items:center;justify-content:space-between;
   padding:1.6rem 0;cursor:none;
@@ -195,14 +197,18 @@ nav.inv .nc{color:var(--pa);border-color:rgba(255,255,255,.25);}
 .pnum{font-family:var(--P);font-weight:800;font-size:1.8rem;color:rgba(0,0,0,.08);letter-spacing:-.03em;line-height:1;flex-shrink:0;}
 .pname{font-family:var(--P);font-weight:700;font-size:1.05rem;letter-spacing:-.01em;text-transform:lowercase;}
 .pstep-arrow{font-size:.75rem;color:var(--ta);opacity:.5;transition:transform .35s cubic-bezier(.16,1,.3,1);flex-shrink:0;}
-.pstep:hover .pstep-arrow{transform:rotate(180deg);opacity:1;}
+@media (hover: hover) and (pointer: fine) {
+  .pstep:hover .pstep-arrow{transform:rotate(180deg);opacity:1;}
+}
 .pstep.open .pstep-arrow{transform:rotate(180deg);opacity:1;}
 .pbody-wrap{
   max-height:0;overflow:hidden;
   transition:max-height .45s cubic-bezier(.16,1,.3,1),padding .35s ease;
   padding:0 0;padding-left:3.8rem;
 }
-.pstep:hover .pbody-wrap{max-height:200px;padding:0 0 1.8rem;padding-left:3.8rem;}
+@media (hover: hover) and (pointer: fine) {
+  .pstep:hover .pbody-wrap{max-height:200px;padding:0 0 1.8rem;padding-left:3.8rem;}
+}
 .pstep.open .pbody-wrap{max-height:200px;padding:0 0 1.8rem;padding-left:3.8rem;}
 .pstep.open .pstep-arrow{transform:rotate(180deg);opacity:1;}
 .pstep.open .pbody-wrap{max-height:200px;padding:0 0 1.8rem;padding-left:3.8rem;}
@@ -745,7 +751,9 @@ footer{background:#060606;border-top:1px solid rgba(255,255,255,.04);padding:2.5
   transition:background .2s;
 }
 .acc-item:first-of-type { border-top:1px solid rgba(0,0,0,.07); }
-.acc-item:hover { background:rgba(0,0,0,.02); }
+@media (hover: hover) and (pointer: fine) {
+  .acc-item:hover { background:rgba(0,0,0,.02); }
+}
 .acc-header {
   display:flex;align-items:center;justify-content:space-between;
   padding:1.1rem 0;cursor:none;
@@ -755,13 +763,17 @@ footer{background:#060606;border-top:1px solid rgba(255,255,255,.04);padding:2.5
 .acc-icon svg { width:13px;height:13px; }
 .acc-name { font-family:var(--P);font-weight:600;font-size:.82rem;text-transform:lowercase; }
 .acc-arr { font-size:.65rem;color:var(--ta);opacity:.4;transition:transform .35s cubic-bezier(.16,1,.3,1); }
-.acc-item:hover .acc-arr { transform:rotate(180deg);opacity:1; }
+@media (hover: hover) and (pointer: fine) {
+  .acc-item:hover .acc-arr { transform:rotate(180deg);opacity:1; }
+}
 .acc-body-wrap {
   max-height:0;overflow:hidden;
   transition:max-height .4s cubic-bezier(.16,1,.3,1),padding .3s ease;
   padding:0;
 }
-.acc-item:hover .acc-body-wrap { max-height:120px;padding:0 0 1rem; }
+@media (hover: hover) and (pointer: fine) {
+  .acc-item:hover .acc-body-wrap { max-height:120px;padding:0 0 1rem; }
+}
 .acc-sub { font-size:.65rem;letter-spacing:.05em;text-transform:lowercase;color:var(--ta);opacity:.7;font-weight:400;padding-left:3.9rem; }
 /* education: keep proper capitalization */
 .edu .acc-name{text-transform:none;}
@@ -770,9 +782,13 @@ footer{background:#060606;border-top:1px solid rgba(255,255,255,.04);padding:2.5
 /* certificates: whole list hidden until hovering the section title */
 .acc-dropdown .acc-title{cursor:default;display:inline-flex;align-items:center;gap:.5rem;padding:.3rem 0;}
 .acc-dropdown .acc-title::after{content:'↓';font-size:.7rem;color:var(--ta);opacity:.55;transition:transform .35s cubic-bezier(.16,1,.3,1);}
-.acc-dropdown:hover .acc-title::after{transform:rotate(180deg);opacity:1;}
+@media (hover: hover) and (pointer: fine) {
+  .acc-dropdown:hover .acc-title::after{transform:rotate(180deg);opacity:1;}
+}
 .acc-dropdown-body{max-height:0;overflow:hidden;transition:max-height .5s cubic-bezier(.16,1,.3,1);}
-.acc-dropdown:hover .acc-dropdown-body{max-height:700px;}
+@media (hover: hover) and (pointer: fine) {
+  .acc-dropdown:hover .acc-dropdown-body{max-height:700px;}
+}
 
 /* hero value proposition line */
 .h-vp{font-size:.85rem;letter-spacing:.03em;color:rgba(13,13,13,.62);font-weight:400;line-height:1.7;max-width:34rem;margin-top:.9rem;}
@@ -790,7 +806,10 @@ footer{background:#060606;border-top:1px solid rgba(255,255,255,.04);padding:2.5
 
 /* skills as individual dropdowns, matching education accordion style */
 .skill-acc .acc-body-wrap{padding-left:0;}
-.skill-acc:hover .acc-body-wrap,.skill-acc.open .acc-body-wrap{max-height:260px;padding:0 0 1.2rem;}
+.skill-acc.open .acc-body-wrap{max-height:260px;padding:0 0 1.2rem;}
+@media (hover: hover) and (pointer: fine) {
+  .skill-acc:hover .acc-body-wrap{max-height:260px;padding:0 0 1.2rem;}
+}
 .skill-acc.open .acc-arr{transform:rotate(180deg);opacity:1;}
 .skill-acc .skill-pills{display:flex;flex-wrap:wrap;gap:.4rem;}
 
@@ -921,9 +940,15 @@ body.wm-open #cr .crlogo-light{opacity:0 !important;}
 .ccard-header{display:flex;align-items:center;justify-content:space-between;padding:1.1rem 1.3rem;cursor:none;}
 .ccard-title{font-family:var(--P);font-weight:700;font-size:.88rem;letter-spacing:-.005em;text-transform:lowercase;}
 .ccard-arrow{font-size:.72rem;color:var(--ta);opacity:.5;transition:transform .35s cubic-bezier(.16,1,.3,1);flex-shrink:0;}
-.ccard:hover .ccard-arrow,.ccard.open .ccard-arrow{transform:rotate(180deg);opacity:1;}
+.ccard.open .ccard-arrow{transform:rotate(180deg);opacity:1;}
+@media (hover: hover) and (pointer: fine) {
+  .ccard:hover .ccard-arrow{transform:rotate(180deg);opacity:1;}
+}
 .ccard-body-wrap{max-height:0;overflow:hidden;transition:max-height .45s cubic-bezier(.16,1,.3,1),padding .35s ease;padding:0 1.3rem;}
-.ccard:hover .ccard-body-wrap,.ccard.open .ccard-body-wrap{max-height:260px;padding:0 1.3rem 1.3rem;}
+.ccard.open .ccard-body-wrap{max-height:260px;padding:0 1.3rem 1.3rem;}
+@media (hover: hover) and (pointer: fine) {
+  .ccard:hover .ccard-body-wrap{max-height:260px;padding:0 1.3rem 1.3rem;}
+}
 .ccard-row{display:flex;flex-direction:column;gap:.15rem;margin-bottom:.8rem;}
 .ccard-lbl{font-size:.62rem;letter-spacing:.1em;text-transform:lowercase;color:var(--ta);opacity:.75;font-weight:500;}
 .ccard-val{font-size:.8rem;line-height:1.6;color:rgba(0,0,0,.55);font-weight:300;}
