@@ -116,7 +116,7 @@ const WORK_PROJECTS = [
   {
     slug: "fashion-editorial-carousels", category: "fashion-beauty",
     title: "altar'd state editorial", type: "content creation & social strategy",
-    description: "Created a range of social designs and content across multiple seasons and apparel lines for altar'd state and altar'd state revival, pairing precise video editing with social strategy to give the work a polished, cohesive presence, featured on altar'd state's Instagram account.",
+    description: "Created a range of social designs and content across multiple seasons and apparel lines in collaboration with altar'd state's brand photographer, pairing precise video editing with social strategy to give the work a polished, cohesive presence, with pieces featured on altar'd state and altar'd state revival's Instagram accounts.",
     coverImage: "Valore Media- My Work all/Fashion & Beauty/altar'd state x as revival/altard state cover.jpg",
     heroVideo: "Valore Media- My Work all/Fashion & Beauty/altar'd state x as revival/Altard State BTS vs Final Reel.mp4",
     previewVideo: "Valore Media- My Work all/Fashion & Beauty/altar'd state x as revival/AS Revival Carousel Tennis.mp4",
