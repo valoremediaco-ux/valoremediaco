@@ -6,21 +6,32 @@ var _hs='a,button,.blo,.vw,.scard-header,.ccard-header,.acc-header,.pstep-header
 document.addEventListener('mouseover',function(e){if(e.target.closest(_hs))document.body.classList.add('ch');},{passive:true,capture:true});
 document.addEventListener('mouseout',function(e){if(!document.elementFromPoint(mx,my)||!document.elementFromPoint(mx,my).closest(_hs))document.body.classList.remove('ch');},{passive:true,capture:true});
 
-/* ── DARK-CURSOR DETECTION (covers whole dark sections + individual dark photos, all pages) ── */
-var _dz=document.querySelectorAll('.stats,.ct,.tick,.work');
-var _dkHov='.cr-dk,.proj-phone,.proj-hero-media';
+/* ── DARK-CURSOR DETECTION (automatic: checks the actual element under the cursor, not a fixed section list) ── */
+function _bgLuminance(el){
+  while(el&&el!==document.documentElement){
+    var bg=getComputedStyle(el).backgroundColor;
+    var m=bg&&bg.match(/[\d.]+/g);
+    if(m&&m.length>=3&&(m[3]===undefined||+m[3]>0.05)){
+      return (0.299*(+m[0])+0.587*(+m[1])+0.114*(+m[2]))/255;
+    }
+    el=el.parentElement;
+  }
+  return 1; // default: assume light page background
+}
 function _computeDk(){
+  var el=document.elementFromPoint(mx,my);
   var d=false;
-  _dz.forEach(function(z){var r=z.getBoundingClientRect();if(r.top<60&&r.bottom>0)d=true;});
-  if(!d){
-    var el=document.elementFromPoint(mx,my);
-    if(el&&el.closest(_dkHov))d=true;
+  if(el){
+    // any photo or video is treated as dark-cursor territory (editorial imagery on this site runs moody/dark)
+    if(el.closest('img,video,picture'))d=true;
+    else d=_bgLuminance(el)<0.5;
   }
   document.body.classList.toggle('dk',d);
 }
 var _tkd=false;
+document.addEventListener('mousemove',function(){
+  if(!_tkd){requestAnimationFrame(function(){_tkd=false;_computeDk();});_tkd=true;}
+},{passive:true});
 window.addEventListener('scroll',function(){
   if(!_tkd){requestAnimationFrame(function(){_tkd=false;_computeDk();});_tkd=true;}
 },{passive:true});
-document.addEventListener('mouseover',_computeDk,{passive:true,capture:true});
-document.addEventListener('mouseout',_computeDk,{passive:true,capture:true});
