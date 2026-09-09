@@ -40,7 +40,6 @@ window.addEventListener('scroll',function(){
     darkZ.forEach(function(z){var r=z.getBoundingClientRect();if(r.top<60&&r.bottom>0)d=true;});
     nav2.classList.toggle('inv',d);
     nav2.classList.toggle('scrolled',window.scrollY>80);
-    document.body.classList.toggle('dk',d);
   });tk2=true;}
 },{passive:true});
 
